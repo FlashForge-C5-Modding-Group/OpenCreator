@@ -1,0 +1,21 @@
+site_name: OpenCreator
+site_description: Creator 5 full-custom-firmware project documentation
+repo_url: https://github.com/FlashForge-C5-Modding-Group/OpenCreator
+repo_name: FlashForge-C5-Modding-Group/OpenCreator
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - content.action.edit
+    - search.suggest
+
+markdown_extensions:
+  - admonition
+
+nav:
+  - Home: index.md
+  - Getting started: getting-started.md
+  - Project layout: project-layout.md
+  - Contributing: contributing.md

@@ -1,0 +1,4 @@
+.venv/
+.uv-cache/
+site/
+__pycache__/
