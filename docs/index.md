@@ -8,6 +8,9 @@ Start with [Getting started](getting-started.md) to find the project sources,
 or see [Project layout](project-layout.md) for the repositories that make up
 the work.
 
+See [OpenCreator Legacy and full custom firmware](opencreator-legacy.md) for
+the difference between the stock-based modding path and the newer project.
+
 !!! warning "Hardware procedures are not published yet"
     Do not treat this site as a flashing or recovery guide until those pages
     include tested steps, supported versions, and rollback instructions.

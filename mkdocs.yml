@@ -17,5 +17,6 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Getting started: getting-started.md
+  - Legacy and full custom firmware: opencreator-legacy.md
   - Project layout: project-layout.md
   - Contributing: contributing.md
