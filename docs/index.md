@@ -28,8 +28,8 @@ diminished.
     or just completely not working, and you should wait
     unless you know exactly what you are doing and how to revert.
 
-!!! warning "Warranty!"
-    OpenCreator's team does not take any responsibility over any
-    damage, unintended wear, or anything else done to your printer
+!!! warning "Warranty & Responsibility Disclosure"
+    OpenCreator's team and contributors do not take any responsibility over 
+    any damage, unintended wear, or anything else done to your printer
     and the responsibility is on you if you "brick" or break your printer,
     and installing mods may void your warranty, so of course, be careful!

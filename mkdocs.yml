@@ -14,6 +14,10 @@ theme:
 markdown_extensions:
   - admonition
 
+plugins:
+ - search 
+ - optimize 
+
 nav:
   - Home: index.md
   - Getting started: getting-started.md
@@ -26,3 +30,4 @@ nav:
   - Project layout: project-layout.md
   - Contributing: contributing.md
   - Slicer Configuration: slicer-config.md
+  - SBC OpenCreator: rpi-klipper.md  

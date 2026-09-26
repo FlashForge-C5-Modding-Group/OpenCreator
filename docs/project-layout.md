@@ -8,7 +8,6 @@ release-status statement.
 | [OpenCreator](https://github.com/FlashForge-C5-Modding-Group/OpenCreator) | This documentation site and project landing page |
 | [klipper-c5](https://github.com/FlashForge-C5-Modding-Group/klipper-c5) | Creator 5 Klipper and MCU integration work |
 | [opencreator-fs](https://github.com/FlashForge-C5-Modding-Group/opencreator-fs) | Printer filesystem and configuration work |
-| OCInstaller development tree | Direct-framebuffer installer UI and preflight framework; not yet a CFW payload installer |
 | [Creator-5-Mods](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Mods) | Stock-based Legacy guides and modifications |
 | [Creator-5-Scripts](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Scripts) | Printer-side scripts for the Legacy path |
 

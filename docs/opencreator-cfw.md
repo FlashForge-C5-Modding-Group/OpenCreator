@@ -33,7 +33,7 @@ and seems to work fine, but it will most likely not be used in the final version
 implemented.
 
 Gadget mode Klipper / RPI Klipper is very close to what AnyCubic's modding scene calls [Tunneled Vanilla Klipper](https://github.com/Kobra-S1/vanilla-klipper-swu/blob/main/tunneled-klipper.md)
-and a lot of insperation was taken to go this route over direct MCU soldering,
+and a lot of inital insperation was taken to go this route over direct MCU soldering,
 as it may not be possible on this board, as there has been no direct way (yet) to
 solder and allow USB passthrough for the MCUs.
 
