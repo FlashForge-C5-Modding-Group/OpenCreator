@@ -19,13 +19,11 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - pymdownx.blocks.caption
-    - abbr
-    - attr_list
-    - pymdownx.snippets
+  - abbr
+  - pymdownx.snippets
 
 plugins:
- - search 
- - optimize 
+  - search
 
 nav:
   - Home: index.md
