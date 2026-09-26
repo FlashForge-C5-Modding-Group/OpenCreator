@@ -25,3 +25,4 @@ nav:
   - Installation boundaries: installation-and-safety.md
   - Project layout: project-layout.md
   - Contributing: contributing.md
+  - Slicer Configuration: slicer-config.md

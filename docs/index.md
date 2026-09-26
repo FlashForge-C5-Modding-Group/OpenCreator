@@ -6,6 +6,10 @@ toolchanging, filament handling, and printer-side configuration into a
 maintainable stack. OpenCreator Legacy deals with older versions that keep
 a mostly stock experience, whilst giving important creature comforts.
 
+Join our [Discord](https://discord.gg/RsdkqDtfww) for updates on development, support and a community of
+Creator 5 / 5 Pro owners. We can even help with alternate custom firmwares, even though support may be
+diminished.
+
 | Read this | For |
 | --- | --- |
 | [Getting started](getting-started.md) | Decide between the stock-based Legacy path and development CFW. |
@@ -16,9 +20,16 @@ a mostly stock experience, whilst giving important creature comforts.
 | [Project layout](project-layout.md) | Find the source repositories. |
 | [OpenCreator Legacy](opencreator-legacy.md) | See the "Legacy" version of OpenCreator, where it works around FlashForge instead of replacing. |
 | [OpenCreator CFW](opencreator-cfw.md) | See the newer replacement stack and its development goals. |
+| [Slicer Configuration for CFW](slicer-config.md) | Check out the needed slicer changes for CFW |
 
 !!! warning "Development software"
     Do not treat any full custom firmware from us as complete.
     Anything you may of seen may be out of date, different
     or just completely not working, and you should wait
     unless you know exactly what you are doing and how to revert.
+
+!!! warning "Warranty!"
+    OpenCreator's team does not take any responsibility over any
+    damage, unintended wear, or anything else done to your printer
+    and the responsibility is on you if you "brick" or break your printer,
+    and installing mods may void your warranty, so of course, be careful!
