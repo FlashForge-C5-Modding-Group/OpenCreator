@@ -17,6 +17,11 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Getting started: getting-started.md
-  - Legacy and full custom firmware: opencreator-legacy.md
+  - OpenCreator Legacy: opencreator-legacy.md
+  - OpenCreator CFW: opencreator-cfw.md
+  - Architecture: architecture.md
+  - Print workflow: print-workflow.md
+  - Status and roadmap: status-and-roadmap.md
+  - Installation boundaries: installation-and-safety.md
   - Project layout: project-layout.md
   - Contributing: contributing.md

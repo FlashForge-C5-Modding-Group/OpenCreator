@@ -1,8 +1,9 @@
 # OpenCreator
 
-OpenCreator is the documentation home for the Creator 5 full-custom-firmware
+OpenCreator is the documentation home for the Creator 5 full custom firmware
 project. The website source is in [`docs/`](docs/index.md) and is built with
-MkDocs on Read the Docs.
+MkDocs on Read the Docs. It covers architecture, current print workflow,
+verification status, installation boundaries, and the stock-based Legacy path.
 
 ## Preview locally
 
@@ -24,6 +25,7 @@ dashboard and select this repository's `main` branch. The root
 `mkdocs.yml`. Read the Docs will provide the project URL after import; no
 deployment credentials belong in this repository.
 
-The current pages are starter documentation. Add verified installation,
-flashing, and printer-operation instructions only after the corresponding
-procedures have been tested on hardware.
+The site is development documentation, not a flashing guide. Add a release
+installation or recovery procedure only after it has been tested on the
+specified hardware and build. Keep current source behavior separate from
+verified printer behavior.
