@@ -38,6 +38,20 @@ purge. Touchscreen support is a separate interface concern and must not be
 assumed to make an unverified machine workflow safe. GrumpyScreen work is
 separate from the core Klipper and filesystem repositories.
 
-The OpenCreator Installer development tree is a direct-framebuffer application
-and preflight framework. It does not yet
-install a CFW payload or flash the MCUs. See [Installation boundaries](installation-and-safety.md).
+## Hardware
+Other than the previously explained hardware for the MCU chips, the printer
+has some unexplained "maximum" limits for temperature
+
+| Hardware | Default Max | Actual Max | Safe Max |
+| --- | --- | --- | --- |
+| Nozzles | 320c | 350c | 350c? |
+| Chamber Heater (Pro) | 65c | 80c | 70c? |
+| Bed | 120 | 130 | 125? |
+
+Safe Max temps are the maximium safe temperatures before you run into actual
+hardware limitations. Anything with a `?` may mean untested.
+
+Please read the list below to have known temperature limits.
+
+### Known hardware limitations
+- Above 70 degrees chamber temperature, the grill will deform
