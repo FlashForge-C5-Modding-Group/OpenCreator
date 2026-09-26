@@ -1,6 +1,6 @@
 # Architecture
 
-The full custom firmware effort has four layers. The printer's Linux host runs
+The full custom firmware effort has layers *(like an onion!)*. The printer's Linux host runs
 Klipper and web services. Four MCU boards perform motion, extrusion, heating,
 and sensing. AFC models the removable tools and filament state. Printer-side
 configuration ties those parts together.
