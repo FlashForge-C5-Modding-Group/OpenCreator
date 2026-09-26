@@ -14,13 +14,13 @@ Go to the Wifi connect button (next to printer) and change your host type to "`M
 and remove any serial numbers or API keys.
 
 ### General profile changes
-Go to the printer settings, go to "Printer Agent" and switch it to `Moonraker`.
-Set "Use 3MF instead of G-code to `off` from `on`.
+Go to the printer settings, go to "Printer Agent" and switch it to `Moonraker`.<br>
+Set "Use 3MF instead of G-code to `off` from `on`.<br>
 Set `Disable set remaining print time` to `off`
 
 ### Machine G-code
 *tbd*
 
 ## Optional / Niceties
-Set retraction and deretraction to 75 on all extruders, should make it much faster, and doesn't seem to have much stringing.
+Set retraction and deretraction to 75 on all extruders, should make it much faster, and doesn't seem to have much stringing.<br>
 Set Z-hop height to 0.24 on all extruders, as it will reduce stress on the Z axis and will make your prints slightly faster.
