@@ -21,6 +21,7 @@ diminished.
 | [OpenCreator Legacy](opencreator-legacy.md) | See the "Legacy" version of OpenCreator, where it works around FlashForge instead of replacing. |
 | [OpenCreator CFW](opencreator-cfw.md) | See the newer replacement stack and its development goals. |
 | [Slicer Configuration for CFW](slicer-config.md) | Check out the needed slicer changes for CFW |
+| [OpenCreator CFW for SBC](rpi-klipper.md) | OpenCreator running on a RPi or SBC instead of the host mips32 SOC. |
 
 !!! warning "Development software"
     Do not treat any full custom firmware from us as complete.

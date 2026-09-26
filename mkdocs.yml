@@ -10,9 +10,18 @@ theme:
     - navigation.sections
     - content.action.edit
     - search.suggest
-
+    - content.tooltips
+ 
 markdown_extensions:
   - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
+    - abbr
+    - attr_list
+    - pymdownx.snippets
 
 plugins:
  - search 
@@ -23,6 +32,7 @@ nav:
   - Getting started: getting-started.md
   - OpenCreator Legacy: opencreator-legacy.md
   - OpenCreator CFW: opencreator-cfw.md
+  - OpenCreator for SBC: rpi-klipper.md    
   - Architecture: architecture.md
   - Print workflow: print-workflow.md
   - Status and roadmap: status-and-roadmap.md
@@ -30,4 +40,3 @@ nav:
   - Project layout: project-layout.md
   - Contributing: contributing.md
   - Slicer Configuration: slicer-config.md
-  - SBC OpenCreator: rpi-klipper.md  
