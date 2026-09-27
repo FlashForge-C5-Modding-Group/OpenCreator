@@ -1,13 +1,15 @@
 # OpenCreator
 
-OpenCreator is the Creator 5 and Creator 5 Pro community full custom firmware
+OpenCreator is the FlashForge Creator 5 and Creator 5 Pro community full custom firmware
 project. It brings the printer's four controller boards, Klipper host,
 toolchanging, filament handling, and printer-side configuration into a
-maintainable stack. OpenCreator Legacy deals with older versions that keep
-a mostly stock experience, whilst giving important creature comforts.
+maintainable stack that is fully open source. 
+OpenCreator Legacy deals with older versions that keep a mostly stock experience, 
+whilst giving important creature comforts such as upgraded camera views.
 
-Join our [Discord](https://discord.gg/RsdkqDtfww) for updates on development, support and a community of
-Creator 5 / 5 Pro owners. We can even help with alternate custom firmwares, even though support may be
+Join our [Discord](https://discord.gg/RsdkqDtfww) for updates on development, support and a community of 
+Flashforge Creator 5 / 5 Pro owners. We can even help with alternate 
+custom firmwares, even though support may be
 diminished.
 
 | Read this | For |
