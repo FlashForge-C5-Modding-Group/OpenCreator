@@ -34,6 +34,7 @@ nav:
   - OpenCreator for SBC: rpi-klipper.md    
   - Architecture: architecture.md
   - Print workflow: print-workflow.md
+  - Printer Features: printer-features.md
   - Status and roadmap: status-and-roadmap.md
   - Project layout: project-layout.md
   - Contributing: contributing.md

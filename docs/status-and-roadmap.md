@@ -13,9 +13,10 @@ build, or one flashed board is not end-to-end verification.
 | Flow and VFA calibration | The host has an eboard pressure-advance test and MCLib vibration calibration integration. | It mostly works, but may still have some bugs |
 | Touchscreen and web UI | Mainsail controls and separate touchscreen work exist. | A complete custom touchscreen workflow and its compatibility matrix are not yet a release claim. |
 | Complete removal of firmwareExe | The main pain point for FlashForge printers | Their bad touchscreen + camera + print uploading sequence has been completely removed and do not function at all |
-| Installer | No real work of substance has been done | Major work still needs to go into making a way to install and update the printer to get onto custom firware, such as an installer helper. |
+| Installer | No real work of substance has been done | Major work still needs to go into making a way to install and update the printer to get onto custom firmware, such as an installer helper. |
 | Real Zero Purge modes | Implemented into switches | You can turn off Flow Calibration and Purging to make a basically zero waste printer. It prints a small purge line to prime the nozzle when starting the print, but thats it. |
 | Print Farm / Automation support | Ready | Needs testing, but it should work with anything that just uses Moonraker. You should be able to just plop in any file and it should be able to just take it. |
+| Z Max on print end | Ready | A suggested feature made it in! |
 
 ## Planned, not implemented as supported features
 
