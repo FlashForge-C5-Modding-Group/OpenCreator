@@ -1,6 +1,13 @@
 # SBC Installation and Configuration
 SBC / RPI Klipper for replacing the Mips32 Host that comes with the printer
 
+## Preamble:
+### Reasons to go OpenCreator SBC over stock
+1. More power to run fun projects on, add more cameras, add monitoring with AI, etc.
+2. Security, airgapping the printer's old kernel version and potentially insecure packages, to only be run through the SBC.
+3. Use different touchscreen apps, such as KlipperScreen instead of GrumpyScreen.
+4. Run Klipper closer to main repos, without logging changes, or major changes to get performance, this also applies to AFC.
+
 ## Requirements:
 - A SBC that has USB Gadget Mode support (PiZ2w, Pi4/5 on its USB-C power port, etc)
 - If using an external power supply on a Pi4/5, a USB power and data splitter

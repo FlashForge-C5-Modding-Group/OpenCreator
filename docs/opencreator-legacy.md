@@ -14,13 +14,12 @@ Script, and Mainsail. The companion
 repository contains scripts intended to run on a rooted printer.
 
 Legacy remains useful while [OpenCreator CFW](opencreator-cfw.md) is being
-developed. Follow each Legacy guide's own prerequisites and recovery notes;
-installing a script is not the same thing as flashing replacement MCU firmware.
+developed. Follow each Legacy guide's own prerequisites.
 
 Legacy will not be discontinued when full custom firmware comes out, and will continued to be
 improved, with some features from full CFW, as they will use similar "Plugin" systems.
 Legacy is also a better choice for people who don't want to tinker at all, and would rather keep up
-with FlashForge's newer features, use their cloud service, or use the FlashForge printer ecosystem.
+with FlashForge's newer features, use their cloud service, or use the FlashForge printer ecosystem such as more direct use of their slicer, Flash Studio.
 
 | Legacy area | Approach |
 | --- | --- |
@@ -29,7 +28,7 @@ with FlashForge's newer features, use their cloud service, or use the FlashForge
 | Root access and scripts | Use the documented root and Loop Script paths for printer-side tweaks. |
 | Toolchanging | Continue using the factory workflow, with any compatible modifications from the guides. |
 | Web access | Add tools such as Mainsail alongside the stock software. |
-| Updates and recovery | Check each modification's prerequisites and recovery instructions before applying it. |
+| Updates and recovery | Check each modification's prerequisite instructions before applying it. |
 
 For a printer you need to operate today, start with the Legacy guides and
 their stated prerequisites. For the separate replacement stack, see
