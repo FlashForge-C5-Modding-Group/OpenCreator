@@ -10,8 +10,7 @@ signal. The eboard reports whether each test waveform passes its check.
 
 The sequence below is reconstructed from the factory `firmwareExe.i64`
 database, principally `BuildPage::clearNozzlePrint` and
-`CommMgr::paTestMgr`, and from the factory `eBoard.hex`. Decompiled names and
-control flow are useful evidence, but they are not manufacturer documentation.
+`CommMgr::paTestMgr`, and from the factory `eBoard.hex`. 
 
 ### The stock test, step by step
 
@@ -25,7 +24,8 @@ control flow are useful evidence, but they are not manufacturer documentation.
    measurement, then `SET_PRESSURE_ADVANCE ADVANCE=<candidate>`.
 3. The carriage starts each candidate at X40 and a Y position from 50 to 80 
    in 5 mm steps. It extrudes across six X strokes ending at X60, X100, X120,
-   X140, X180, and X200. (ANY MOTOR MOVEMENTS DON'T ACTUALLY HAPPEN FOR MOVEMENT OF XY, THIS IS JUST SO THEN THEY CAN APPLY PA WHILST STANDING COMPLETELY STILL) The short strokes extrude 1.13573 mm of filament at
+   X140, X180, and X200. The X and Y movements don't actually happen and get discarded, this is mostly to trick 
+   Klippy into thinking PA can be used. The short strokes extrude 1.13573 mm of filament at
    `F1080` (18 mm/s); the long strokes extrude 2.27146 mm at `F10980`
    (183 mm/s). Alternating slow and fast motion creates the motor-load
    transient that the eboard examines. 
