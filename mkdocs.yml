@@ -31,6 +31,7 @@ nav:
   - Installation: installation-and-safety.md  
   - OpenCreator Legacy: opencreator-legacy.md
   - OpenCreator CFW: opencreator-cfw.md
+  - OpenCreator CFW Features:  
   - OpenCreator for SBC: rpi-klipper.md    
   - Architecture: architecture.md
   - Print workflow: print-workflow.md

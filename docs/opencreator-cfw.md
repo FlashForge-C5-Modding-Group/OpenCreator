@@ -24,6 +24,8 @@ for printer files, configuration, and installation helpers.
 | Web and touchscreen | Build custom workflows for selecting tools and filaments. |
 | Raspberry Pi host | Use USB gadget mode to tunnel Klipper communication from a Raspberry Pi running the Klipper host to the printer. This is planned, not implemented. |
 
+To see more features that are directly implemented in detail look at [CFW Features](cfwfeatures.md).
+
 These are development goals, not claims that every feature is complete or
 hardware-verified. In particular, ACE Pro support and Raspberry Pi USB
 gadget-mode tunneling are planned, not available features. A configuration's

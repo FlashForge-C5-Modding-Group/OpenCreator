@@ -24,6 +24,8 @@ diminished.
 | [OpenCreator CFW](opencreator-cfw.md) | See the newer replacement stack and its development goals. |
 | [Slicer Configuration for CFW](slicer-config.md) | Check out the needed slicer changes for CFW |
 | [OpenCreator CFW for SBC](rpi-klipper.md) | OpenCreator running on a RPi or SBC instead of the host mips32 SOC. |
+| [General Printer Features](printer-features.md) | General Printer Features. |
+| [OpenCreator CFW Features](cfwfeatures.md) | OpenCreator Features in general over stock. | 
 
 !!! warning "Development software"
     Do not treat any full custom firmware from us as complete.

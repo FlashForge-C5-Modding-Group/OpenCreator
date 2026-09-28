@@ -16,7 +16,6 @@ build, or one flashed board is not end-to-end verification.
 | Installer | No real work of substance has been done | Major work still needs to go into making a way to install and update the printer to get onto custom firmware, such as an installer helper. |
 | Real Zero Purge modes | Implemented into switches | You can turn off Flow Calibration and Purging to make a basically zero waste printer. It prints a small purge line to prime the nozzle when starting the print, but thats it. |
 | Print Farm / Automation support | Ready | Needs testing, but it should work with anything that just uses Moonraker. You should be able to just plop in any file and it should be able to just take it. |
-| Z Max on print end | Ready | A suggested feature made it in! |
 
 ## Planned, not implemented as supported features
 

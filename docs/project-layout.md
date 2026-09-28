@@ -13,5 +13,4 @@ release-status statement.
 
 The source repository and branch should always be recorded alongside any
 published build or testing result. Hardware compatibility and verification
-status are summarized in [Status and roadmap](status-and-roadmap.md). None of
-these repository links is, by itself, a release or flashing instruction.
+status are summarized in [Status and roadmap](status-and-roadmap.md). 
