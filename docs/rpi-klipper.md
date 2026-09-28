@@ -7,6 +7,7 @@ SBC / RPI Klipper for replacing the Mips32 Host that comes with the printer
 2. Security, airgapping the printer's old kernel version and potentially insecure packages, to only be run through the SBC.
 3. Use different touchscreen apps, such as KlipperScreen instead of GrumpyScreen.
 4. Run Klipper closer to main repos, without logging changes, or major changes to get performance, this also applies to AFC.
+5. Use KIUAH to install utilities instead of manually.
 
 ### What is the reason for development?
 On the stock system, you have amazing MCUs, but the worst SOCs, to the point of encountering issues.
@@ -23,9 +24,10 @@ running on a Raspberry Pi or similar microcomputer, that has several times the p
 - A SBC that has USB Gadget Mode support (PiZ2w, Pi4/5 on its USB-C power port, etc)
 - If using an external power supply on a Pi4/5, a USB power and data splitter
 - If using an external power supply on a Pi4/5, a USB-A power blocker for the USB data in/out port on the splitter
-- Running a recent Debian with up-to date packages, forks of Debian, or Fedora
+- Running a recent Debian with up-to date packages, forks of Debian like Ubuntu, or Fedora (Recommended headless / server installs)
 - At least 2GB of Storage
 - At least 512MB of RAM
+- Internet on at least the SBC
 
 ## Installation:
 ### On the Printer

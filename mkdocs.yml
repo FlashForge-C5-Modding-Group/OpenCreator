@@ -12,13 +12,11 @@ theme:
     - search.suggest
     - content.tooltips
   palette: 
-
     # Palette toggle for light mode
     - scheme: default
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
-
     # Palette toggle for dark mode
     - scheme: slate
       toggle:
@@ -44,7 +42,7 @@ nav:
   - Installation: installation-and-safety.md  
   - OpenCreator Legacy: opencreator-legacy.md
   - OpenCreator CFW: opencreator-cfw.md
-  - OpenCreator CFW Features:  
+  - OpenCreator CFW Features: cfwfeatures.md
   - OpenCreator for SBC: rpi-klipper.md    
   - Architecture: architecture.md
   - Print workflow: print-workflow.md
