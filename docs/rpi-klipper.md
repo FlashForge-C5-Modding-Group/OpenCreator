@@ -6,8 +6,8 @@ SBC / RPI Klipper for replacing the Mips32 Host that comes with the printer
 1. More power to run fun projects on, add more cameras, add monitoring with AI, etc.
 2. Security, airgapping the printer's old kernel version and potentially insecure packages, to only be run through the SBC.
 3. Use different touchscreen apps, such as KlipperScreen instead of GrumpyScreen.
-4. Run Klipper closer to main repos, without logging changes, or major changes to get performance, this also applies to AFC.
-5. Use KIUAH to install utilities instead of manually.
+4. Use KIUAH to install utilities instead of manually, and have all the support of having a good architecture.
+5. Run ShakeTune natively
 
 ### What is the reason for development?
 On the stock system, you have amazing MCUs, but the worst SOCs, to the point of encountering issues.
@@ -15,7 +15,8 @@ That wouldn't be normally an issue, manufacturers would put the minimum spec SOC
 demanded too much, for how slow, and not powerful the stock SOC is (Ingenic x2600), it frequently
 encounters issues and runs into weirdness, such as on completely stock, even with the stock touchscreen,
 you can't really print too fast, with toolchanges, and no prime tower, as it will Timer Too Close, which
-is a issue when the host (the SOC) can't catch up and falls behind.
+is a issue when the host (the SOC) can't catch up and falls behind. On 1.9.9 they even forced it to slow
+down to prevent this.
 
 On OpenCreator SOC, Timer Too Close becomes a thing of the past, and you can run almost anything, as you're
 running on a Raspberry Pi or similar microcomputer, that has several times the power of the stock board.
@@ -24,10 +25,16 @@ running on a Raspberry Pi or similar microcomputer, that has several times the p
 - A SBC that has USB Gadget Mode support (PiZ2w, Pi4/5 on its USB-C power port, etc)
 - If using an external power supply on a Pi4/5, a USB power and data splitter
 - If using an external power supply on a Pi4/5, a USB-A power blocker for the USB data in/out port on the splitter
-- Running a recent Debian with up-to date packages, forks of Debian like Ubuntu, or Fedora (Recommended headless / server installs)
-- At least 2GB of Storage
+- Running a recent Debian / Raspberry Pi OS Lite with up-to date packages (Recommended headless / server installs).
+- At least 4GB of Storage
 - At least 512MB of RAM
 - Internet on at least the SBC
+
+## Caviats
+- The camera will not work if you airgap the MCUs. You will have to make a custom connector or add your own camera.
+- The camera may slow down during fast movements due to the USB bus being overloaded, if that persists you may cause it to need to be restarted.
+- A USB to spec cable is recommended, and as short as possible to keep signal integrity.
+- Unplugging / Restarting the Pi causes the FlashForge Printer's SoC to disconnect from WiFi. No idea why.
 
 ## Installation:
 ### On the Printer

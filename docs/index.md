@@ -16,7 +16,6 @@ diminished.
 | --- | --- |
 | [Getting started](getting-started.md) | Decide between the stock-based Legacy path and development CFW. |
 | [Architecture](architecture.md) | Understand the host, four MCUs, AFC, touchscreen, and filesystem roles. |
-| [Print workflow](print-workflow.md) | See tool selection, calibration, priming, meshing, and print-end behavior. |
 | [Status and roadmap](status-and-roadmap.md) | Separate implemented work from printer-verified behavior and plans. |
 | [Installation boundaries](installation-and-safety.md) | Understand why there is no general installation recipe yet. |
 | [Project layout](project-layout.md) | Find the source repositories. |

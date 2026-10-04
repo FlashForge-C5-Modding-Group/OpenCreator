@@ -21,8 +21,8 @@ for printer files, configuration, and installation helpers.
 | Tool selection | Configure T0 to T3 pickup, docking, and safety in host-side modules and macros. |
 | Filament control | Integrate AFC standalone for toolchanger filament mapping, loading, and runout handling. |
 | ACE Pro | Add support for ACE Pro as another filament system. This is planned, not implemented. |
-| Web and touchscreen | Build custom workflows for selecting tools and filaments. |
-| Raspberry Pi host | Use USB gadget mode to tunnel Klipper communication from a Raspberry Pi running the Klipper host to the printer. This is planned, not implemented. |
+| Web and touchscreen | Allow for switching filaments on the web. |
+| Raspberry Pi host | Use USB gadget mode to tunnel Klipper communication from a Raspberry Pi running the Klipper host to the printer. In testing! |
 
 To see more features that are directly implemented in detail look at [CFW Features](cfwfeatures.md).
 
