@@ -25,16 +25,19 @@ running on a Raspberry Pi or similar microcomputer, that has several times the p
 - A SBC that has USB Gadget Mode support (PiZ2w, Pi4/5 on its USB-C power port, etc)
 - If using an external power supply on a Pi4/5, a USB power and data splitter
 - If using an external power supply on a Pi4/5, a USB-A power blocker for the USB data in/out port on the splitter
-- Running a recent Debian / Raspberry Pi OS Lite with up-to date packages (Recommended headless / server installs).
+- Running a recent Debian / Raspberry Pi OS Lite with up-to date packages (Recommended headless / server installs)
+- If running a device that is slow (1ghz piz2w) to overclock to 1.2ghz or above
+- Some type of cooling
 - At least 4GB of Storage
 - At least 512MB of RAM
 - Internet on at least the SBC
 
 ## Caviats
-- The camera will not work if you airgap the MCUs. You will have to make a custom connector or add your own camera.
+- The camera will not work if you airgap the MCUs / SoC. You will have to make a custom connector or add your own camera.
 - The camera may slow down during fast movements due to the USB bus being overloaded, if that persists you may cause it to need to be restarted.
-- A USB to spec cable is recommended, and as short as possible to keep signal integrity.
+- A high quality USB cable is highly recommended, and as short as possible to keep signal integrity.
 - Unplugging / Restarting the Pi causes the FlashForge Printer's SoC to disconnect from WiFi. No idea why.
+- Obviously, no FlashForge integration at all.
 
 ## Installation:
 ### On the Printer
