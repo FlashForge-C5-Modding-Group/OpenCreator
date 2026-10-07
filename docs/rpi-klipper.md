@@ -31,19 +31,26 @@ running on a Raspberry Pi or similar microcomputer, that has several times the p
 - Internet on at least the SBC
 
 ## Caviats
-- The camera will not work if you airgap the MCUs. You will have to make a custom connector or add your own camera.
+- The camera will not work if you airgap the MCUs. You will have to make a custom connector or add your own camera. (In testing to rectify)
 - The camera may slow down during fast movements due to the USB bus being overloaded, if that persists you may cause it to need to be restarted.
-- A USB to spec cable is recommended, and as short as possible to keep signal integrity.
-- Unplugging / Restarting the Pi causes the FlashForge Printer's SoC to disconnect from WiFi. No idea why.
+- A USB to spec cable is recommended, and as short as possible to keep signal integrity. Even if a cable looks good, that doesn't mean it actually is.
+- Unplugging / Restarting the Pi causes the FlashForge Printer's SoC to disconnect from WiFi. It selects the virtual interface as internet and dies when it loses it.
 
 ## Installation:
 ### On the Printer
 1. Plug in the OpenCreator Installer media as outlined on the installation page
 2. Click to use "Tunneled"
 3. Wait for installation to finish
+4. Restart your printer
+5. You should see GrumpyScreen open up for a Moonraker printer, go to /usr/data/grumpyscreen/ and edit the config file to your Moonraker instance on the Pi
 
 ### On the SBC
-*tbd*
+1. Plug in the SBC through the Gadget Mode port (USB C on RPI 4/5, Power Micro USB for 3B+ and Z2W.)
+2. Setup Klipper, Moonraker, and Fluidd/Mainsail (Fluidd Recommended)
+3. Clone (repo)
+4. Run the script in the Pi folder to install the gadget service if on RPI3B+, 4, 5 or Zero2W, if using another SBC, setup a gadget tunnel based on the service.
+5. Add the configs from the Pi folder, if you are using Kalico or not too
+6. Restart the firmware for Klipper, you should have it connect if you did Printer first.
 
 ## Extra Notes:
 The touchscreen might feel physically slow no matter the device, due to VNC, unless you use GrumpyScreen or similar on the device.

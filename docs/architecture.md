@@ -22,8 +22,7 @@ printer. `printer.base.cfg` includes the Creator 5, probe, motor, filament,
 vibration, Misc, and AFC files. G-code storage is configured at
 `/usr/data/gcodes`. Stock-format calibration data remains under
 `/usr/data/firmwareRes/config`, including `extruder.json`, `zoffset.json`, and
-`test.json`. The host applies those saved measurements rather than treating a
-successful probe command as a complete nozzle calibration.
+`test.json`. 
 
 There is one physical extrusion motor. The four Klipper extruder contexts
 select the corresponding tool heaters and state; they are not four independent
