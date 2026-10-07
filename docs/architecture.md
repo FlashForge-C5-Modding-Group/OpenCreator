@@ -32,9 +32,8 @@ the selected logical extruder becomes active.
 ## Interfaces
 
 The printer configuration currently uses AFC standalone mode, not a BoxTurtle
-mechanism. Mainsail exposes virtual Misc switches for flow calibration and
-purge. Touchscreen support is a separate interface concern and must not be
-assumed to make an unverified machine workflow safe. GrumpyScreen work is
+mechanism. Mainsail/Fluidd exposes virtual Misc (or runout in Fluidd) switches for flow calibration and
+purge. GrumpyScreen work is
 separate from the core Klipper and filesystem repositories.
 
 ## Hardware
@@ -54,3 +53,4 @@ Please read the list below to have known temperature limits.
 
 ### Known hardware limitations
 - Above 70 degrees chamber temperature, the grill will deform
+- Above 320 degrees, the nozzle may start recording wildly off temperatures

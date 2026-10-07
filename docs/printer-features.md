@@ -56,3 +56,74 @@ filled with `99.0` as placeholders. If flow testing is off, or no valid tool
 result is available, it sends `SET_PA_ADVANCE T0=99.0 T1=99.0 T2=99.0
 T3=99.0 ENABLE=0`. These final per-tool settings are distinct from the
 temporary `SET_PRESSURE_ADVANCE` candidate applied during each test.
+
+## Offset Calibration
+
+Offset calibration aligns the *nozzles* of T0–T3 for printing. It is separate
+from locating their docks. The Creator 5 port exposes it through
+`C5_CALIBRATE_OFFSETS`; measurements and the levelboard reference are kept in
+`/usr/data/firmwareRes/config/extruder.json`.
+
+Calibration cannot run during a print. If a tool is
+attached, the carriage first raises it to the safe Z clearance and docks it.
+The ordinary calibration pin is then probed at two known locations. Their
+contact-height difference is used to reject a plate that may still be
+installed and to set a safe approach floor for the following measurements.
+
+With the carriage bare, the routine contacts the levelboard fixture to
+establish its Z reference, then scans outward from its center for the X+,
+Y+, X-, and Y- edges. Each edge scan is limited to 7 mm; opposite edges
+give the fixture's X/Y center. The routine then picks up T0, probes its Z
+against the fixture, scans its four X/Y edges, raises clear of the fixture,
+and docks it. It repeats that sequence for T1, T2, and T3. The saved X/Y
+printing offsets are each tool's measured center relative to T0. Its nozzle
+Z offset uses the tool's measured Z relative to the fixture reference, plus
+the separate per-tool Z fine adjustment. The code rejects measurements beyond
+its configured correction limits or an unsafe resulting nozzle Z offset.
+
+**CFW**
+
+The all-tool run saves only after all four tools succeed. It makes a backup
+of `extruder.json` and replaces that file atomically, so a failed tool does
+not leave a partially saved set. The measured offsets are also applied to
+the active tool through Klipper's G-code offset when it is selected.
+
+A single tool can be recalibrated with `TOOL=0` through `TOOL=3`. It still
+requires removing and checking the build plate; it docks any attached tool,
+checks the ordinary pin, and automatically picks up the requested tool.
+`LEVELBOARD=0` skips refreshing the *bare fixture reference* for a single
+tool, but does not skip that tool's levelboard measurement. `Z=0` performs
+XY-only calibration and needs a configured scan height or `SCAN_Z`; the
+default `Z=1` probes the nozzle Z automatically. `TOOL=ALL` always refreshes
+the fixture reference and requires `Z=1`.
+
+## Toolhead Dock Calibration
+
+Toolhead dock calibration, called **Extruder Position Calibrate** in the
+factory UI, finds the physical pickup/docking X/Y coordinates for one tool.
+It does **not** change the nozzle offsets used to align layers during a
+print. In the Creator 5 port, run `C5_CALIBRATE_TOOL_POSITION T=0` through
+`T=3`, or use the underlying `EXTRUDER_POSITION_CALIBRATE T=n` command.
+
+Before starting, park all four tools, home the printer, raise Z to at least
+the configured safe clearance (10 mm in the supplied config), and let every
+toolhead cool below 50 °C. A print must not be active. The build plate does
+not need to be removed for this calibration.
+
+1. The routine disables X/Y motors and asks you to move the bare master
+   carriage by hand to the chosen parked tool. It waits for both that dock's
+   holder sensor and its grab sensor to register contact.
+2. Once contact is detected, it asks you to release the carriage and waits
+   briefly before taking over. It latches the tool and pulls it clear,
+   checking that the holder sensor released while the grab sensor remains
+   active.
+3. It measures X and Y against the printer's X/Y home references, calculates
+   the dock coordinates, and rejects a correction beyond the configured
+   limit (2 mm in the supplied config).
+4. It rehomes X/Y, redocks the tool using the measured coordinates, and only
+   then saves them as `x_check_pos`/`y_check_pos` for T0, or the corresponding
+   numbered keys for T1–T3, in `extruder.json`. A timestamped backup is made
+   first.
+
+If contact, sensor verification, measurement, or redocking fails, the
+routine does not save new dock coordinates. 

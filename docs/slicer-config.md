@@ -2,7 +2,7 @@
 A collection of configurations and settings for Custom Firmware OpenCreator.
 
 ## Print Profile changes
-Under "Quality" & "Precision" switch "`Arc fitting`" to `off`.
+Under "Quality" & "Precision" switch "`Arc fitting`" to off.
 This will improve performance with no quality loss as Arcs
 are not supported under Klipper.
 
@@ -22,5 +22,5 @@ Set `Disable set remaining print time` to `off`
 *tbd*
 
 ## Optional / Niceties
-Set retraction and deretraction to 75 on all extruders, should make it much faster, and doesn't seem to have much stringing.<br>
+Set retraction and deretraction to 50 on all extruders, should make it much faster, and doesn't seem to have much stringing.<br>
 Set Z-hop height to 0.24 on all extruders, as it will reduce stress on the Z axis and will make your prints slightly faster.

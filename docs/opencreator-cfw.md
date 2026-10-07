@@ -18,7 +18,7 @@ for printer files, configuration, and installation helpers.
 | --- | --- |
 | Base software | Maintain Creator 5 behavior in a community-developed Klipper host and MCU stack. |
 | Installation and updates | Provide a tested CFW installation and update path with recovery instructions. |
-| Tool selection | Configure T0 to T3 pickup, docking, and safety in host-side modules and macros. |
+| Tool selection | Configure T0 to T3 pickup, docking, and safety in host-side modules and macros. Finished |
 | Filament control | Integrate AFC standalone for toolchanger filament mapping, loading, and runout handling. |
 | ACE Pro | Add support for ACE Pro as another filament system. This is planned, not implemented. |
 | Web and touchscreen | Allow for switching filaments on the web. |
