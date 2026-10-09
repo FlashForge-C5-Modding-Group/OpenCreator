@@ -22,3 +22,4 @@
 | Removal of FlashForge services | Finished | You can completely disable FlashForge's things, and make it like it never existed. Full Orcaslicer with Moonraker Agent. |
 | Filament sync | Broken | Probably due to an Orca bug, but you will be able to eventually syncronize your filaments (material wise) |
 | Turn off cooling fan when chamber heater is on | Finished | It will actively say in console that it has been turned off, making it where cold air won't mess with the heated chamber |
+| Bed warp stabilization (bed soak) | Finished | Optionally waits at bed temperature for a configurable number of minutes immediately before a fresh mesh, letting the plate finish warping/expanding so the mesh reflects its settled shape instead of its heat-up transient. |
