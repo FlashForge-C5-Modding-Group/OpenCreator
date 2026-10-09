@@ -12,4 +12,3 @@ If you want to use the printer today, use the
 - At least 4GB in size (For nowifi install)
 - USB is recommended to have at least 16GB for the backup step
 
-

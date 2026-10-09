@@ -45,6 +45,8 @@ nav:
   - OpenCreator CFW Features: cfwfeatures.md
   - OpenCreator for SBC: rpi-klipper.md    
   - Architecture: architecture.md
+  - MCU development and verification: mcu-development.md
+  - Print workflow: print-workflow.md
   - Printer Features: printer-features.md
   - Status and roadmap: status-and-roadmap.md
   - Project layout: project-layout.md

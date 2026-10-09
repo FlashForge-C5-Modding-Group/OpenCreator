@@ -16,6 +16,8 @@ diminished.
 | --- | --- |
 | [Getting started](getting-started.md) | Decide between the stock-based Legacy path and development CFW. |
 | [Architecture](architecture.md) | Understand the host, four MCUs, AFC, touchscreen, and filesystem roles. |
+| [MCU development and verification](mcu-development.md) | Understand the four boards, shared extruder driver, build checks, and outstanding printer tests. |
+| [Print workflow](print-workflow.md) | Follow the current tool, heating, mesh, and nozzle-Z preparation sequence for CFW. |
 | [Status and roadmap](status-and-roadmap.md) | Separate implemented work from printer-verified behavior and plans. |
 | [Installation boundaries](installation-and-safety.md) | Understand why there is no general installation recipe yet. |
 | [Project layout](project-layout.md) | Find the source repositories. |

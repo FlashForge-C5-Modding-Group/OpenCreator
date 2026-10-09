@@ -29,6 +29,9 @@ select the corresponding tool heaters and state; they are not four independent
 extrusion drives. A toolchange must agree with the dock and grab pins before
 the selected logical extruder becomes active.
 
+The single motor driver is configured as `[tmc2209 extruder]` on the eBoard.
+See [MCU development and verification](mcu-development.md) for pin assignments.
+
 ## Interfaces
 
 The printer configuration currently uses AFC standalone mode, not a BoxTurtle
