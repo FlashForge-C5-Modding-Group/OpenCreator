@@ -38,6 +38,7 @@ running on a Raspberry Pi or similar microcomputer, that has several times the p
 - A USB to spec cable is recommended, and as short as possible to keep signal integrity. Even if a cable looks good, that doesn't mean it actually is.
 - Unplugging / Restarting the Pi causes the FlashForge Printer's SoC to disconnect from WiFi. It selects the virtual interface as internet and dies when it loses it.
 - Obviously, no FlashForge integration at all.
+- The USB gadget tunnel normally runs 5 ports (4 MCUs + a dedicated beep channel). Not every board's USB controller tolerates this under sustained traffic -- confirmed stable on a Raspberry Pi 4 (dwc2), but an Orange Pi Zero 2W's own controller destabilized the whole bus, stable at 4. The gadget script auto-falls-back to 4 ports if the 5-port bind fails outright at boot and pins that choice for future boots; a failure that only shows up at runtime isn't detectable that way and still needs a manual pin (`echo 4 | sudo tee /etc/c5-tunnel-ports`). Pinned to 4 ports, C5_BUZZER can optionally fall back to sending the beep over the network instead of just going silent -- see `network_host` in `[creator5_remote_beeper]`.
 
 ## Installation:
 ### On the Printer
@@ -56,5 +57,7 @@ running on a Raspberry Pi or similar microcomputer, that has several times the p
 6. Restart the firmware for Klipper, you should have it connect if you did Printer first.
 
 ## Extra Notes:
-The touchscreen might feel physically slow no matter the device, due to VNC, unless you use GrumpyScreen or similar on the device.
+The touchscreen might feel physically slow no matter the device unless you use GrumpyScreen or similar running locally on the printer itself. Streaming KlipperScreen to the printer's own screen over VNC (instead of running GrumpyScreen) was attempted but is not currently working: a second, isolated headless KlipperScreen instance (matched to the printer panel's resolution, so the VNC feed needs no scaling) hangs indefinitely during its own window setup under cage's headless Wayland backend, for reasons not yet root-caused. GrumpyScreen remains the supported local touchscreen option.
+
+Config files (and Klipper itself) can be kept in sync with upstream without manually re-applying your own customizations each time -- see OpenCreator Updater in [Status and roadmap](status-and-roadmap.md).
 This could be fixed by using a touchscreen out, from the SBC, such as something [like this](https://www.aliexpress.com/item/1005007273964563.html?spm=a2g0o.productlist.main.2.c9cd551fSWesaK&algo_pvid=d8ed057c-13b2-4553-a58b-d601e81d3247&algo_exp_id=d8ed057c-13b2-4553-a58b-d601e81d3247-1&pdp_ext_f=%7B%22order%22%3A%22360%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21CAD%21100.91%2192.60%21%21%21468.26%21429.70%21%402101ca9517905632722322961e1293%2112000040028480724%21sea%21CA%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3Acde07206%3Bm03_new_user%3A-29895%3BpisId%3A5000000210902380&curPageLogUid=NCNdazYF7ey6&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005007273964563%7C_p_origin_prod%3A).
