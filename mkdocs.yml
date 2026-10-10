@@ -38,19 +38,23 @@ plugins:
 
 nav:
   - Home: index.md
-  - Getting started: getting-started.md
-  - Installation: installation-and-safety.md  
-  - OpenCreator Legacy: opencreator-legacy.md
-  - OpenCreator CFW: opencreator-cfw.md
-  - OpenCreator CFW Features: cfwfeatures.md
-  - OpenCreator for SBC: rpi-klipper.md    
-  - Architecture: architecture.md
-  - MCU development and verification: mcu-development.md
-  - Print workflow: print-workflow.md
-  - Printer Features: printer-features.md
-  - Status and roadmap: status-and-roadmap.md
-  - Project layout: project-layout.md
-  - Contributing: contributing.md
-  - Slicer Configuration: slicer-config.md
-  - Attributions: attributions.md   
-  - What makes us different: different.md
+  - Getting Started:
+    - Getting started: getting-started.md
+    - Installation: installation-and-safety.md
+    - Slicer Configuration: slicer-config.md
+  - OpenCreator Editions:
+    - OpenCreator Legacy: opencreator-legacy.md
+    - OpenCreator CFW: opencreator-cfw.md
+    - OpenCreator CFW Features: cfwfeatures.md
+    - OpenCreator for SBC: rpi-klipper.md
+    - What makes us different: different.md
+  - Technical Reference:
+    - Architecture: architecture.md
+    - MCU development and verification: mcu-development.md
+    - Print workflow: print-workflow.md
+    - Printer Features: printer-features.md
+    - Project layout: project-layout.md
+  - Project:
+    - Status and roadmap: status-and-roadmap.md
+    - Contributing: contributing.md
+    - Attributions: attributions.md
