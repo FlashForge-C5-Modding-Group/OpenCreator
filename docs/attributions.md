@@ -9,3 +9,7 @@ We've used some open source projects, here's the ones we've used, this isn't ful
 
 We've also used a non open source project, which should be.<br>
 FlashForge's MCU and Touchscreen research was done.
+
+## Special Thanks
+
+- @pappicio0000 -- amazing tester, and the first to test OpenCreator on the Creator 5 (non-Pro).
