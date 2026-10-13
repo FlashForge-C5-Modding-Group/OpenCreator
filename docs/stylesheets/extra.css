@@ -1,0 +1,87 @@
+:root {
+  --oc-ok: #2e9d57;
+  --oc-test: #d98a00;
+  --oc-partial: #2f7fd1;
+  --oc-bad: #d64545;
+  --oc-plan: #7a7f8a;
+}
+
+/* Landing hero */
+.oc-hero {
+  padding: 1.6rem 1.4rem;
+  margin: 0 0 1.6rem;
+  border-radius: 0.6rem;
+  background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, #ff8a3d 100%);
+  color: #fff;
+}
+.oc-hero h1 {
+  margin: 0 0 0.4rem;
+  color: #fff;
+  font-weight: 700;
+}
+.oc-hero p {
+  margin: 0.4rem 0;
+  max-width: 42rem;
+}
+.oc-hero .md-button {
+  margin: 0.8rem 0.4rem 0 0;
+  color: #fff;
+  border-color: #fff;
+}
+.oc-hero .md-button--primary {
+  background: #fff;
+  color: var(--md-primary-fg-color);
+}
+.oc-hero .md-button:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+/* Cards */
+.md-typeset .grid.cards > ul > li {
+  border-radius: 0.5rem;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+.md-typeset .grid.cards > ul > li:hover {
+  border-color: var(--md-primary-fg-color);
+  box-shadow: var(--md-shadow-z2);
+  transform: translateY(-2px);
+}
+
+/* Tables */
+.md-typeset table:not([class]) {
+  border-radius: 0.4rem;
+  overflow: hidden;
+  font-size: 0.72rem;
+}
+.md-typeset table:not([class]) th {
+  background: var(--md-default-fg-color--lightest);
+  font-weight: 700;
+}
+.md-typeset table:not([class]) tr:hover td {
+  background: var(--md-accent-fg-color--transparent);
+}
+
+/* Status badges: <span class="oc-status ok">Finished</span> */
+.md-typeset .oc-status {
+  display: inline-block;
+  padding: 0.05rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #fff;
+  background: var(--oc-plan);
+}
+.md-typeset .oc-status.ok { background: var(--oc-ok); }
+.md-typeset .oc-status.test { background: var(--oc-test); }
+.md-typeset .oc-status.partial { background: var(--oc-partial); }
+.md-typeset .oc-status.bad { background: var(--oc-bad); }
+
+/* Task lists */
+.md-typeset .task-list-item {
+  margin-bottom: 0.35rem;
+}
+.md-typeset .task-list-control [type="checkbox"]:checked + .task-list-indicator::before {
+  background-color: var(--oc-ok);
+}

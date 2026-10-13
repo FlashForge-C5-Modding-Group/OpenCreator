@@ -20,14 +20,28 @@ present from behavior verified on a specific printer.
 | RPI Support | In testing | Currently being tested, but allowing to tunnel the board MCUs to a Raspberry Pi. High quality cables are required or else you will get strange results. |
 | Power Loss Recovery | Early testing | An early version is included, but seems to not work correctly. |
 
+## Milestones
+
+- [x] Four MCU boards ported to Klipper and Kalico
+- [x] Toolchanging and AFC standalone
+- [x] Print start and stop sequences
+- [x] Complete removal of firmwareExe
+- [x] OpenCreator Updater (Pi-tunnel)
+- [x] Real Zero Purge modes
+- [ ] Flow and VFA calibration without bugs on interrupted flow
+- [ ] GrumpyScreen macros and extruding
+- [ ] Installer verified end to end on a printer
+- [ ] RPi / SBC support out of testing
+- [ ] Working power loss recovery
+
 ## Planned, not implemented as supported features
 
-- ACE Pro integration as an additional filament system.
-- Sliced G-code 3MF intake in the print-upload path.
-- Version tracking
-- AI-vision overwatch for failures
-- Further detection for print failures
-- Reducing amount of wasted filament when runout is occured
+- [ ] ACE Pro integration as an additional filament system.
+- [x] Sliced G-code 3MF intake in the print-upload path (SBC installs, not yet verified on a printer).
+- [ ] Version tracking
+- [ ] AI-vision overwatch for failures
+- [ ] Further detection for print failures
+- [ ] Reducing amount of wasted filament when runout is occured
 
 The full-CFW installer (with real backups and a demo mode to inspect
 changes first) and a Moonraker-update_manager-based plugin updater are no

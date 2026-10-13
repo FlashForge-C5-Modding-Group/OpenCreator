@@ -21,6 +21,13 @@ If you want to run the CFW, there is no place for you yet, as development is
 not yet finished and is under-way for making an easy installer, adding features,
 and unlocking the system from FlashForge's chains.
 
-Before attempting a printer trial, read [Status and roadmap](status-and-roadmap.md)
-and [Installation boundaries](installation-and-safety.md). There is no general,
-verified full-CFW flashing or recovery procedure on this site yet.
+There is no general, verified full-CFW flashing or recovery procedure on this
+site yet.
+
+## Before a printer trial
+
+- [ ] Read [Status and roadmap](status-and-roadmap.md)
+- [ ] Read [Installation boundaries](installation-and-safety.md)
+- [ ] Know how to revert to stock firmware
+- [ ] Have a USB drive that meets the [requirements](installation-and-safety.md#requirements-for-usb)
+- [ ] Join the [Discord](https://discord.gg/RsdkqDtfww) for support
