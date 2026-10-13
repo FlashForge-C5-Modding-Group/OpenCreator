@@ -1,5 +1,23 @@
 # Printer Features
 
+## First-time setup
+
+The first time you open Fluidd (or Mainsail, or look at the touchscreen) after
+installing OpenCreator, a dialog welcomes you and asks two questions:
+
+- **Clog Detection:** pause the print when a tool's filament wheel stops
+  turning while filament is still loaded in it. Off by default.
+- **Bed heat soak:** before a fresh bed mesh, wait a few minutes at bed
+  temperature so the plate finishes warping first. Off by default.
+
+The last page links to our [Discord](https://discord.gg/RsdkqDtfww) for help
+and questions.
+
+If you close the dialog before finishing, it comes back within a minute. Once
+you reach the last page it won't appear again. Both choices are ordinary
+switches under Fans & Outputs, so you can change them at any time. To go
+through the dialog again, send `C5_FIRST_SETUP` in the console.
+
 ## Flow Calibration in the Creator 5 factory firmware
 
 The touchscreen calls this **Flow Calibration**, but the routine tests
