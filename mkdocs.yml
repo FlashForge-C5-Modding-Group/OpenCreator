@@ -13,7 +13,6 @@ theme:
     text: Inter
     code: JetBrains Mono
   features:
-    - navigation.tabs
     - navigation.sections
     - navigation.indexes
     - announce.dismiss
