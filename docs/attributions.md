@@ -7,6 +7,10 @@ We've used some open source projects, here's the ones we've used, this isn't ful
 | Kalico | Same as Klipper | [GPLv3](https://github.com/KalicoCrew/kalico) |
 | AFC | Toolchanger and Filament Setting | [GPLv3](https://github.com/AFCProject/AFC-Klipper-Add-On?tab=GPL-3.0-1-ov-file) |
 | GrumpyScreen | SoC Touchscreen | [GPLv3](https://github.com/pellcorp/grumpyscreen) |
+| Moonraker | API server for the web interfaces and slicers | [GPLv3](https://github.com/Arksine/moonraker) |
+| Fluidd | Web interface | [GPLv3](https://github.com/fluidd-core/fluidd) |
+| Mainsail | Web interface | [GPLv3](https://github.com/mainsail-crew/mainsail) |
+| Material for MkDocs | This documentation site | [MIT](https://github.com/squidfunk/mkdocs-material) |
 
 We've also used a non open source project, which should be.<br>
 FlashForge's MCU and Touchscreen research was done.

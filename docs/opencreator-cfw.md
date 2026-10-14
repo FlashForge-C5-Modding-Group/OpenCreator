@@ -14,25 +14,23 @@ for printer files, configuration, and installation helpers.
 
 ## What the newer path aims to support
 
-| Full custom firmware area | Goal |
-| --- | --- |
-| Base software | Maintain Creator 5 behavior in a community-developed Klipper host and MCU stack. |
-| Installation and updates | Provide a tested CFW installation and update path with recovery instructions. |
-| Tool selection | Configure T0 to T3 pickup, docking, and safety in host-side modules and macros. Finished |
-| Filament control | Integrate AFC standalone for toolchanger filament mapping, loading, and runout handling. |
-| ACE Pro | Add support for ACE Pro as another filament system. This is planned, not implemented. |
-| Web and touchscreen | Allow for switching filaments on the web. |
-| Raspberry Pi host | Use USB gadget mode to tunnel Klipper communication from a Raspberry Pi running the Klipper host to the printer. In testing! |
+| Full custom firmware area | Goal | Status |
+| --- | --- | --- |
+| Base software | Maintain Creator 5 behavior in a community-developed Klipper host and MCU stack. | <span class="oc-status ok">Working</span> |
+| Installation and updates | Provide a tested CFW installation and update path with recovery instructions. | <span class="oc-status test">Testing</span> |
+| Tool selection | Configure T0 to T3 pickup, docking, and safety in host-side modules and macros. | <span class="oc-status ok">Finished</span> |
+| Filament control | Integrate AFC standalone for toolchanger filament mapping, loading, and runout handling. | <span class="oc-status ok">Finished</span> |
+| ACE Pro | Add support for ACE Pro as another filament system. | <span class="oc-status">Planned</span> |
+| Web and touchscreen | Allow for switching filaments on the web. | <span class="oc-status partial">Partial</span> |
+| Raspberry Pi host | Use USB gadget mode to tunnel Klipper communication from a Raspberry Pi running the Klipper host to the printer. | <span class="oc-status test">Testing</span> |
 
 To see more features that are directly implemented in detail look at [CFW Features](cfwfeatures.md).
 
 These are development goals, not claims that every feature is complete or
-hardware-verified. In particular, ACE Pro support and Raspberry Pi USB
-gadget-mode tunneling are planned, not available features. A configuration's
-existence does not prove that its toolchanging or calibration sequence is safe
-on every printer. A pre-alpha version for gadget mode testing was made by ano
-and seems to work fine, but it will most likely not be used in the final versions
-implemented.
+hardware-verified. In particular, ACE Pro support is planned, not available,
+and Raspberry Pi USB gadget-mode tunneling is in testing (see
+[OpenCreator for SBC](rpi-klipper.md)). A configuration's existence does not
+prove that its toolchanging or calibration sequence is safe on every printer.
 
 Gadget mode Klipper / RPI Klipper is very close to what AnyCubic's modding scene calls [Tunneled Vanilla Klipper](https://github.com/Kobra-S1/vanilla-klipper-swu/blob/main/tunneled-klipper.md)
 and a lot of inital insperation was taken to go this route over direct MCU soldering,

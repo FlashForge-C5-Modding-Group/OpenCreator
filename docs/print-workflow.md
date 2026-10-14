@@ -13,6 +13,23 @@ cancels the job; unused tools are not required to be loaded.
 
 ## Preparation order
 
+```mermaid
+flowchart TD
+  A[Check filament in every used tool] -->|missing| X[Cancel the job]
+  A --> B[Home]
+  B --> C[Preheat used tools to max 100 °C<br/>while the bed heats]
+  C --> D{Flow calibration<br/>or purge on?}
+  D -->|yes| E[For each used tool:<br/>pick up, nozzle Z, heat,<br/>flow / purge, cool, dock]
+  D -->|no| F
+  E --> F{Bed leveling on?}
+  F -->|yes| G[Adaptive mesh]
+  F -->|no| H[Load saved mesh]
+  G --> I[Center probe check]
+  H --> I
+  I --> J[Pick up first tool, apply nozzle Z,<br/>park, wait for print temperature]
+  J --> K[Slicer G-code starts]
+```
+
 1. Home for printing. If a tool is attached, the Creator 5 homing helper
    handles its docking before Z homing.
 2. Start non-blocking preheat of every used tool to at most 100 °C while the

@@ -85,3 +85,31 @@
 .md-typeset .task-list-control [type="checkbox"]:checked + .task-list-indicator::before {
   background-color: var(--oc-ok);
 }
+
+/* Announcement banner */
+.md-banner {
+  background: linear-gradient(90deg, #3a1608, #5a2410 50%, #3a1608);
+  color: #ffe7da;
+}
+.md-banner a {
+  color: #ffb02e;
+  text-decoration: underline;
+}
+
+/* Mermaid diagrams */
+:root {
+  --md-mermaid-node-bg-color: var(--md-accent-fg-color--transparent);
+  --md-mermaid-node-fg-color: var(--md-primary-fg-color);
+  --md-mermaid-edge-color: var(--md-default-fg-color--light);
+}
+.md-typeset .mermaid {
+  margin: 1.2rem 0;
+  text-align: center;
+}
+
+/* Content tabs */
+.md-typeset .tabbed-set {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.5rem;
+  padding: 0 0.8rem;
+}

@@ -54,8 +54,6 @@ has some unexplained "maximum" limits for temperature
 Safe Max temps are the maximium safe temperatures before you run into actual
 hardware limitations. Anything with a `?` may mean untested.
 
-Please read the list below to have known temperature limits.
-
-### Known hardware limitations
-- Above 70 degrees chamber temperature, the grill will deform
-- Above 320 degrees, the nozzle may start recording wildly off temperatures
+!!! danger "Known hardware limitations"
+    - Above 70 degrees chamber temperature, the grill will deform
+    - Above 320 degrees, the nozzle may start recording wildly off temperatures
