@@ -118,11 +118,12 @@ running on a Raspberry Pi or similar microcomputer that has several times the po
 1. Make sure the printer is on FlashForge firmware 1.9.9, then plug in the
    [OpenCreator Installer](installer.md) media as outlined on the [installation page](installation-and-safety.md)
 2. Click to use "Tunneled", and choose whether to install the GrumpyScreen touchscreen
-3. Wait for installation to finish
+3. Wait for installation to finish. The printer needs internet: it installs Entware, LoopScript
+   and the socat bridge ([details](installer.md#what-gets-installed))
 4. Restart your printer
 5. If you installed GrumpyScreen, it opens up for a Moonraker printer. Edit
    `/usr/data/grumpyscreen/grumpyscreen.cfg` and set `host:` under `[moonraker]` to your
-   Pi's IP address ([details](installer.md#touchscreen-with-tunneled))
+   Pi's IP address
 
 ### On the SBC
 

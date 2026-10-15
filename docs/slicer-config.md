@@ -29,7 +29,16 @@ These will change stuff like printer agents.
 
 ### Machine G-code
 
-*tbd*
+- [ ] **File start G-code:** clear it (leave it empty).
+  The FlashForge profile puts a FlashForge-style time estimate there, and Orca
+  also copies that setting into the end of the file, where Moonraker reads it
+  instead of the real estimate. With it in place, Fluidd and Mainsail show no
+  slicer time estimate.
+
+!!! note "Files sliced before the change"
+    OpenCreator's Moonraker component works around this for files uploaded from
+    now on. Files already on the printer show no estimate until you upload them
+    again.
 
 ## Optional / niceties
 

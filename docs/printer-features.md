@@ -10,8 +10,18 @@ installing OpenCreator, a dialog welcomes you and asks two questions:
 - **Bed heat soak:** before a fresh bed mesh, wait a few minutes at bed
   temperature so the plate finishes warping first. Off by default.
 
-The last page links to our [Discord](https://discord.gg/RsdkqDtfww) for help
-and questions.
+It then reminds you to recalibrate, since OpenCreator doesn't use FlashForge's
+calibration:
+
+- [ ] Run `CALIBRATE_INPUT_SHAPER` for input shaping.
+- [ ] Run `C5_PID_CALIBRATE` to PID-tune all four tools.
+
+Both save the results to your config and restart Klipper. The last page links
+to our [Discord](https://discord.gg/RsdkqDtfww) for help and questions.
+
+Fluidd also starts with the OpenCreator macro layout: the macros grouped into
+*On / Off*, *Calibrations*, *Toolhead* and *Misc*. A layout you already set up
+in Fluidd is kept.
 
 If you close the dialog before finishing, it comes back within a minute. Once
 you reach the last page it won't appear again. Both choices are ordinary
