@@ -28,7 +28,7 @@ flowchart TD
   A[Check printer model<br/>and kernel package] --> B{Supported?}
   B -->|no| S[Stop: install stock 1.9.9 first]
   B -->|yes| E{Where should<br/>Klipper run?}
-  E -->|On printer SoC| F[Choose Mainsail or Fluidd]
+  E -->|On printer SoC| F[Choose Fluidd or Mainsail]
   F --> G[Install GrumpyScreen?]
   E -->|Tunneled| G
   G --> H[Ready to install:<br/>summary]
@@ -41,7 +41,7 @@ flowchart TD
    installed next to the stock software.
 2. **Where should Klipper run?** *On printer SoC* installs everything on the
    printer. *Tunneled* turns the printer's board into a bridge for an SBC.
-3. **Web interface** (SoC only): Mainsail or Fluidd. Both are installed; the
+3. **Web interface** (SoC only): Fluidd (recommended) or Mainsail. Both are installed; the
    one you pick is the one the printer's web page shows.
 4. **Touchscreen**: install GrumpyScreen (recommended) or not.
 5. **Ready to install** shows the printer, mode, web UI and touchscreen you

@@ -112,7 +112,7 @@ with alternate custom firmwares, even though support may be diminished.
 
     Toggles, macros and behaviors available on the printer.
 
--   :material-folder-git: **[Project layout](project-layout.md)**
+-   :material-source-repository: **[Project layout](project-layout.md)**
 
     ---
 
