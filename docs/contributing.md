@@ -1,8 +1,9 @@
 # Contributing documentation
 
-Edit pages under `docs/` and add new pages to `nav` in `mkdocs.yml`. Keep
-hardware instructions tied to a specific printer model, firmware version,
-source commit, and test result. Call out unverified behavior explicitly.
+Edit pages under `docs/` and add new pages to `nav` in `mkdocs.yml`. For
+hardware instructions, say which printer model, firmware version and source
+commit they're for, and how they were tested. Say plainly when something
+hasn't been tested.
 
 Make sure to use clear language and only delve into techincal specs and docs on parts
 where it would be expected. 

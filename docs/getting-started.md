@@ -17,17 +17,13 @@ and [Architecture](architecture.md). The printer configuration lives in
 MCU code live in `klipper-c5`. The detailed toolchanger development notes are
 in `CREATOR5_TOOLCHANGER.md` inside the configuration tree.
 
-If you want to run the CFW, there is no place for you yet, as development is
-not yet finished and is under-way for making an easy installer, adding features,
-and unlocking the system from FlashForge's chains.
-
-There is no general, verified full-CFW flashing or recovery procedure on this
-site yet.
+CFW isn't ready to install yet. We're still building it, along with an easy
+installer.
 
 ## Before a printer trial
 
 - [ ] Read [Status and roadmap](status-and-roadmap.md)
-- [ ] Read [Installation boundaries](installation-and-safety.md)
+- [ ] Read [Installation and safety](installation-and-safety.md)
 - [ ] Know how to revert to stock firmware
 - [ ] Have a USB drive that meets the [requirements](installation-and-safety.md#requirements-for-usb)
 - [ ] Join the [Discord](https://discord.gg/RsdkqDtfww) for support

@@ -50,15 +50,8 @@ absolute direction at the start of every move in `src/stepper.c`. This needs
 the eBoard reflashed; until then a `FIRMWARE_RESTART` resets all four to
 forward.
 
-## What package validation proves
+## Test packages
 
-The Kalico source at commit `e48df776` produced a four-MCU Creator 5 Pro
-development archive. The package generator checked the board images, template
-hashes, control metadata, and archive structure. The eBoard transport change in the
-Klipper-c5 source was at commit `336ba5fa`. These commit IDs identify tests and are not fully finished.
-
-Use a matching host fork, its MCU firmware, and its configuration as one set.
-In particular, an MCU archive built from Kalico source does not establish that
-an installed Klipper-c5 host has been updated to Kalico. Firmware packaging
-cannot establish whether homing, heating, probing, extrusion, or a toolchange
-is safe on a physical printer. See [installation boundaries](installation-and-safety.md).
+The four-MCU Creator 5 Pro test package was built from Kalico commit
+`e48df776`, with the eBoard transport change from Klipper-c5 commit `336ba5fa`.
+These are test builds, not finished releases.

@@ -1,8 +1,8 @@
 # Current print workflow
 
-The development `C5_PRINT_START` macro prepares only the tools assigned to
-the job. This is a description of the current printer configuration, not a
-claim that every hardware and filament combination has been validated.
+The `C5_PRINT_START` macro prepares only the tools the job uses. This page
+describes the current config; not every printer and filament combination has
+been tested.
 
 The slicer or print dispatcher supplies `TOOL=0..3`, `HOTEND`, and `BED`.
 `TOOLS=0,3`, for example, identifies all tools used by a multi-tool job;

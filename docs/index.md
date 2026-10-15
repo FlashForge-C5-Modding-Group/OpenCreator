@@ -34,17 +34,17 @@ with alternate custom firmwares, even though support may be diminished.
 
     Decide between the stock-based Legacy path and development CFW.
 
--   :material-shield-alert: **[Installation boundaries](installation-and-safety.md)**
+-   :material-shield-alert: **[Installation and safety](installation-and-safety.md)**
 
     ---
 
-    Understand why there is no general installation recipe yet.
+    Where installation stands, and what you need.
 
 -   :material-progress-check: **[Status and roadmap](status-and-roadmap.md)**
 
     ---
 
-    Separate implemented work from printer-verified behavior and plans.
+    What works, what is being tested, and what is planned.
 
 -   :material-printer-3d: **[Slicer Configuration for CFW](slicer-config.md)**
 

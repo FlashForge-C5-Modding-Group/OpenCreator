@@ -1,7 +1,7 @@
 # Status and roadmap
 
-OpenCreator is a work in progress. The labels below distinguish code that is
-present from behavior verified on a specific printer. 
+OpenCreator is a work in progress. The table shows what's in the code and how
+well it has been tested on a printer.
 
 | Area | Present in development source | Current evidence and remaining work |
 | --- | --- | --- |
@@ -43,10 +43,7 @@ present from behavior verified on a specific printer.
 - [ ] Further detection for print failures
 - [ ] Reducing amount of wasted filament when runout is occured
 
-The full-CFW installer (with real backups and a demo mode to inspect
-changes first) and a Moonraker-update_manager-based plugin updater are no
-longer purely planned -- see the Installer and OpenCreator Updater rows
-above for what's actually implemented and what's still unverified.
+The installer and the OpenCreator Updater are already being built; see their
+rows in the table above.
 
-The planned list is not a promise that the current board, kernel, or host image
-already supports those features. Any planned feature may be scrapped at any point.
+Planned features aren't promised and may change or be dropped.

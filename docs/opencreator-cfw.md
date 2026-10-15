@@ -26,11 +26,9 @@ for printer files, configuration, and installation helpers.
 
 To see more features that are directly implemented in detail look at [CFW Features](cfwfeatures.md).
 
-These are development goals, not claims that every feature is complete or
-hardware-verified. In particular, ACE Pro support is planned, not available,
-and Raspberry Pi USB gadget-mode tunneling is in testing (see
-[OpenCreator for SBC](rpi-klipper.md)). A configuration's existence does not
-prove that its toolchanging or calibration sequence is safe on every printer.
+These are goals, and not all of them are finished. ACE Pro support is planned,
+and the Raspberry Pi tunnel is in testing (see
+[OpenCreator for SBC](rpi-klipper.md)).
 
 Gadget mode Klipper / RPI Klipper is very close to what AnyCubic's modding scene calls [Tunneled Vanilla Klipper](https://github.com/Kobra-S1/vanilla-klipper-swu/blob/main/tunneled-klipper.md)
 and a lot of inital insperation was taken to go this route over direct MCU soldering,
