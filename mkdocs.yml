@@ -90,6 +90,7 @@ nav:
   - Getting Started:
     - Getting started: getting-started.md
     - Installation: installation-and-safety.md
+    - OpenCreator Installer: installer.md
     - Slicer Configuration: slicer-config.md
   - OpenCreator Editions:
     - OpenCreator Legacy: opencreator-legacy.md

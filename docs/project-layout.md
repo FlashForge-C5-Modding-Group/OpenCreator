@@ -9,6 +9,7 @@ OpenCreator spans several repositories. This page is a navigation aid.
 | [kalico](https://github.com/FlashForge-C5-Modding-Group/kalico) | Creator 5 custom Klipper port to Kalico |
 | [opencreator-fs](https://github.com/FlashForge-C5-Modding-Group/opencreator-fs) | Printer filesystem and configuration work |
 | [opencreator-tunnel](https://github.com/FlashForge-C5-Modding-Group/opencreator-tunnel) | Tunneled Klipper for OpenCreator work |
+| opencreator-installer | The touchscreen [OpenCreator Installer](installer.md) (not public yet) |
 | [Creator-5-Mods](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Mods) | Stock-based Legacy guides and modifications |
 | [Creator-5-Scripts](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Scripts) | Printer-side scripts for the Legacy path |
 
