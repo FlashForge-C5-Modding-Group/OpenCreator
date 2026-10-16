@@ -13,10 +13,10 @@ repository.
 
 ## What you need
 
-- [ ] A Creator 5 or Creator 5 Pro on FlashForge firmware (1.9.9 recommended)
-- [ ] A USB drive that meets the [requirements](installation-and-safety.md#requirements-for-usb)
-- [ ] Internet on the printer (Entware, Kalico, Moonraker and the web UIs are downloaded during install)
-- [ ] For tunnel mode: an SBC, see [OpenCreator for SBC](rpi-klipper.md)
+- [x] A Creator 5 or Creator 5 Pro on FlashForge firmware (1.9.9 recommended)
+- [x] A USB drive that meets the [requirements](installation-and-safety.md#requirements-for-usb)
+- [x] Internet on the printer (Entware, Kalico, Moonraker and the web UIs are downloaded during install)
+- [x] For tunnel mode: an SBC, see [OpenCreator for SBC](rpi-klipper.md)
 
 ## How it goes
 

@@ -22,8 +22,8 @@ installer.
 
 ## Before a printer trial
 
-- [ ] Read [Status and roadmap](status-and-roadmap.md)
-- [ ] Read [Installation and safety](installation-and-safety.md)
-- [ ] Know how to revert to stock firmware
-- [ ] Have a USB drive that meets the [requirements](installation-and-safety.md#requirements-for-usb)
-- [ ] Join the [Discord](https://discord.gg/RsdkqDtfww) for support
+- [x] Read [Status and roadmap](status-and-roadmap.md)
+- [x] Read [Installation and safety](installation-and-safety.md)
+- [x] Know how to revert to stock firmware
+- [x] Have a USB drive that meets the [requirements](installation-and-safety.md#requirements-for-usb)
+- [x] Join the [Discord](https://discord.gg/RsdkqDtfww) for support
