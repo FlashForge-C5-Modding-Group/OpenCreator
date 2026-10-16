@@ -13,7 +13,7 @@ well it has been tested on a printer.
 | Flow and VFA calibration | The host has an eboard pressure-advance test and MCLib vibration calibration integration. | It mostly works, but may still have some bugs if the flow is interupted. |
 | Touchscreen and web UI | Mainsail/Fluidd controls and separate touchscreen. | GrumpyScreen has had multi-extruder pulled in, macros are in dev. |
 | Complete removal of firmwareExe | The main pain point for FlashForge printers | Their bad touchscreen + camera + print uploading sequence has been completely removed and do not function at all. |
-| Installer | SoC install now really installs: shallow git clones of Klipper and Moonraker, latest GitHub release downloads for Mainsail/Fluidd/GrumpyScreen, and the config/loopscript overlay from opencreator-fs, all with automatic backup-before-replace. | The LVGL GUI has a working Demo install button; the actual on-device install flow (git clone, GitHub release fetch) has been tested, but not yet on a printer running the real touchscreen GUI end to end. MCU firmware flashing and the squashfs OTA rootfs swap are separate, lower-level steps this doesn't replace. |
+| Installer | Touchscreen installer from a USB drive: Entware, LoopScript, Kalico, Moonraker, Mainsail/Fluidd, GrumpyScreen, the root login and MCU firmware flashing, with a backup first (optional) and restore. Recovery and Update Configs when it's already installed. | Working: tested from a fully stock install to a OpenCreator install. |
 | OpenCreator Updater | A Moonraker update_manager entry (Pi-tunnel installs) that 3-way-merges the latest config template into your live config without clobbering customized values, then pulls Klipper -- one "Update" click. SoC installs get an equivalent LoopScript-triggered version. | Verified live on a real Pi + printer, conflicts no longer ever touch the live file, only a sibling .conflict file. SoC version is unverified on real hardware. |
 | Real Zero Purge modes | Implemented into switches | You can turn off Flow Calibration and Purging to make a basically zero waste printer. It prints a small purge line to prime the nozzle when starting the print, but thats it. It is under runout in Fluidd, or Misc in Mainsail. |
 | Print Farm / Automation support | Ready | Needs testing, but it should work with anything that just uses Moonraker. You should be able to just plop in any file and it should be able to just take it. |
@@ -30,7 +30,7 @@ well it has been tested on a printer.
 - [x] Real Zero Purge modes
 - [ ] Flow and VFA calibration without bugs on interrupted flow
 - [ ] GrumpyScreen macros and extruding
-- [ ] Installer verified end to end on a printer
+- [x] Installer verified end to end on a printer
 - [ ] RPi / SBC support out of testing
 - [ ] Working power loss recovery
 
@@ -43,7 +43,7 @@ well it has been tested on a printer.
 - [ ] Further detection for print failures
 - [ ] Reducing amount of wasted filament when runout is occured
 
-The installer and the OpenCreator Updater are already being built; see their
+The installer works, and the OpenCreator Updater is being finished; see their
 rows in the table above.
 
 Planned features aren't promised and may change or be dropped.

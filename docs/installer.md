@@ -1,6 +1,6 @@
 # OpenCreator Installer
 
-<span class="oc-status test">In testing</span>
+<span class="oc-status ok">Working</span>
 
 The OpenCreator Installer is a touchscreen app that runs on the Creator 5's own
 screen. It walks you through installing OpenCreator CFW from a USB drive: on the
@@ -8,11 +8,8 @@ printer itself, or tunneled to a Raspberry Pi / SBC. It backs everything up
 first, so you can go back. Its source is the `opencreator-installer`
 repository.
 
-!!! warning "Not released yet"
-    The installer flow has been tested in demo mode and the on-device install
-    steps have been run, but it has not yet been tested end to end on a printer
-    running the real touchscreen GUI. Do not run it on your printer until a
-    release is announced on [Discord](https://discord.gg/RsdkqDtfww).
+!!! success "Tested"
+    The installer has been tested, from a completely stock install to a fully modded OpenCreator SoC install. Not yet finished.
 
 ## What you need
 
@@ -50,9 +47,24 @@ flowchart TD
 5. **Ready to install** shows the printer, mode, web UI and touchscreen you
    chose. *Back up and install* starts; *Install without backup* skips the
    backup (faster when re-running); *Demo install* does a dry run (below).
-6. **Installing** shows each step live with a progress bar and elapsed time.
+6. **Installing** shows each step live with its number (*Step 3 of 11*), a
+   progress bar and elapsed time.
    Installing Entware and the Python packages takes a while.
 7. **Installation complete**: reboot from the button, then unplug the USB drive.
+
+### Already installed
+
+If the printer already has OpenCreator from the same installer version, the
+installer opens on **OpenCreator is installed** with two choices:
+
+- **Recovery** runs the whole setup again, as above.
+- **Update Configs** asks the same questions (where Klipper runs, web UI,
+  touchscreen), then shows only what differs from the current setup and
+  changes just that. For example, switching from *On printer SoC* to
+  *Tunneled* only installs the bridge, and switching back only installs what
+  SoC mode needs and isn't on the printer yet. Switching web UI changes which
+  one the printer serves; turning the touchscreen off keeps GrumpyScreen on
+  the printer but stops starting it. Nothing is backed up. Reboot afterwards.
 
 ??? info "Supported kernel packages"
     Entware needs *legacy NaN*, which is switched on with one byte written at
@@ -71,7 +83,7 @@ flowchart TD
     | LoopScript | OpenCreator's startup system from [opencreator-fs](https://github.com/FlashForge-C5-Modding-Group/opencreator-fs): it replaces FlashForge's `firmwareExe` (a copy of the original is kept) and starts everything below at boot. It also replaces the boot logo with the OpenCreator one (the original is backed up). |
     | MCU firmware | Flashes all four boards (eBoard, heaterBoard, levelBoard, mainBoardGD) from the package on the USB drive, after checking its checksum. Skipped if the boards already run that firmware. |
     | Klipper | [Kalico](https://github.com/FlashForge-C5-Modding-Group/kalico) with the OpenCreator printer config, including the [first-time setup dialog](printer-features.md#first-time-setup) and the OpenCreator Fluidd theme, in `/usr/data/opencreator/klipper`. A config you already have there is kept. |
-    | Moonraker | The latest Moonraker, replacing FlashForge's older one. |
+    | Moonraker | The latest Moonraker, replacing FlashForge's older one. Its update manager lists Kalico, Moonraker, Mainsail, Fluidd and **opencreator** (the OpenCreator configs). Updating *opencreator* merges the new config templates into yours within a minute, keeping your own edits, then restarts Klipper once nothing is printing. |
     | Web UI | The latest Mainsail and Fluidd; the printer's web page shows the one you chose. |
     | Touchscreen | The latest [GrumpyScreen](https://github.com/FlashForge-C5-Modding-Group/grumpyscreen) release, if chosen. |
     | Root login | Adds the root login `opencreator` (password `FlashForge2026`) for SSH. See [Root login](#root-login). |
@@ -127,7 +139,7 @@ ssh opencreator@<printer IP>
 
     ---
 
-    Before anything changes, the FlashForge program folder, Moonraker, the
+    Before anything changes, FlashForge's `firmwareExe`, Moonraker, the
     OpenCreator folder (Klipper and your config), the web UI folders and the
     nginx config are archived to the USB drive.
 

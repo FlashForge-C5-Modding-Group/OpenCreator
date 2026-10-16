@@ -31,6 +31,13 @@ flowchart LR
 
     Run fun projects, add more cameras, add monitoring with AI, etc.
 
+-   :material-timer-sand-complete: **Faster toolchanges**
+
+    ---
+
+    Toolchanges are half a second to a second faster, since Klipper runs on
+    the SBC's much faster CPU instead of the printer's.
+
 -   :material-shield-lock: **Security**
 
     ---
