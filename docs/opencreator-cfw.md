@@ -7,8 +7,8 @@ in development, not a ready-to-flash release. The mostly stock alternative is
 [OpenCreator Legacy](opencreator-legacy.md).
 
 The work is split between
-[klipper-c5](https://github.com/FlashForge-C5-Modding-Group/klipper-c5) for
-Klipper and MCU integration, and
+[kalico](https://github.com/FlashForge-C5-Modding-Group/kalico) for
+Klipper and MCU integration (it replaces klipper-c5, which is archived), and
 [opencreator-fs](https://github.com/FlashForge-C5-Modding-Group/opencreator-fs)
 for printer files, configuration, and installation helpers.
 

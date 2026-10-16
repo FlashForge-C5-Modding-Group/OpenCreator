@@ -2,11 +2,17 @@
 
 OpenCreator spans several repositories. This page is a navigation aid.
 
+!!! note "klipper-c5 is archived"
+    All Creator 5 Klipper work now happens in
+    [kalico](https://github.com/FlashForge-C5-Modding-Group/kalico), for both
+    the host and the MCU firmware. klipper-c5 stays up for reference only and
+    no longer gets updates.
+
 | Repository | Purpose |
 | --- | --- |
 | [OpenCreator](https://github.com/FlashForge-C5-Modding-Group/OpenCreator) | This documentation site and project landing page |
-| [klipper-c5](https://github.com/FlashForge-C5-Modding-Group/klipper-c5) | Creator 5 Klipper and MCU integration work |
-| [kalico](https://github.com/FlashForge-C5-Modding-Group/kalico) | Creator 5 custom Klipper port to Kalico |
+| [kalico](https://github.com/FlashForge-C5-Modding-Group/kalico) | Creator 5 Klipper host and MCU code (Kalico) |
+| [klipper-c5](https://github.com/FlashForge-C5-Modding-Group/klipper-c5) | **Archived.** The original Creator 5 Klipper port, replaced by Kalico |
 | [opencreator-fs](https://github.com/FlashForge-C5-Modding-Group/opencreator-fs) | Printer filesystem and configuration work |
 | [opencreator-tunnel](https://github.com/FlashForge-C5-Modding-Group/opencreator-tunnel) | Tunneled Klipper for OpenCreator work |
 | opencreator-installer | The touchscreen [OpenCreator Installer](installer.md) (not public yet) |

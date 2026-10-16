@@ -14,7 +14,7 @@ Do not use the CFW source tree as an installation package.
 If you are contributing to CFW, start with [Project layout](project-layout.md)
 and [Architecture](architecture.md). The printer configuration lives in
 `opencreator-fs/fs/usr/data/config`, while the Creator 5 Klipper modules and
-MCU code live in `klipper-c5`. The detailed toolchanger development notes are
+MCU code live in `kalico`. The detailed toolchanger development notes are
 in `CREATOR5_TOOLCHANGER.md` inside the configuration tree.
 
 CFW isn't ready to install yet. We're still building it, along with an easy

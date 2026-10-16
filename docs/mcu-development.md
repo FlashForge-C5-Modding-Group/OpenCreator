@@ -12,10 +12,10 @@ October 8, 2026, this is still pre-release.
 | Heaterboard | N32G455REL7 | Tool heaters and temperature I/O |
 | Levelboard | N32G430F8S7 | Probing and levelboard sensing |
 
-The source for the MCU ports is in
-[klipper-c5](https://github.com/FlashForge-C5-Modding-Group/klipper-c5).
-The [Kalico port](https://github.com/FlashForge-C5-Modding-Group/kalico)
-contains the corresponding Creator 5 support for that host. The configuration
+The source for the MCU ports and the host is in
+[kalico](https://github.com/FlashForge-C5-Modding-Group/kalico). It
+replaces [klipper-c5](https://github.com/FlashForge-C5-Modding-Group/klipper-c5),
+which is archived and kept for reference only. The configuration
 is maintained separately in
 [opencreator-fs](https://github.com/FlashForge-C5-Modding-Group/opencreator-fs)
 and [opencreator-tunnel](https://github.com/FlashForge-C5-Modding-Group/opencreator-tunnel).

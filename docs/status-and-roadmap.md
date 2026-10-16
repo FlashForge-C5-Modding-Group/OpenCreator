@@ -5,7 +5,7 @@ well it has been tested on a printer.
 
 | Area | Present in development source | Current evidence and remaining work |
 | --- | --- | --- |
-| Four MCU ports | Mainboard, eBoard, heaterboard, and levelboard support is under development in `klipper-c5`. | The new eBoard TMC UART path has been built and looks to be working See [MCU development and verification](mcu-development.md). |
+| Four MCU ports | Mainboard, eBoard, heaterboard, and levelboard support is under development in `kalico`. | The new eBoard TMC UART path has been built and looks to be working See [MCU development and verification](mcu-development.md). |
 | Kalico MCU port | Creator 5 MCU support has been ported to Kalico, and a four-board development archive was structurally validated from commit `e48df776`. | They were tested to be working, and actually toolchange faster. |
 | Klipper host on printer | Creator 5 modules, MCU protocol support, and printer configs exist. | It is mostly working. |
 | Toolchanging and AFC standalone | T0 to T3 motion, physical dock and grab checks, filament mapping, runout integration, and safety interlocks are implemented. | Mostly finished testing, and should almost be 100%. |
