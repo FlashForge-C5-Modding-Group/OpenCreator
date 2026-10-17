@@ -22,7 +22,7 @@
 | Allow to load multiple toolheads simultaneously | <span class="oc-status test">Untested</span> | You can send the load command for multiple tools, which changes them, loads, then docks. |
 | Allow for reading colour information and material information on Orca | <span class="oc-status bad">Not Working</span> | You will be able to eventually syncronize filament list from "AMS" |
 | Raspberry Pi Host support | <span class="oc-status test">Testing</span> | Allowing to use a Raspberry Pi over the stock MIPS32 CPU, by tunneling the MCUs through the SoC through gadget mode USBs. |
-| Power Loss Recovery | <span class="oc-status test">Testing</span> | Allows to resume a print from power loss or MCU errors. |
+| Power Loss Recovery | <span class="oc-status ok">Finished</span> | Allows to resume a print from power loss or MCU errors. Until you resume or discard it, the bed is kept at the print's temperature so the part stays stuck down; discarding turns the heaters off. |
 | Kalico Support | <span class="oc-status test">Testing</span> | On non-SoC installs, you can use Kalico's stronger MPC tuning or PID tuning, and eventually bleeding edge for better input shaper. |
 | Removal of FlashForge services | <span class="oc-status ok">Finished</span> | You can completely disable FlashForge's things, and make it like it never existed. Full Orcaslicer with Moonraker Agent. |
 | Filament sync | <span class="oc-status bad">Broken</span> | Probably due to an Orca bug, but you will be able to eventually syncronize your filaments (material wise) |
