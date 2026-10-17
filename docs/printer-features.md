@@ -10,12 +10,16 @@ installing OpenCreator, a dialog welcomes you and asks two questions:
 - **Bed heat soak:** before a fresh bed mesh, wait a few minutes at bed
   temperature so the plate finishes warping first. Off by default.
 
-Then it calibrates, since OpenCreator doesn't use FlashForge's calibration.
-The **Calibrate** page has a button for each, and shows which ones are done:
+Then it calibrates. The heaters keep FlashForge's PID tuning, but input shaper
+and VFA have to be calibrated for OpenCreator. The **Calibrate** page has a
+button for each, and shows which ones are done:
 
-- **PID tuning** (`C5_PID_CALIBRATE`, all four tools)
 - **Input shaper** (`CALIBRATE_INPUT_SHAPER`)
 - **VFA** (`VFA_COMPENSATION`)
+
+`C5_PID_CALIBRATE` is still there if you want to tune a heater yourself:
+`C5_PID_CALIBRATE TOOL=1 TARGET=250`. Add `TOLERANCE=0.1` if a noisy heater
+won't settle (the default is 0.05).
 
 The dialog closes while a calibration runs and comes back when it's finished.
 *Save and continue* saves all the results at once (`SAVE_CONFIG`), Klipper
