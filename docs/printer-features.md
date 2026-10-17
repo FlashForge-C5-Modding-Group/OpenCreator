@@ -27,6 +27,8 @@ The next page explains when to run the two other calibrations:
 firmware either, and `C5_CALIBRATE_TOOL_POSITION` if a tool doesn't dock or
 pick up cleanly. 
 
+[![Fluidd with the OpenCreator macro groups and the switches under Fans & Outputs](assets/images/fluidd-macros-switches.png){ .oc-side-shot loading=lazy }](assets/images/fluidd-macros-switches.png)
+
 Fluidd also starts with the OpenCreator macro layout: the macros grouped into
 *On / Off*, *Calibrations*, *Toolhead* and *Misc*. A layout you already set up
 in Fluidd is kept.

@@ -113,3 +113,28 @@
   border-radius: 0.5rem;
   padding: 0 0.8rem;
 }
+
+/* Home page photo row: three small thumbnails, full size on click. */
+.md-typeset .oc-shots p {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
+.md-typeset .oc-shots img,
+.md-typeset img.oc-side-shot {
+  border-radius: 0.5rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+}
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .oc-shots p { grid-template-columns: 1fr; }
+}
+
+/* A tall screenshot beside the text it illustrates; full width on phones. */
+.md-typeset img.oc-side-shot {
+  float: right;
+  width: 15rem;
+  margin: 0 0 1rem 1.2rem;
+}
+@media screen and (max-width: 44.9375em) {
+  .md-typeset img.oc-side-shot { float: none; width: 100%; margin: 0 0 1rem; }
+}

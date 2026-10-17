@@ -84,6 +84,16 @@ with alternate custom firmwares, even though support may be diminished.
 
 </div>
 
+## On the printer
+
+<div class="oc-shots" markdown>
+
+[![OpenCreator boot logo on the Creator 5 screen](assets/images/oc-boot-logo.jpg){ loading=lazy }](assets/images/oc-boot-logo.jpg "Boot logo")
+[![GrumpyScreen home screen with all four extruders, bed and chamber](assets/images/grumpyscreen-home.jpg){ loading=lazy }](assets/images/grumpyscreen-home.jpg "GrumpyScreen home")
+[![GrumpyScreen spool page with the four spools and their materials](assets/images/grumpyscreen-spools.jpg){ loading=lazy }](assets/images/grumpyscreen-spools.jpg "GrumpyScreen spools")
+
+</div>
+
 ## Technical reference
 
 <div class="grid cards" markdown>
