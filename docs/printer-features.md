@@ -42,6 +42,34 @@ you reach the last page it won't appear again. Both choices are ordinary
 switches under Fans & Outputs, so you can change them at any time. To go
 through the dialog again, send `C5_FIRST_SETUP` in the console.
 
+## Timelapse
+
+The OpenCreator Installer sets up
+[Moonraker Timelapse](https://github.com/mainsail-crew/moonraker-timelapse). It
+takes a camera frame at every layer change and renders them into an MP4 when the
+print finishes. The videos show up under **Timelapse** in Fluidd and Mainsail,
+where you can also change its settings (frame rate, parking the toolhead for
+each frame, and so on).
+
+To record a print, add `TIMELAPSE_TAKE_FRAME` to the slicer's layer change
+G-code (see [Slicer Configuration](slicer-config.md#machine-g-code)). Without it,
+only *hyperlapse* mode records, which takes frames at a fixed interval instead.
+
+| | Printer (SoC) | Raspberry Pi (tunnel) |
+|---|---|---|
+| Camera | The printer camera, through its snapshot URL | The webcam you set up in Fluidd or Mainsail |
+| ffmpeg | FlashForge's own build, already on the printer | Installed from apt |
+| Frames | `/usr/data/opencreator/timelapse/frames/` | `/tmp/timelapse/` |
+| Videos | `/usr/data/opencreator/timelapse/` | `~/printer_data/timelapse/` |
+
+!!! note "Rendering on the printer"
+    On the printer, ffmpeg runs at the lowest priority so it never holds up
+    Klipper, which makes rendering slow: expect a few minutes for a long print.
+    Frames are kept on storage rather than in `/tmp`, which is RAM and too
+    small for a long print.
+
+Moonraker's update manager keeps Timelapse current, as the `timelapse` entry.
+
 ## Flow Calibration in the Creator 5 factory firmware
 
 The touchscreen calls this **Flow Calibration**, but the routine is intended

@@ -10,6 +10,7 @@ We've used some open source projects, here's the ones we've used, this isn't ful
 | Moonraker | API server for the web interfaces and slicers | [GPLv3](https://github.com/Arksine/moonraker) |
 | Fluidd | Web interface | [GPLv3](https://github.com/fluidd-core/fluidd) |
 | Mainsail | Web interface | [GPLv3](https://github.com/mainsail-crew/mainsail) |
+| Moonraker Timelapse | Print timelapses | [GPLv3](https://github.com/mainsail-crew/moonraker-timelapse) |
 | Material for MkDocs | This documentation site | [MIT](https://github.com/squidfunk/mkdocs-material) |
 
 We've also used a non open source project, which should be.<br>

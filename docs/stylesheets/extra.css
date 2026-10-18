@@ -138,3 +138,10 @@
 @media screen and (max-width: 44.9375em) {
   .md-typeset img.oc-side-shot { float: none; width: 100%; margin: 0 0 1rem; }
 }
+
+/* A screenshot inline with the text, at a readable size. */
+.md-typeset img.oc-shot {
+  max-width: min(100%, 32rem);
+  border-radius: 0.5rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+}

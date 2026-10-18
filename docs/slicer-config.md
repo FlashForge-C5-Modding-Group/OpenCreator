@@ -23,6 +23,8 @@ These will change stuff like printer agents.
 - [ ] **Use 3MF instead of G-code:** switch from `on` to `off`.
 - [ ] **Disable set remaining print time:** `off`.
 
+[![OrcaSlicer printer settings, Basic information: Printer Agent set to Moonraker, Use 3MF instead of G-code and Disable set remaining print time both unticked](assets/images/orca-printer-settings.png){ .oc-shot loading=lazy }](assets/images/orca-printer-settings.png)
+
 !!! tip "3MF on SBC installs"
     [SBC installs](rpi-klipper.md#3mf-uploads) also accept sliced 3MF uploads, but plain G-code
     works on every install, so keep 3MF off unless you need it.
@@ -39,6 +41,10 @@ These will change stuff like printer agents.
     OpenCreator's Moonraker component works around this for files uploaded from
     now on. Files already on the printer show no estimate until you upload them
     again.
+
+- [ ] **Layer change G-code (optional, for timelapses):** add
+  `TIMELAPSE_TAKE_FRAME` on its own line, so [Timelapse](printer-features.md#timelapse)
+  takes a frame at every layer.
 
 ## Optional / niceties
 
