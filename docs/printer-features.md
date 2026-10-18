@@ -10,21 +10,17 @@ installing OpenCreator, a dialog welcomes you and asks two questions:
 - **Bed heat soak:** before a fresh bed mesh, wait a few minutes at bed
   temperature so the plate finishes warping first. Off by default.
 
-Then it calibrates. The heaters keep FlashForge's PID tuning, but input shaper
-and VFA have to be calibrated for OpenCreator. The **Calibrate** page has a
-button for each, and shows which ones are done:
+There's nothing to calibrate first: a first install on the printer (SoC) takes
+your printer's own calibration from FlashForge's config (`/usr/data/config/printer.cfg`), so it
+starts with the input shaper and the PID tuning of all four hotends and the bed
+that FlashForge measured. The bed mesh isn't taken; OpenCreator measures its
+own. A reinstall or update keeps the config you already have. Tunneled
+installs start with the template's values, so calibrate those yourself.
 
-- **Input shaper** (`CALIBRATE_INPUT_SHAPER`)
-- **VFA** (`VFA_COMPENSATION`)
-
-`C5_PID_CALIBRATE` is still there if you want to tune a heater yourself:
-`C5_PID_CALIBRATE TOOL=1 TARGET=250`. Add `TOLERANCE=0.1` if a noisy heater
-won't settle (the default is 0.05).
-
-The dialog closes while a calibration runs and comes back when it's finished.
-*Save and continue* saves all the results at once (`SAVE_CONFIG`), Klipper
-restarts and the dialog picks up where it left off. *Skip* moves on without
-calibrating.
+To calibrate yourself anyway: `CALIBRATE_INPUT_SHAPER` (or
+[`CALIBRATE_INPUT_SHAPER_GRAPH`](#input-shaper-graphs) for graphs too),
+`VFA_COMPENSATION`, and `C5_PID_CALIBRATE TOOL=1 TARGET=250` for a heater (add
+`TOLERANCE=0.1` if a noisy heater won't settle; the default is 0.05).
 
 The next page explains when to run the two other calibrations:
 `C5_CALIBRATE_OFFSETS` if the tools' offsets weren't right on the stock
