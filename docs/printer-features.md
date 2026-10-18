@@ -93,9 +93,7 @@ Mainsail.
   remaining vibrations, smoothing and the highest acceleration it suits.
 
 The figures come from Kalico's own shaper code, so they match what
-`SHAPER_CALIBRATE` reports in the console. Calibration sweeps the toolhead
-slowly during the test (`sweeping_period: 1.2` in `printer.vibration.cfg`),
-which keeps friction from hiding resonances.
+`SHAPER_CALIBRATE` reports in the console. 
 
 ## Flow Calibration in the Creator 5 factory firmware
 
