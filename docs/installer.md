@@ -9,7 +9,7 @@ first, so you can go back. Its source is the `opencreator-installer`
 repository.
 
 !!! success "Tested"
-    The installer has been tested, from a completely stock install to a fully modded OpenCreator SoC install. Not yet finished.
+    The installer has been tested, from a completely stock install to a fully modded OpenCreator SoC install on multiple printers, testing is available for anyone who asks.
 
 ## What you need
 

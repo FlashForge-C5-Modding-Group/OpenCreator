@@ -42,8 +42,5 @@ AFC standalone integration, printer configuration, and a print workflow under
 active test. Read [Architecture](architecture.md) for the component roles,
 [Print workflow](print-workflow.md) for the current sequence, and
 [Status and roadmap](status-and-roadmap.md) for the difference between source
-implementation and printer verification.
-
-Currently, nothing is end-user ready, so you should not be trying to clone,
-and build firmware / run custom firmware. Everything will be done automatically 
-for you when it is ready.
+implementation and printer verification. Testing is underway for the general public
+and can be joined via Discord and asking in any channel for access.

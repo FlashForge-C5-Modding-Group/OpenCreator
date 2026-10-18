@@ -74,15 +74,15 @@ running on a Raspberry Pi or similar microcomputer that has several times the po
 
 ## Requirements
 
-- [ ] A SBC that has USB Gadget Mode support (Pi Zero 2 W, Pi 4/5 on its USB-C power port, etc)
-- [ ] If using an external power supply on a Pi 4/5, a USB power and data splitter
-- [ ] If using an external power supply on a Pi 4/5, a USB-A power blocker for the USB data in/out port on the splitter
-- [ ] A recent Debian / Raspberry Pi OS Lite with up-to-date packages (headless / server installs recommended)
-- [ ] If running a slow device (1 GHz Pi Zero 2 W), an overclock to 1.2 GHz or above
-- [ ] Some type of cooling
-- [ ] At least 4GB of storage
-- [ ] At least 512MB of RAM
-- [ ] Internet on at least the SBC
+- [x] A SBC that has USB Gadget Mode support (Pi Zero 2 W, Pi 4/5 on its USB-C power port, etc)
+- [x] If using an external power supply on a Pi 4/5, a USB power and data splitter
+- [x] If using an external power supply on a Pi 4/5, a USB-A power blocker for the USB data in/out port on the splitter
+- [x] A recent Debian / Raspberry Pi OS Lite with up-to-date packages (headless / server installs recommended)
+- [x] If running a slow device (1 GHz Pi Zero 2 W), an overclock to 1.2 GHz or above
+- [x] Some type of cooling
+- [x] At least 4GB of storage
+- [x] At least 512MB of RAM
+- [x] Internet on at least the SBC
 
 ## Caveats
 
@@ -134,7 +134,7 @@ running on a Raspberry Pi or similar microcomputer that has several times the po
 
 ### On the SBC
 
-1. Plug in the SBC through the Gadget Mode port (USB-C on RPi 4/5, power micro USB for 3B+ and Zero 2 W).
+1. Plug in the SBC through the Gadget Mode port (USB-C on RPi 4/5, power micro USB for Zero 2 W).
 2. Install the software:
 
 === "Automatic (recommended)"

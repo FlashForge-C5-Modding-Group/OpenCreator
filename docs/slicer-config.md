@@ -5,8 +5,13 @@ A collection of configurations and settings for Custom Firmware OpenCreator.
 ## Print profile
 
 - [x] Under **Quality → Precision**, switch `Arc fitting` **off**.
+
   This will improve performance with no quality loss, as arcs are not
   supported under Klipper.
+- [x] Under **Others → G-code output**, switch `Label objects` & `Exclude objects` **on**.
+
+This will allow adaptive bed meshing to work correctly and allow you to use Exclude objects on both
+touchscreen and Fluidd/Mainsail
 
 ## Printer profile
 

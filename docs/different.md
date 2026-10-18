@@ -34,3 +34,6 @@ If you really don't want to break too much of your warranty, you can stick with 
 
 ## Maintainable Source
 Unlike some other mods, our source code is easily readable and is reasonably split up on the repository, making it very easy to understand what we do.
+
+## Mainstream UIs
+Most of our UIs and backends such as Mainsail and Fluidd, along with Moonraker are mainstream, not forked, and only come with a CSS theme, update as soon as updates come out.

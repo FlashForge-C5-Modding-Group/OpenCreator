@@ -9,7 +9,6 @@ development.
 If you want to improve a working stock printer today, start with the
 [Creator-5-Mods Legacy guides](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Mods).
 Follow the prerequisites and rollback advice for each individual modification.
-Do not use the CFW source tree as an installation package.
 
 If you are contributing to CFW, start with [Project layout](project-layout.md)
 and [Architecture](architecture.md). The printer configuration lives in
@@ -17,8 +16,7 @@ and [Architecture](architecture.md). The printer configuration lives in
 MCU code live in `kalico`. The detailed toolchanger development notes are
 in `CREATOR5_TOOLCHANGER.md` inside the configuration tree.
 
-CFW isn't ready to install yet. We're still building it, along with an easy
-installer.
+CFW is ready for testing, go back to the main page and join our Discord, and ask to test CFW!
 
 ## Before a printer trial
 
