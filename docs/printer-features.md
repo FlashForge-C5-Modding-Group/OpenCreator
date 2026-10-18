@@ -70,6 +70,33 @@ only *hyperlapse* mode records, which takes frames at a fixed interval instead.
 
 Moonraker's update manager keeps Timelapse current, as the `timelapse` entry.
 
+## Input shaper graphs
+
+`CALIBRATE_INPUT_SHAPER_GRAPH` does the same as `CALIBRATE_INPUT_SHAPER`
+(measures both axes, applies the recommended shaper and saves it; add `SAVE=0`
+to save later), and also draws a graph of each axis on the printer, the same
+graph Klipper's `calibrate_shaper.py` makes on a PC. It is under
+**Calibrations** on Fluidd's Macros card (Uncategorized on installs whose
+macro layout is older than the macro).
+
+The graphs are saved to the config folder as `input_shaper/shaper_x.png` and
+`input_shaper/shaper_y.png`; open them from the config files in Fluidd or
+Mainsail.
+
+[![X axis graph from a Creator 5 Pro: one large resonance near 60 Hz, each shaper's vibration reduction, and the recommended MZV shaper at 61.0 Hz leaving almost none of it](assets/images/shaper-graph-example.png){ .oc-shot loading=lazy }](assets/images/shaper-graph-example.png)
+
+- **Left axis:** the measured vibrations (X, Y, Z and their sum) at each
+  frequency. Peaks are resonances; *After shaper* is what the recommended
+  shaper leaves of them.
+- **Right axis:** how much each shaper lets through at each frequency. The
+  recommended shaper is dash-dotted; the legend gives each one's frequency,
+  remaining vibrations, smoothing and the highest acceleration it suits.
+
+The figures come from Kalico's own shaper code, so they match what
+`SHAPER_CALIBRATE` reports in the console. Calibration sweeps the toolhead
+slowly during the test (`sweeping_period: 1.2` in `printer.vibration.cfg`),
+which keeps friction from hiding resonances.
+
 ## Flow Calibration in the Creator 5 factory firmware
 
 The touchscreen calls this **Flow Calibration**, but the routine is intended
