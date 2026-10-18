@@ -19,8 +19,7 @@ We're also currently the only custom firmware that has this.
 We also actively take in suggestions and if we like them, we'll implement them.
 
 ## Klipper 
-We're fully Klipper 13. No FlashForge, no old Klipper. We even
-have support for Kalico on SBC installs.
+We're fully Kalico, a fork of Klipper with more features. No FlashForge, no old Klipper.
 
 ## Different hosts
 You're not forced to cope with a bad SoC with the printer, just
