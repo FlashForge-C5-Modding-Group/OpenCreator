@@ -1,9 +1,7 @@
 # MCU development and verification
 
 OpenCreator has separate host software, printer configuration, and firmware for
-four controller boards. A successful firmware build is not the same as a
-successful printer test. This page records the development state as of
-October 8, 2026, this is still pre-release.
+four controller boards. They should be fully working as of 19 of October.
 
 | Board | MCU | Primary role |
 | --- | --- | --- |
@@ -49,9 +47,3 @@ before docking. eBoard builds (`CONFIG_C5_EBOARD`) therefore write the
 absolute direction at the start of every move in `src/stepper.c`. This needs
 the eBoard reflashed; until then a `FIRMWARE_RESTART` resets all four to
 forward.
-
-## Test packages
-
-The four-MCU Creator 5 Pro test package was built from Kalico commit
-`e48df776`, with the eBoard transport change from Klipper-c5 commit `336ba5fa`.
-These are test builds, not finished releases.

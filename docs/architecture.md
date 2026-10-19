@@ -27,6 +27,9 @@ vibration, Misc, and AFC files. G-code storage is configured at
 `/usr/data/firmwareRes/config`, including `extruder.json`, `zoffset.json`, and
 `test.json`. 
 
+The config layout is originally based on FlashForge's default config layout, just expanded with new macros, settings, and removals of useless settings.
+This does not mean our config is interchangable with stock firmware, and if you try, it will not work as a lot of settings are intertwined.
+
 There is one physical extrusion motor. The four Klipper extruder contexts
 select the corresponding tool heaters and state; they are not four independent
 extrusion drives. A toolchange must agree with the dock and grab pins before
@@ -39,10 +42,11 @@ See [MCU development and verification](mcu-development.md) for pin assignments.
 
 ## Interfaces
 
-The printer configuration currently uses AFC standalone mode, not a BoxTurtle
-mechanism. Mainsail/Fluidd exposes virtual Misc (or runout in Fluidd) switches for flow calibration and
+The printer configuration currently uses AFC standalone mode, not a BoxTurtle or AMS-like 
+mechanism. Mainsail/Fluidd exposes virtual Misc switches for flow calibration and
 purge. GrumpyScreen work is
-separate from the core Klipper and filesystem repositories.
+separate from the core Klipper and filesystem repositories, and is mostly kept up to date and commited to mainline
+SimpleAF GrumpyScreen.
 
 ## Hardware
 Other than the previously explained hardware for the MCU chips, the printer
