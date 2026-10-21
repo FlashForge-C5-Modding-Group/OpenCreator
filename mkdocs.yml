@@ -103,6 +103,7 @@ nav:
     - MCU development and verification: mcu-development.md
     - Print workflow: print-workflow.md
     - Printer Features: printer-features.md
+    - Plugins: plugins.md
     - Project layout: project-layout.md
   - Project:
     - Status and roadmap: status-and-roadmap.md
