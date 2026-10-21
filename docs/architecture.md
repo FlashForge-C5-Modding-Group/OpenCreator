@@ -27,6 +27,12 @@ vibration, Misc, and AFC files. G-code storage is configured at
 `/usr/data/firmwareRes/config`, including `extruder.json`, `zoffset.json`, and
 `test.json`. 
 
+The Creator 5 has no chamber heater, chamber fans or aux fan, so those are in `printer.pro.cfg`. They're only
+included on a Creator 5 Pro, through `printer.model.cfg`. On the printer, that file is written at every boot,
+from the model in the stock boot script (`MACHINE=` in `/usr/prog/app_startup.sh`). In tunnel mode, the Pi
+installer asks which printer it's connected to. On a Creator 5, `M106`/`M107 P2` and `P3` do nothing, and
+`M191` says there's no chamber heater instead of failing.
+
 The config layout is originally based on FlashForge's default config layout, just expanded with new macros, settings, and removals of useless settings.
 This does not mean our config is interchangable with stock firmware, and if you try, it will not work as a lot of settings are intertwined.
 
