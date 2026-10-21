@@ -6,7 +6,7 @@ We've used some open source projects, here's the ones we've used, this isn't ful
 | Klipper | MCU & Motor Control / Control | [GPLv3](https://github.com/klipper3d/klipper?tab=GPL-3.0-1-ov-file) |
 | Kalico | Same as Klipper | [GPLv3](https://github.com/KalicoCrew/kalico) |
 | AFC | Toolchanger and Filament Setting | [GPLv3](https://github.com/AFCProject/AFC-Klipper-Add-On?tab=GPL-3.0-1-ov-file) |
-| GrumpyScreen | SoC Touchscreen | [GPLv3](https://github.com/pellcorp/grumpyscreen) |
+| GrumpyScreen | Touchscreen | [GPLv3](https://github.com/pellcorp/grumpyscreen) |
 | Moonraker | API server for the web interfaces and slicers | [GPLv3](https://github.com/Arksine/moonraker) |
 | Fluidd | Web interface | [GPLv3](https://github.com/fluidd-core/fluidd) |
 | Mainsail | Web interface | [GPLv3](https://github.com/mainsail-crew/mainsail) |
