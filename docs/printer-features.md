@@ -241,6 +241,149 @@ result is available, it sends `SET_PA_ADVANCE T0=99.0 T1=99.0 T2=99.0
 T3=99.0 ENABLE=0`. These final per-tool settings are distinct from the
 temporary `SET_PRESSURE_ADVANCE` candidate applied during each test.
 
+## Host pressure-advance test (OpenCreator, experimental)
+
+`C5_FLOW_STROKES METHOD=host` is OpenCreator's own pressure-advance test. The
+stock test only says whether each fixed candidate passes or fails. This one
+has Klippy look at every driver reading itself and work out the pressure
+advance, so it isn't limited to the stock candidates. It takes about a minute
+per tool, where the stock test takes about two and a half.
+
+It needs OpenCreator's eboard firmware with the reading stream (flashed by
+installer 0.4.8 and later), and StealthChop on the extruder drivers, the same
+as the stock test.
+
+At print start it runs when the **host_pressure_advance** switch is on (Fans &
+Outputs, `C5_MISC_HOST_PRESSURE_ADVANCE_ON`/`_OFF`, or `HOST_PRESSURE_ADVANCE=1`
+on `C5_PRINT_START`), with `APPLY=1`. It is off by default and separate from
+the stock **flow_calibration** switch. With both on, the stock test runs first
+and the host test after it; if the host result is rejected, the stock value
+stays.
+
+### The idea
+
+Pressure advance models nozzle pressure as trailing the extruder motor. The
+right advance is the one that cancels that lag: by the time the motor reaches
+a steady speed, pressure has already caught up.
+
+So the test runs the extruder fast at a constant speed and watches the motor's
+load (`SG_RESULT`) during that steady part:
+
+- **Too little advance:** pressure is still building, so the load keeps
+  rising.
+- **Too much advance:** the extra push overshoots, so the load falls back.
+- **Right advance:** the load stays flat.
+
+Because the motor speed isn't changing during that part, a change in load can
+only come from the melt pressure. The test measures this drift at a few
+advance values and finds where it crosses zero.
+
+### Readings
+
+The stock eboard firmware only keeps its readings to make its own pass/fail
+decision. OpenCreator's eboard firmware also keeps each reading with the
+eboard's clock time, and Klippy downloads them afterwards (`get_pa_stream`).
+That's about 500 readings a second, up to 6,000 (12 s) per run. Each one is
+matched to the extruder's commanded position and speed at that moment.
+
+Without that firmware, `SENSOR=sg` has Klippy poll the driver itself instead,
+which gives far fewer readings.
+
+### The strokes
+
+Each run starts with 0.4 s at 1 mm/s of filament, then six strokes. Each
+stroke is 0.5 s at 10.4 mm/s, then 0.4 s back at 1 mm/s. As in the stock test,
+the X/Y motors are held still, and each move has X/Y travel four times its
+extrusion so Klipper applies pressure advance to it. The first stroke is only a
+warm-up and isn't scored.
+
+### Scoring a stroke
+
+Every stroke is measured from the moment it reaches speed:
+
+- **Early:** 0.03–0.09 s in, just after the advance's own push has finished.
+- **Late:** the rest of the stroke, up to 0.02 s before it ends.
+
+The stroke's drift is (early − late) / late.
+
+The motor's load reading also ripples with each electrical cycle of the
+motor: once every four full steps, which is 0.0589 mm of filament on these
+extruders. That ripple was more than half of the reading noise during a
+stroke. The test fits it across all of a run's strokes (four harmonics) and
+removes it before it compares early and late.
+
+### Finding the answer
+
+1. The test runs at advances of 0, 0.05 and 0.10, which gives 15 scored
+   strokes.
+2. It fits a straight line through (advance, drift) and takes the advance
+   where the line crosses zero.
+3. Now and then a stroke reads far off. Up to a tenth of the strokes that sit
+   more than four robust standard deviations off the line are dropped, and
+   the line is fitted again.
+4. The fit gives a 95% range for the answer. If that range is wider than
+   0.03, the test runs twice more, at the answer ±0.01. It repeats this until
+   the range is narrow enough or it has done nine runs.
+
+The answer is rejected, and nothing is changed, when:
+
+| Reason | Meaning |
+| --- | --- |
+| Load does not respond | The drift barely changes with advance (\|t\| below 4). Usually the driver isn't in StealthChop. |
+| Drifts the wrong way | Drift rises with advance, the opposite of what pressure does. |
+| Outside the tested range | The answer is more than 0.02 outside the advances that were tested. |
+| Too uncertain | The 95% range is still wider than 0.03 after nine runs. |
+
+The trace is written to `/tmp/c5_flow_T<tool>.csv` (one row per reading:
+run, advance, time, filament position, reading, commanded speed and
+acceleration). The console shows each stroke's drift and the result, for
+example:
+
+```
+T2 host flow test: pressure advance 0.0751 (95%: 0.0633-0.0869, t=-6.3, 25 strokes, 5 runs)
+```
+
+### Parameters
+
+| Parameter | Default | |
+| --- | --- | --- |
+| `APPLY` | `0` | `1` sets the result as the tool's pressure advance if it isn't rejected |
+| `ADVANCES` | `0,0.05,0.10` | Advances for the first runs, comma separated |
+| `REFINE` | `1` | `0` skips the extra runs |
+| `MAX_RUNS` | `9` | Limit on runs, including the extra ones |
+| `SENSOR` | `eboard` | `eboard`: the eboard's reading stream; `sg`: Klippy polls the driver (used when the eboard firmware has no stream) |
+| `FAST` | `10.4` | Stroke speed, mm/s of filament |
+| `SLOW` | `1` | Speed between strokes, mm/s of filament |
+| `STROKES` | `6` | Strokes per run |
+| `FAST_TIME` | `0.5` | Stroke length, s |
+| `SLOW_TIME` | `0.4` | Time between strokes, s |
+| `LEAD` | `0.4` | Slow time before the first stroke, s |
+| `RATIO` | `0.25` | Filament per mm of the (held) X/Y travel |
+
+The tool must be attached and at printing temperature, with Z calibrated, as
+for the stock test.
+
+### Results so far
+
+On T2 with PETG at 255 °C, five runs gave 0.067, 0.068, 0.074, 0.075 and 0.079
+(one of these was rejected as too uncertain, before the extra runs were
+added). The others took under a minute each. The stock test gives 0.028–0.030
+for the same filament.
+
+The stock test is limited by the motion more than by the filament. Its end
+check fails above about 0.037 because the retract outruns the stroke's own
+speed, and its spike check needs at least about 0.02. That leaves about 0.03
+for most filaments.
+
+Neither number has been checked against a print yet, so leave `APPLY` at 0
+until it has. To check, print a pressure-advance tower with the same filament:
+
+```
+TUNING_TOWER COMMAND=SET_PRESSURE_ADVANCE PARAMETER=ADVANCE START=0 FACTOR=.005
+```
+
+Then compare the height where the corners look best with both results.
+
 ## Offset Calibration
 
 Offset calibration aligns the *nozzles* of T0–T3 for printing. It is separate
