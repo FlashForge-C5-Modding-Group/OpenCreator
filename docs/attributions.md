@@ -18,9 +18,12 @@ FlashForge's MCU and Touchscreen research was done.
 
 ## Current Contributions
 
-- @ano.space --- MCU Firmware
+- @ano.space --- MCU Firmware, some Klippy bugfixes
 - @cartri --- Klippy Modules and some MCU modifications
 
 ## Special Thanks
 
-- @pappicio0000 --- amazing tester, and the first to test OpenCreator on the Creator 5 (non-Pro).
+- @pappicio0000 --- first outside tester, and the first to test OpenCreator on the Creator 5 (non-Pro).
+- @ChrisBBaken4536 --- another tester, and first to mess around on older firmwares, and sacrificed a nozzle (RIP).
+- @Null__f --- another tester which found some small bugs.
+- @spmomeiette --- another tester which found small critiques.

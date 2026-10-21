@@ -43,6 +43,9 @@ flowchart TD
    printer. *Tunneled* turns the printer's board into a bridge for an SBC.
    Tunneled needs FlashForge firmware 1.9.9: on 1.9.8 or older it's greyed
    out, and the page asks you to update the printer to 1.9.9 first.
+   Choosing *Tunneled* asks for the tunneled-mode password, typed on the screen's
+   keyboard, both for a first install and for switching an installed printer to
+   tunneled. It isn't asked again when the printer is already tunneled.
 3. **Web interface** (SoC only): Fluidd (recommended) or Mainsail. Both are installed; the
    one you pick is the one the printer's web page shows.
 4. **Touchscreen**: install GrumpyScreen (recommended) or not.

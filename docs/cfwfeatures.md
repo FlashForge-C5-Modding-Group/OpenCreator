@@ -11,7 +11,7 @@
 | Allow for near zero purge printing | <span class="oc-status ok">Finished</span> | You can turn off purge and flow calibration to have almost zero purge on start, a half suggestion from @josemyab |
 | Allow for calibration of only one toolhead | <span class="oc-status ok">Finished</span> | You don't need to calibrate all offsets to update z-offset of a nozzle, for switching nozzles. |
 | Allow for configuration of nozzle calibration | <span class="oc-status ok">Finished</span> | If your nozzle doesn't fit the min mm for levelboard, you can set it higher. |
-| Filament runout and switchover support | <span class="oc-status bad">Broken</span> | You can either "Infinite Spool" through AFC to runout to another filament, or pause if nothing is selected. |
+| Filament runout and switchover support | <span class="oc-status test">Untested</span> | Give a tool a backup in AFC ("Infinite Spool") and a runout switches to it by itself, with the run-out tool's Tx commands sent to the backup. With no backup, it pauses and asks: switch to another loaded tool, or load new filament. |
 | AFC Toolchanger | <span class="oc-status ok">Finished</span> | Allows for the use of AFC filament system, but with toolchangers. Should be fully functional except for "loaded" filament buttons. |
 | GrumpyScreen Toolchanger Support | <span class="oc-status partial">Semi-Finished</span> | GrumpyScreen now properly shows all extruders and currently in use extruder, but you cannot extrude yet. |
 | Stock Feature Parity | <span class="oc-status ok">Finished</span> | Should have feature parity. |
