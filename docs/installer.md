@@ -11,6 +11,12 @@ repository.
 !!! success "Tested"
     The installer has been tested, from a completely stock install to a fully modded OpenCreator SoC install on multiple printers, testing is available for anyone who asks.
 
+## Download
+
+The installer is part of the [0.0.1 release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/tag/0.0.1) (Public Alpha Version 1).
+Extract the zip to the root of a FAT32 USB drive, then follow
+[Steps to install OpenCreator](installation-and-safety.md#steps-to-install-opencreator).
+
 ## What you need
 
 - [x] A Creator 5 or Creator 5 Pro on FlashForge firmware (1.9.9 recommended)
@@ -74,8 +80,9 @@ installer opens on **OpenCreator is installed** with two choices:
 ??? info "Supported kernel packages"
     Entware needs *legacy NaN*, which is switched on with one byte written at
     an address that depends on the FlashForge kernel package
-    (`/usr/prog/PROGRAM/kernel/`): `0x00a130d1` for 2.0.1 to 2.0.6 and
-    `0x00B330D1` for 2.0.7 (FlashForge 1.9.9). On any other package the
+    (`/usr/prog/PROGRAM/kernel/`): `0x00a130d1` for 2.0.1 to 2.0.6,
+    `0x00B330D1` for 2.0.7 (FlashForge 1.9.9) and `0x00B030D1` for 2.0.8
+    (FlashForge 2.0.0). On any other package the
     installer stops without changing anything.
 
 ## What gets installed

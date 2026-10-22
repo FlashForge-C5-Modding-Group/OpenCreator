@@ -3,8 +3,9 @@
 OpenCreator has two paths. [Legacy](opencreator-legacy.md) keeps the mostly
 stock FlashForge control stack and adds selected modifications.
 [OpenCreator CFW](opencreator-cfw.md) replaces more of that stack with
-community-maintained Klipper and printer-side components. CFW is still under
-development.
+community-maintained Klipper and printer-side components. CFW is in public
+alpha: download the [0.0.1 release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/tag/0.0.1) and see
+[Installation and safety](installation-and-safety.md).
 
 If you want to improve a working stock printer today, start with the
 [Creator-5-Mods Legacy guides](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Mods).
@@ -16,7 +17,7 @@ and [Architecture](architecture.md). The printer configuration lives in
 MCU code live in `kalico`. The detailed toolchanger development notes are
 in `CREATOR5_TOOLCHANGER.md` inside the configuration tree.
 
-CFW is ready for testing, go back to the main page and join our Discord, and ask to test CFW!
+Join our Discord for support and to report problems with the alpha.
 
 ## Before a printer trial
 

@@ -15,6 +15,7 @@
 | AFC Toolchanger | <span class="oc-status ok">Finished</span> | Allows for the use of AFC filament system, but with toolchangers. Should be fully functional except for "loaded" filament buttons. |
 | GrumpyScreen Toolchanger Support | <span class="oc-status partial">Semi-Finished</span> | GrumpyScreen now properly shows all extruders and currently in use extruder, but you cannot extrude yet. |
 | Stock Feature Parity | <span class="oc-status ok">Finished</span> | Should have feature parity. |
+| Every FlashForge firmware version | <span class="oc-status ok">Finished</span> | Installs on any FlashForge release, 1.7.8 up to the latest 2.0.0 (kernel 2.0.8), with no need to update or downgrade first. See [Supported FlashForge firmware](installation-and-safety.md#supported-flashforge-firmware). |
 | Full WebUI support | <span class="oc-status ok">Finished</span> | You can avoid using the touchscreen, and don't even need it in general. |
 | SFTP over SSH | <span class="oc-status ok">Finished</span> | Transfer and manage files over SSH using SFTP, unlike stock firmware, which requires SCP for file transfers. |
 | Automatic Fan control for Heated Chamber (Pro Only) | <span class="oc-status ok">Finished</span> | Removes user fan control, and makes it automatically turn on when the chamber is set to something. |

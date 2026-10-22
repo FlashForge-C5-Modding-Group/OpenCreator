@@ -16,6 +16,7 @@ OpenCreator Legacy deals with older versions that keep a mostly stock experience
 whilst giving important creature comforts such as upgraded camera views.
 
 [Get started](getting-started.md){ .md-button .md-button--primary }
+[Download 0.0.1 alpha](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/tag/0.0.1){ .md-button }
 [Join the Discord](https://discord.gg/RsdkqDtfww){ .md-button }
 
 </div>
@@ -44,7 +45,7 @@ with alternate custom firmwares, even though support may be diminished.
 
     ---
 
-    Where installation stands, and what you need.
+    Download the 0.0.1 alpha, and what you need to install it.
 
 -   :material-progress-check: **[Status and roadmap](status-and-roadmap.md)**
 

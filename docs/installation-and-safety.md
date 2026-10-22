@@ -1,14 +1,30 @@
 # Installation and safety
 
-OpenCreator CFW isn't ready to install yet. The code is still in development
-and hasn't been released.
+OpenCreator CFW 0.0.1, Public Alpha Version 1, is the first official release.
+Download it from the [0.0.1 release on GitHub](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/tag/0.0.1).
 
-If you want to use the printer today, use the
-[Legacy path](opencreator-legacy.md) and its own instructions instead.
+!!! warning "Alpha"
+    This is an alpha. Expect bugs, keep a backup, and know how to go back to stock.
+    Report problems on the [Discord](https://discord.gg/RsdkqDtfww).
 
-CFW will be installed with the [OpenCreator Installer](installer.md), a
-touchscreen app that backs up the printer before changing anything. It is in
-testing and not released yet.
+CFW is installed with the [OpenCreator Installer](installer.md), a touchscreen app
+that backs up the printer before changing anything. If you want a mostly stock printer
+instead, use the [Legacy path](opencreator-legacy.md) and its own instructions.
+
+## Supported FlashForge firmware
+
+OpenCreator supports every FlashForge firmware version released for the Creator 5 and Creator 5 Pro,
+from 1.7.8 up to the latest, 2.0.0. You don't need to update or downgrade before installing.
+
+| FlashForge firmware | Kernel package |
+| --- | --- |
+| 1.7.8 to 1.9.7 | 2.0.1 to 2.0.5 |
+| 1.9.8 | 2.0.6 |
+| 1.9.9 | 2.0.7 |
+| 2.0.0 | 2.0.8 |
+
+A newer FlashForge release with a new kernel needs an installer update first; until then the installer
+stops without changing anything. See [Supported kernel packages](installer.md).
 
 ## Requirements for USB
 
@@ -18,7 +34,7 @@ testing and not released yet.
 
 ## Steps to install OpenCreator
 
-1. Load the USB with the install environment by loading the files on a USB drive
+1. Download the zip from the [0.0.1 release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/tag/0.0.1) and extract it to the root of the USB drive
 2. Reboot the printer with the USB plugged in
 3. Go through the steps, SoC installs are recommended for people who don't know what tunneled is
 4. Wait about 25-30 minutes for things to install

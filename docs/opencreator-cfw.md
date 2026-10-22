@@ -2,8 +2,8 @@
 
 OpenCreator full custom firmware, or CFW, is the deeper Creator 5 integration
 effort. It aims to make the printer's host software, MCU behavior, toolchanging,
-and configuration maintainable as one community-developed stack. CFW is still
-in development, not a ready-to-flash release. The mostly stock alternative is
+and configuration maintainable as one community-developed stack. The first official
+release is the [0.0.1 Public Alpha](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/tag/0.0.1). The mostly stock alternative is
 [OpenCreator Legacy](opencreator-legacy.md).
 
 The work is split between
