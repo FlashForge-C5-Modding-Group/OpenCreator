@@ -40,6 +40,7 @@ stops without changing anything. See [Supported kernel packages](installer.md).
 4. Wait about 25-30 minutes for things to install
 5. After it is finished, it will prompt you to remove the USB drive and press the reboot button
 6. Once you reboot, you should see a new boot logo, and Grumpyscreen, and on the web under the printer IP, Fluidd.
+7. Set up your slicer for OpenCreator: follow [Slicer Configuration](slicer-config.md) before your first print.
 
 ## Steps to update OpenCreator
 There are two ways.
