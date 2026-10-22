@@ -89,6 +89,7 @@ plugins:
 nav:
   - Home: index.md
   - Getting Started:
+    - Is OpenCreator CFW for you?: is-cfw-for-you.md
     - Getting started: getting-started.md
     - Installation: installation-and-safety.md
     - OpenCreator Installer: installer.md

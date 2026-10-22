@@ -18,6 +18,10 @@ We're also currently the only custom firmware that has this.
 
 We also actively take in suggestions and if we like them, we'll implement them.
 
+## Up to 2x faster toolchanges
+A stock toolchange usually takes about 6 seconds. On OpenCreator CFW one can take as little as 3 seconds,
+so multi-color and multi-material prints spend far less time swapping tools.
+
 ## Klipper 
 We're fully Kalico, a fork of Klipper with more features. No FlashForge, no old Klipper.
 

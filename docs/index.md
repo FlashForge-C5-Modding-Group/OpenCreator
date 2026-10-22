@@ -28,6 +28,12 @@ with alternate custom firmwares, even though support may be diminished.
 
 <div class="grid cards" markdown>
 
+-   :material-help-circle: **[Is OpenCreator CFW for you?](is-cfw-for-you.md)**
+
+    ---
+
+    What you gain, what you give up, and when Legacy fits better.
+
 -   :material-rocket-launch: **[Getting started](getting-started.md)**
 
     ---
