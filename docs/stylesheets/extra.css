@@ -86,16 +86,6 @@
   background-color: var(--oc-ok);
 }
 
-/* Announcement banner */
-.md-banner {
-  background: linear-gradient(90deg, #3a1608, #5a2410 50%, #3a1608);
-  color: #ffe7da;
-}
-.md-banner a {
-  color: #ffb02e;
-  text-decoration: underline;
-}
-
 /* Mermaid diagrams */
 :root {
   --md-mermaid-node-bg-color: var(--md-accent-fg-color--transparent);

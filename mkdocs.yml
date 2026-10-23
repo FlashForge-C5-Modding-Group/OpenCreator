@@ -16,7 +16,6 @@ theme:
   features:
     - navigation.sections
     - navigation.indexes
-    - announce.dismiss
     - navigation.top
     - navigation.footer
     - navigation.instant
