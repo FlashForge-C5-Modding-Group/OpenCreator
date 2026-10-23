@@ -22,6 +22,10 @@ We also actively take in suggestions and if we like them, we'll implement them.
 A stock toolchange usually takes about 6 seconds. On OpenCreator CFW one can take as little as 3 seconds,
 so multi-color and multi-material prints spend far less time swapping tools.
 
+<video class="oc-video" controls preload="metadata" playsinline>
+  <source src="../assets/videos/toolchange-speed.mp4" type="video/mp4">
+</video>
+
 ## Klipper 
 We're fully Kalico, a fork of Klipper with more features. No FlashForge, no old Klipper.
 

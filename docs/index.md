@@ -65,12 +65,6 @@ with alternate custom firmwares, even though support may be diminished.
 
 <div class="grid cards" markdown>
 
--   :material-history: **[OpenCreator Legacy](opencreator-legacy.md)**
-
-    ---
-
-    The "Legacy" version of OpenCreator, which works around FlashForge instead of replacing it.
-
 -   :material-chip: **[OpenCreator CFW](opencreator-cfw.md)**
 
     ---
@@ -88,6 +82,12 @@ with alternate custom firmwares, even though support may be diminished.
     ---
 
     OpenCreator features in general over stock.
+
+-   :material-history: **[OpenCreator Legacy](opencreator-legacy.md)**
+
+    ---
+
+    The "Legacy" version of OpenCreator, which works around FlashForge instead of replacing it.
 
 </div>
 

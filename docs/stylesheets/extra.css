@@ -135,3 +135,12 @@
   border-radius: 0.5rem;
   border: 1px solid var(--md-default-fg-color--lightest);
 }
+
+/* Inline videos */
+.md-typeset video.oc-video {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  margin: 1rem auto;
+  border-radius: 0.4rem;
+}
