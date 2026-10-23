@@ -59,6 +59,7 @@ and a web UI. It's in public alpha, so it suits some people more than others.
 - **Rely on the stock touchscreen.** GrumpyScreen replaces it and shows all four tools, but can't extrude yet.
 - **Use FlashForge's app, cloud or FlashStudio.** These go away once FlashForge's services are disabled.
 - **Care about your warranty.** Installing mods may void it.
+- **Want official support.** You can't ask FlashForge for software support if you're on custom firmware.
 
 ## Not sure?
 

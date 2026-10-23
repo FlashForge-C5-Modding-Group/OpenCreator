@@ -1,15 +1,10 @@
 # OpenCreator Installer
 
-<span class="oc-status ok">Working</span>
-
 The OpenCreator Installer is a touchscreen app that runs on the Creator 5's own
 screen. It walks you through installing OpenCreator CFW from a USB drive: on the
 printer itself, or tunneled to a Raspberry Pi / SBC. It backs everything up
 first, so you can go back. Its source is the `opencreator-installer`
 repository.
-
-!!! success "Tested"
-    The installer has been tested, from a completely stock install to a fully modded OpenCreator SoC install on multiple printers, testing is available for anyone who asks.
 
 ## Download
 
@@ -23,6 +18,7 @@ Extract the zip to the root of a FAT32 USB drive, then follow
 - [x] A USB drive that meets the [requirements](installation-and-safety.md#requirements-for-usb)
 - [x] Internet on the printer (Entware, Kalico, Moonraker and the web UIs are downloaded during install)
 - [x] For tunnel mode: an SBC, see [OpenCreator for SBC](rpi-klipper.md)
+- [x] A printer that has at least 200MB on the prog partition and 1gb of storage on the data partition
 
 ## How it goes
 

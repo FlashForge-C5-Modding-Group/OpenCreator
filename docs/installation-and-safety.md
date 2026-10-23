@@ -29,8 +29,11 @@ stops without changing anything. See [Supported kernel packages](installer.md).
 ## Requirements for USB
 
 - [x] FAT32 Partition
-- [x] At least 4GB in size (For nowifi install)
-- [x] USB is recommended to have at least 16GB for the backup step
+- [x] At least 4GB in size 
+- [x] USB is recommended to have at least 8GB for the backup step
+
+## Requirement for printer
+- [x] A printer that has at least 200MB on the prog partition and 1gb of storage on the data partition
 
 ## Steps to install OpenCreator
 
@@ -58,6 +61,6 @@ Sometimes an update can't be distributed like that, this is the other way for mo
 1. Load the update by copying files overtop the existing files
 2. Plug in the USB drive and reboot
 3. Update with backups or without backups (Backups will make it last significantly longer and are not required for updates)
-4. Restart & when it prompts you
+4. Restart when it prompts you
 
 
