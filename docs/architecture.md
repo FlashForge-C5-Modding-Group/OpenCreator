@@ -13,9 +13,6 @@ configuration ties those parts together.
 | Heaterboard MCU | Handles tool heater and temperature I/O. Chip is `n32g455rel7`. | `kalico/src/stm32` N32G45x support (`C5_HEATERBOARD` build option) |
 | Levelboard MCU | Supplies probe and levelboard-specific sensing used by calibration. Chip is `n32g430f8s7`. | `kalico/src/c5_levelboard.c` and Klippy levelboard code |
 | Toolchanger and AFC | Uses physical dock and grab inputs for T0 to T3 selection. AFC standalone provides filament and tool mapping, while `creator5_toolchanger.py` owns the machine-specific motion and safety checks. | `kalico/klippy/extras` |
-
-klipper-c5, the original host and MCU port, is archived: everything above now
-lives in Kalico.
 | Printer filesystem | Holds the Creator 5 configuration, AFC configuration, scripts, and printer data layout. | [opencreator-fs](https://github.com/FlashForge-C5-Modding-Group/opencreator-fs) |
 
 ## Printer-side layout
