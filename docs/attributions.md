@@ -27,3 +27,5 @@ FlashForge's MCU and Touchscreen research was done.
 - @ChrisBBaken4536 --- another tester, and first to mess around on older firmwares, and sacrificed a nozzle (RIP).
 - @Null__f --- another tester which found some small bugs.
 - @spmomeiette --- another tester which found small critiques.
+
+### There were both human and AI use.
