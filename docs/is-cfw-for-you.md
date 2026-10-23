@@ -45,6 +45,13 @@ and a web UI. It's in public alpha, so it suits some people more than others.
 
     Move Klipper onto an SBC for more power and cameras. See [OpenCreator for SBC](rpi-klipper.md).
 
+-   :material-rocket-launch-outline: **Want what's coming next**
+
+    ---
+
+    More is on the way, including more accurate pressure advance tuned to your filament, and stall
+    and skipped step detection (StallGuard-like) on X, Y and Z. Both are coming soon.
+
 </div>
 
 ## CFW may not be for you yet if you
