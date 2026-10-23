@@ -13,7 +13,7 @@ repository.
 
 ## Download
 
-The installer is part of the [0.0.1 release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/tag/0.0.1) (Public Alpha Version 1).
+The installer is part of each [OpenCreator release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/latest); use the latest one.
 Extract the zip to the root of a FAT32 USB drive, then follow
 [Steps to install OpenCreator](installation-and-safety.md#steps-to-install-opencreator).
 

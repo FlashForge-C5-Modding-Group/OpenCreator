@@ -4,7 +4,7 @@ OpenCreator has two paths. [Legacy](opencreator-legacy.md) keeps the mostly
 stock FlashForge control stack and adds selected modifications.
 [OpenCreator CFW](opencreator-cfw.md) replaces more of that stack with
 community-maintained Klipper and printer-side components. CFW is in public
-alpha: download the [0.0.1 release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/tag/0.0.1) and see
+alpha: download the [latest release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/latest) and see
 [Installation and safety](installation-and-safety.md).
 
 If you want to improve a working stock printer today, start with the

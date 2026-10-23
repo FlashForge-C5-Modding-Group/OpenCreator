@@ -1,7 +1,7 @@
 # Installation and safety
 
-OpenCreator CFW 0.0.1, Public Alpha Version 1, is the first official release.
-Download it from the [0.0.1 release on GitHub](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/tag/0.0.1).
+OpenCreator CFW is in public alpha. Download the
+[latest release on GitHub](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/latest).
 
 !!! warning "Alpha"
     This is an alpha. Expect bugs, keep a backup, and know how to go back to stock.
@@ -34,7 +34,7 @@ stops without changing anything. See [Supported kernel packages](installer.md).
 
 ## Steps to install OpenCreator
 
-1. Download the zip from the [0.0.1 release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/tag/0.0.1) and extract it to the root of the USB drive
+1. Download the zip from the [latest release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/latest) and extract it to the root of the USB drive
 2. Reboot the printer with the USB plugged in
 3. Go through the steps, SoC installs are recommended for people who don't know what tunneled is
 4. Wait about 25-30 minutes for things to install
