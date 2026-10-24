@@ -16,33 +16,37 @@ cancels the job; unused tools are not required to be loaded.
 ```mermaid
 flowchart TD
   A[Check filament in every used tool] -->|missing| X[Cancel the job]
-  A --> B[Home]
-  B --> C[Preheat used tools to max 100 °C<br/>while the bed heats]
-  C --> D{Flow calibration<br/>or purge on?}
+  A --> C[Start preheating used tools<br/>to max 100 °C]
+  C --> B[Home, then wait for the bed]
+  B --> D{Flow calibration<br/>or purge on?}
   D -->|yes| E[For each used tool:<br/>pick up, nozzle Z, heat,<br/>flow / purge, cool, dock]
-  D -->|no| F
-  E --> F{Bed leveling on?}
+  D -->|no| W
+  E --> W[Wait for used tools<br/>to reach their preheat]
+  W --> F{Bed leveling on?}
   F -->|yes| G[Adaptive mesh]
   F -->|no| H[Load saved mesh]
   G --> I[Center probe check]
   H --> I
-  I --> J[Pick up first tool, apply nozzle Z,<br/>park, wait for print temperature]
+  I --> J[Pick up first tool, apply nozzle Z,<br/>park, other tools to half temperature,<br/>wait for print temperature]
   J --> K[Slicer G-code starts]
 ```
 
-1. Home for printing. If a tool is attached, the Creator 5 homing helper
-   handles its docking before Z homing.
-2. Start non-blocking preheat of every used tool to at most 100 °C while the
-   bed reaches its target.
+1. Start a non-blocking preheat of every used tool to at most 100 °C, so the
+   tools warm while the printer homes and the bed heats.
+2. Home for printing. If a tool is attached, the Creator 5 homing helper
+   handles its docking before Z homing. Then wait for the bed to reach its
+   target.
 3. If flow calibration or purge is enabled, prepare each used tool in turn:
    select it, establish its nozzle Z reference, heat it to its material
    temperature, run the selected flow and/or purge operation, cool it for
    docking, and release it.
-4. Clear the old mesh. When bed leveling is enabled, create an adaptive mesh.
+4. Wait for every used tool to reach its preheat (re-applied, since docking
+   after priming may have left it cooler). Then clear the old mesh. When bed leveling is enabled, create an adaptive mesh.
    Otherwise, load the saved default mesh if one exists.
 5. Probe the bed center as a check, then select the job's initial tool. Apply
    its automatic nozzle Z, verify that a safe nozzle Z is available, smart
-   park, and wait for its print temperature. The slicer's print moves follow.
+   park, and wait for its print temperature. The print's other tools are set
+   to half their print temperature. The slicer's print moves follow.
 
 The center probe check does **not** itself replace the automatic nozzle Z
 measurement. A missing safe nozzle Z is a print-stopping condition, not a
