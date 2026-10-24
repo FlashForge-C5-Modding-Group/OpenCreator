@@ -34,6 +34,7 @@ stops without changing anything. See [Supported kernel packages](installer.md).
 
 ## Requirement for printer
 - [x] A printer that has at least 200MB on the prog partition and 1gb of storage on the data partition
+- [x] A printer that has an active and stable internet connection of at least 1 mbps
 
 ## Steps to install OpenCreator
 
@@ -80,3 +81,5 @@ from FlashForge's [download center](https://www.flashforge.com/pages/download-ce
     `/usr/data/grumpyscreen`
     `/usr/data/python-hf`
     Moonraker will also be updated, and will have to be reinstalled if you go back to stock
+
+    If you uninstall OpenCreator and you picked Fluidd, you'll have to revert Nginx to stock configs.
