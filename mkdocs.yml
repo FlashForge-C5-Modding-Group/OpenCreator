@@ -99,6 +99,7 @@ nav:
     - OpenCreator CFW Features: cfwfeatures.md
     - OpenCreator for SBC: rpi-klipper.md
     - What makes us different: different.md
+  - Printable Mods: printable-mods.md
   - Technical Reference:
     - Architecture: architecture.md
     - MCU development and verification: mcu-development.md
