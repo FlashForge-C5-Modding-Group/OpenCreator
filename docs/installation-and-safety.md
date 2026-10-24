@@ -73,3 +73,10 @@ from FlashForge's [download center](https://www.flashforge.com/pages/download-ce
    [download center](https://www.flashforge.com/pages/download-center)
 2. Put the file on the USB and plug it in, without OpenCreator also on the drive
 3. Once it finishes, the printer runs FlashForge's firmware again, with the stock MCU firmware on every board
+
+!!! warn "Files left over"
+    There are some files left over from uninstalling, they can be removed via
+    `/usr/data/opencreator`
+    `/usr/data/grumpyscreen`
+    `/usr/data/python-hf`
+    Moonraker will also be updated, and will have to be reinstalled if you go back to stock
