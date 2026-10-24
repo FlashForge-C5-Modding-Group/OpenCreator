@@ -384,6 +384,30 @@ TUNING_TOWER COMMAND=SET_PRESSURE_ADVANCE PARAMETER=ADVANCE START=0 FACTOR=.005
 
 Then compare the height where the corners look best with both results.
 
+## Filament dryer (VDS)
+
+On the SoC install, OpenCreator drives FlashForge's two-chamber VDS filament dryer the same way the stock
+firmware does: over the printer's internal serial port `/dev/ttyS3` at 115200 baud. Plug the dryer in where
+FlashForge says to before installing: the installer only turns the dryer controls on when a dryer answers.
+It then writes `printer.accessory.dryer.cfg`, which loads `printer.dryer.cfg`. If you add a dryer later, rerun the
+installer or add `[include printer.dryer.cfg]` to `printer.cfg` yourself.
+
+| Command | What it does |
+| --- | --- |
+| `C5_DRYER_START CHAMBER=A\|B\|AB TEMP=45-85 HOURS=1-48` | Dry one or both chambers (`MINUTES=60-2880` works instead of `HOURS`) |
+| `C5_DRYER_STOP CHAMBER=A\|B\|AB` | Stop drying |
+| `C5_DRYER_PAUSE CHAMBER=A\|B\|AB` | Turn the heaters off; start again with `C5_DRYER_START` |
+| `C5_DRYER_DEHUMIDIFY CHAMBER=A\|B\|AB ENABLE=0\|1` | Keep a chamber dry after drying |
+| `C5_DRYER_STATUS` | Firmware version, and each chamber's state, temperature, humidity and time left |
+| `C5_DRYER_PLA`, `C5_DRYER_PETG`, `C5_DRYER_ABS`, `C5_DRYER_OFF` | Presets (50, 65 and 80 °C for 6 hours) and stop; add `CHAMBER=A` or `B` for one chamber |
+
+`CHAMBER` defaults to both. The chambers also show up as the temperature sensors **dryer_a** and **dryer_b**,
+with their humidity, so Fluidd and Mainsail graph them. Macros can read `printer.creator5_dryer`
+(`connected`, `firmware_version`, and per chamber `drying`, `temperature`, `humidity`, `remaining_minutes`).
+
+The dryer's own firmware limits drying to 45-85 °C and 1-48 hours. OpenCreator doesn't update the dryer's
+firmware; if `C5_DRYER_STATUS` says it is in its bootloader, update it from stock FlashForge firmware.
+
 ## Offset Calibration
 
 Offset calibration aligns the *nozzles* of T0–T3 for printing. It is separate
