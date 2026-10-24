@@ -41,6 +41,8 @@ flowchart TD
    installer version, the MCU firmware on the drive (and what the boards last
    got, if OpenCreator flashed them before), the kernel package and the build
    date.
+
+   [![Installer checking the printer, with the OpenCreator logo](assets/images/installer/check.png){ .oc-shot loading=lazy }](assets/images/installer/check.png)
 2. **Where should Klipper run?** *On printer SoC* installs everything on the
    printer. *Tunneled* turns the printer's board into a bridge for an SBC.
    Tunneled needs FlashForge firmware 1.9.9: on 1.9.8 or older it's greyed
@@ -48,22 +50,37 @@ flowchart TD
    Choosing *Tunneled* asks for the tunneled-mode password, typed on the screen's
    keyboard, both for a first install and for switching an installed printer to
    tunneled. It isn't asked again when the printer is already tunneled.
+
+   [![Where should Klipper run? On printer SoC, Tunneled and Clean up storage](assets/images/installer/mode.png){ .oc-shot loading=lazy }](assets/images/installer/mode.png)
 3. **Web interface** (SoC only): Fluidd (recommended) or Mainsail. Both are installed; the
    one you pick is the one the printer's web page shows.
+
+   [![Choose web interface: Fluidd (recommended) or Mainsail](assets/images/installer/web.png){ .oc-shot loading=lazy }](assets/images/installer/web.png)
 4. **Touchscreen**: install GrumpyScreen (recommended) or not.
+
+   [![Install touchscreen UI? Yes (recommended) or No](assets/images/installer/touch.png){ .oc-shot loading=lazy }](assets/images/installer/touch.png)
 5. **Ready to install** shows the printer, mode, web UI and touchscreen you
    chose. *Back up and install* starts; *Install without backup* skips the
    backup (faster when re-running); *Demo install* does a dry run (below).
+
+   [![Ready to install: printer, mode, web UI and touchscreen summary](assets/images/installer/ready.png){ .oc-shot loading=lazy }](assets/images/installer/ready.png)
 6. **Installing** shows each step live with its number (*Step 3 of 11*), a
    progress bar and elapsed time.
    Installing Entware and the Python packages takes a while.
+
+   [![Installing, with the current step, progress bar and elapsed time](assets/images/installer/installing.png){ .oc-shot loading=lazy }](assets/images/installer/installing.png)
 7. **Installation complete**: reboot from the button, then unplug the USB drive.
+
+   [![Installation complete with a Reboot now button](assets/images/installer/done.png){ .oc-shot loading=lazy }](assets/images/installer/done.png)
 
 ### Already installed
 
 If the printer already has OpenCreator from the same installer version, the
-installer opens on **OpenCreator is installed** with two choices:
+installer opens on **OpenCreator is up to date**:
 
+[![OpenCreator is up to date: Recovery, Update Configs, Update again and Clean up storage](assets/images/installer/installed.png){ .oc-shot loading=lazy }](assets/images/installer/installed.png)
+
+- **Update again** re-runs the update with the current setup.
 - **Recovery** runs the whole setup again, as above.
 - **Update Configs** asks the same questions (where Klipper runs, web UI,
   touchscreen), then shows only what differs from the current setup and
@@ -72,11 +89,33 @@ installer opens on **OpenCreator is installed** with two choices:
   SoC mode needs and isn't on the printer yet. Switching web UI changes which
   one the printer serves; turning the touchscreen off keeps GrumpyScreen on
   the printer but stops starting it. Nothing is backed up. Reboot afterwards.
+- **Restore backup** and **Rollback to stock** show up when there's a backup or
+  FlashForge's own firmwareExe to go back to.
+
+### Update available
+
+With an older OpenCreator installed, it opens on **Update available**, which
+updates in place with the setup shown. Your configs and files are kept; OpenCreator
+files you changed are saved to the backup. *Change setup* asks the questions again.
+
+[![Update available: 0.0.3 to Public Alpha 4, with the setup that's kept](assets/images/installer/update.png){ .oc-shot loading=lazy }](assets/images/installer/update.png)
+
+### No internet
+
+Without internet, it lists the Wi-Fi networks it can see. Tap one and type its
+password on the screen's keyboard. Quit starts the printer normally.
+
+[![No internet connection: a list of Wi-Fi networks with their signal strength](assets/images/installer/offline.png){ .oc-shot loading=lazy }](assets/images/installer/offline.png)
 
 ### Clean up storage
 
 Every start page (first install, update, already installed, no internet,
-unsupported kernel) has **Clean up storage**. After a confirmation, it deletes:
+unsupported kernel) has **Clean up storage**. Its confirmation page warns that
+nothing can be brought back, and *Yes, delete* only works after a 10-second
+countdown. It deletes:
+
+[![Clean up storage? The list of what is deleted, the warning, and Yes, delete counting down from 10](assets/images/installer/cleanup.png){ .oc-shot loading=lazy }](assets/images/installer/cleanup.png)
+
 
 - every print file (`.gcode`, `.3mf`, `.stl`), `.mp4` and log under `/usr/data`
   and `/usr/prog`;
@@ -88,7 +127,8 @@ unsupported kernel) has **Clean up storage**. After a confirmation, it deletes:
 
 Git checkouts (Klipper, Moonraker, opencreator-fs and the rest), the stock
 firmware's own model files and the installer's backups are kept. It can't be
-undone. Based on [CleanFlashforgeCreator5Pro](https://github.com/d3dorsett/CleanFlashforgeCreator5Pro).
+undone, and OpenCreator takes no responsibility for anything it breaks or
+removes. Based on [CleanFlashforgeCreator5Pro](https://github.com/d3dorsett/CleanFlashforgeCreator5Pro).
 
 ??? info "Supported kernel packages"
     Entware needs *legacy NaN*, which is switched on with one byte written at
