@@ -14,7 +14,7 @@ well it has been tested on a printer.
 | Touchscreen and web UI | Mainsail/Fluidd controls and separate touchscreen. | GrumpyScreen has had multi-extruder pulled in, macros are in dev. |
 | Complete removal of firmwareExe | The main pain point for FlashForge printers | Their bad touchscreen + camera + print uploading sequence has been completely removed and do not function at all. |
 | Installer | Touchscreen installer from a USB drive: Entware, LoopScript, Kalico, Moonraker, Mainsail/Fluidd, GrumpyScreen, the root login and MCU firmware flashing, with a backup first (optional) and restore. Recovery and Update Configs when it's already installed. | Working: tested from a fully stock install to a OpenCreator install. |
-| OpenCreator Updater | A Moonraker update_manager entry (Pi-tunnel installs) that 3-way-merges the latest config template into your live config without clobbering customized values, then pulls Klipper -- one "Update" click. SoC installs get an equivalent LoopScript-triggered version. | Verified live on a real Pi + printer, conflicts no longer ever touch the live file, only a sibling .conflict file. SoC version is unverified on real hardware. |
+| OpenCreator Updater | A Moonraker update_manager entry (Pi-tunnel installs) that 3-way-merges the latest config template into your live config without clobbering customized values, then pulls Klipper -- one "Update" click. SoC installs get an equivalent LoopScript-triggered version. | Verified live on a real Pi + printer, conflicts no longer ever touch the live file, only a sibling .conflict file. SoC also works. |
 | Real Zero Purge modes | Implemented into switches | You can turn off Flow Calibration and Purging to make a basically zero waste printer. It prints a small purge line to prime the nozzle when starting the print, but thats it. It is under runout in Fluidd, or Misc in Mainsail. |
 | Print Farm / Automation support | Ready | Needs testing, but it should work with anything that just uses Moonraker. You should be able to just plop in any file and it should be able to just take it. |
 | RPI Support | In testing | Currently being tested, but allowing to tunnel the board MCUs to a Raspberry Pi. High quality cables are required or else you will get strange results. |
@@ -28,7 +28,7 @@ well it has been tested on a printer.
 - [x] Complete removal of firmwareExe
 - [x] OpenCreator Updater (Pi-tunnel)
 - [x] Real Zero Purge modes
-- [ ] Flow and VFA calibration without bugs on interrupted flow
+- [x] Flow and VFA calibration without bugs on interrupted flow
 - [ ] GrumpyScreen macros and extruding
 - [x] Installer verified end to end on a printer
 - [ ] RPi / SBC support out of testing
@@ -39,7 +39,7 @@ well it has been tested on a printer.
 - [ ] ACE Pro integration as an additional filament system.
 - [x] Sliced G-code 3MF intake in the print-upload path (SBC installs, not yet verified on a printer).
 - [ ] Version tracking
-- [ ] AI-vision overwatch for failures
+- [x] AI-vision overwatch for failures (Can be implemented via Pi and any service)
 - [ ] Further detection for print failures
 - [ ] Reducing amount of wasted filament when runout is occured
 

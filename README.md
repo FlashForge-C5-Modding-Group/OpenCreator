@@ -24,8 +24,3 @@ dashboard and select this repository's `main` branch. The root
 `.readthedocs.yaml` installs the pinned documentation dependencies and builds
 `mkdocs.yml`. Read the Docs will provide the project URL after import; no
 deployment credentials belong in this repository.
-
-The site is development documentation, not a flashing guide. Add a release
-installation or recovery procedure only after it has been tested on the
-specified hardware and build. Keep current source behavior separate from
-verified printer behavior.

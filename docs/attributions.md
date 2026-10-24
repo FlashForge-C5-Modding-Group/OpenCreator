@@ -27,5 +27,6 @@ FlashForge's MCU and Touchscreen research was done.
 - @ChrisBBaken4536 --- another tester, and first to mess around on older firmwares, and sacrificed a nozzle (RIP).
 - @Null__f --- another tester which found some small bugs.
 - @spmomeiette --- another tester which found small critiques.
+- @Qba$ --- another tester, added support for rk3318.
 
 ### There were both human and AI use.
