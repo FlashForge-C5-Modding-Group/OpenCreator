@@ -23,6 +23,6 @@ Join our Discord for support and to report problems with the alpha.
 
 - [x] Read [Status and roadmap](status-and-roadmap.md)
 - [x] Read [Installation and safety](installation-and-safety.md)
-- [x] Know how to revert to stock firmware
+- [x] Know how to [revert to stock firmware](installation-and-safety.md#uninstalling-opencreator)
 - [x] Have a USB drive that meets the [requirements](installation-and-safety.md#requirements-for-usb)
 - [x] Join the [Discord](https://discord.gg/RsdkqDtfww) for support

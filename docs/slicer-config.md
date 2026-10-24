@@ -48,13 +48,23 @@ These will change stuff like printer agents.
     now on. Files already on the printer show no estimate until you upload them
     again.
 
-- [x] **Remove or comment out some G-code:**
+- [x] **Remove or comment out some G-code Print Start (Older versions of the profile):**
 
     `LINE_PURGE G1 X256 Y0 Z0.2 F6000`
 
     `G1 E5 F{filament_max_volumetric_speed[initial_no_support_extruder]/2.4053*60}`
 
     `G1 X216 E10 F{filament_max_volumetric_speed[initial_no_support_extruder]/2.4053*60}`
+
+- [x] **Remove or comment out some G-code Print Start (Newer versions of the profile):**
+    `G1 X256 Y0 Z0.2 F6000`
+
+    `G1 E5 F{filament_max_volumetric_speed[initial_no_support_extruder]/2.4053*60}`
+
+    ` G1 X216 E10 F{filament_max_volumetric_speed[initial_no_support_extruder]/2.4053*60}`
+
+- [x] **Remove or comment out some G-code Print End (Newer versions of the profile):**
+    `G1 X150 Y150 E-1.2 F12000`
 
 - [x] **Layer change G-code (optional, for timelapses):** add
   `TIMELAPSE_TAKE_FRAME` on its own line, so [Timelapse](printer-features.md#timelapse)

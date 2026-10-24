@@ -64,3 +64,12 @@ Sometimes an update can't be distributed like that, this is the other way for mo
 4. Restart when it prompts you
 
 
+
+## Uninstalling OpenCreator
+To uninstall OpenCreator and go back to bone stock, install any firmware update for your printer
+from FlashForge's [download center](https://www.flashforge.com/pages/download-center).
+
+1. Download the firmware for your model (Creator 5 or Creator 5 Pro) from the
+   [download center](https://www.flashforge.com/pages/download-center)
+2. Put the file on the USB and plug it in, without OpenCreator also on the drive
+3. Once it finishes, the printer runs FlashForge's firmware again, with the stock MCU firmware on every board
