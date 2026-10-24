@@ -26,6 +26,10 @@ so multi-color and multi-material prints spend far less time swapping tools.
   <source src="../assets/videos/toolchange-speed.mp4" type="video/mp4">
 </video>
 
+## Fixes stock firmware bugs
+FlashForge's firmware has a bug where switching extruders while one is unloading
+can make the extruder run backwards. OpenCreator CFW fixes this.
+
 ## Klipper 
 We're fully Kalico, a fork of Klipper with more features. No FlashForge, no old Klipper.
 
