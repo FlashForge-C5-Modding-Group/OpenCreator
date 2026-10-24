@@ -73,6 +73,23 @@ installer opens on **OpenCreator is installed** with two choices:
   one the printer serves; turning the touchscreen off keeps GrumpyScreen on
   the printer but stops starting it. Nothing is backed up. Reboot afterwards.
 
+### Clean up storage
+
+Every start page (first install, update, already installed, no internet,
+unsupported kernel) has **Clean up storage**. After a confirmation, it deletes:
+
+- every print file (`.gcode`, `.3mf`, `.stl`), `.mp4` and log under `/usr/data`
+  and `/usr/prog`;
+- everything in `/usr/data/logs`, `/usr/data/update` (FlashForge update
+  downloads), `/usr/data/opencreator/timelapse`,
+  `/usr/data/opencreator/klipper/logs` and the Entware caches;
+- other mods' leftovers (ZMOD, Anvil), old Moonraker copies, and the stock
+  Klipper docs and man pages.
+
+Git checkouts (Klipper, Moonraker, opencreator-fs and the rest), the stock
+firmware's own model files and the installer's backups are kept. It can't be
+undone. Based on [CleanFlashforgeCreator5Pro](https://github.com/d3dorsett/CleanFlashforgeCreator5Pro).
+
 ??? info "Supported kernel packages"
     Entware needs *legacy NaN*, which is switched on with one byte written at
     an address that depends on the FlashForge kernel package
@@ -91,7 +108,7 @@ installer opens on **OpenCreator is installed** with two choices:
     | LoopScript | OpenCreator's startup system from [opencreator-fs](https://github.com/FlashForge-C5-Modding-Group/opencreator-fs): it replaces FlashForge's `firmwareExe` (a copy of the original is kept) and starts everything below at boot. It also replaces the boot logo with the OpenCreator one (the original is backed up). |
     | MCU firmware | Flashes all four boards (eBoard, heaterBoard, levelBoard, mainBoardGD) from the package on the USB drive, after checking its checksum. Skipped if the boards already run that firmware. |
     | Klipper | [Kalico](https://github.com/FlashForge-C5-Modding-Group/kalico) with the OpenCreator printer config, including the [first-time setup dialog](printer-features.md#first-time-setup) and the OpenCreator Fluidd theme, in `/usr/data/opencreator/klipper`. A first install takes the printer's input shaper and hotend and bed PID tuning from FlashForge's config; a config you already have there is kept. |
-    | Moonraker | The latest Moonraker, replacing FlashForge's older one. Its update manager lists Kalico, Moonraker, Mainsail, Fluidd and **opencreator** (the OpenCreator configs). Updating *opencreator* merges the new config templates into yours within a minute, keeping your own edits, then restarts Klipper once nothing is printing. |
+    | Moonraker | The latest Moonraker, replacing FlashForge's older one. Its update manager lists Kalico, Moonraker, Mainsail, Fluidd and **opencreator** (the OpenCreator configs). Updating *opencreator* merges the new config templates into yours within a minute, keeping your own edits. Restart Klipper afterwards to load them. |
     | Web UI | The latest Mainsail and Fluidd; the printer's web page shows the one you chose. |
     | Touchscreen | The latest [GrumpyScreen](https://github.com/FlashForge-C5-Modding-Group/grumpyscreen) release, if chosen. |
     | Root login | Adds the root login `opencreator` (password `FlashForge2026`) for SSH. See [Root login](#root-login). |

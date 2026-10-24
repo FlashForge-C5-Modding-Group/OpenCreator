@@ -46,6 +46,8 @@ flowchart TD
 5. Probe the bed center as a check, then select the job's initial tool. Apply
    its automatic nozzle Z, verify that a safe nozzle Z is available, smart
    park, and wait for its print temperature. The print's other tools are set
+   to their slicer idle temperature (Orca's *Idle temperature*), or 100 °C
+   if it has none. The print's other tools are set
    to half their print temperature. The slicer's print moves follow.
 
 The center probe check does **not** itself replace the automatic nozzle Z

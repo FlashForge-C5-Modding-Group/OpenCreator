@@ -12,6 +12,7 @@ We've used some open source projects, here's the ones we've used, this isn't ful
 | Mainsail | Web interface | [GPLv3](https://github.com/mainsail-crew/mainsail) |
 | Moonraker Timelapse | Print timelapses | [GPLv3](https://github.com/mainsail-crew/moonraker-timelapse) |
 | Material for MkDocs | This documentation site | [MIT](https://github.com/squidfunk/mkdocs-material) |
+| CleanFFC5P | A cleanup script for removing old G-Code, mods, and similar things | [MIT](https://github.com/d3dorsett/CleanFlashforgeCreator5Pro?tab=MIT-1-ov-file) |
 
 We've also used a non open source project, which should be.<br>
 FlashForge's MCU and Touchscreen research was done.
