@@ -31,9 +31,9 @@ These will change stuff like printer agents.
 
 [![OrcaSlicer printer settings, Basic information: Printer Agent set to Moonraker, Use 3MF instead of G-code and Disable set remaining print time both unticked](assets/images/orca-printer-settings.png){ .oc-shot loading=lazy }](assets/images/orca-printer-settings.png)
 
-!!! tip "3MF on SBC installs"
-    [SBC installs](rpi-klipper.md#3mf-uploads) also accept sliced 3MF uploads, but plain G-code
-    works on every install, so keep 3MF off unless you need it.
+!!! tip "3MFs"
+     .gcode.3mf files will get automatically changed to normal .gcode on upload, so to optimize file size uploading, you may use it.
+     This has a downside of unzip / parse time being much higher, but the time you save via internet uploading could be worth it.
 
 ### Machine G-code
 
