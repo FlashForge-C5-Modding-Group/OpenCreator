@@ -2,6 +2,10 @@
 
 A collection of configurations and settings for Custom Firmware OpenCreator.
 
+## New - OrcaSlicer Cloud Profile
+For those who do not want to do this manually, we now have an Orca Cloud Profile!
+Check it out [here](https://cloud.orcaslicer.com/b/4e8284d5f077)
+
 ## Print profile
 
 - [x] Under **Quality → Precision**, switch `Arc fitting` **off**.
