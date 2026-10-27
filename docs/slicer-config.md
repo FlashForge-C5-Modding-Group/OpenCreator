@@ -41,7 +41,7 @@ These will change stuff like printer agents.
 
 ### Machine G-code
 
-- [x] **File start G-code:** clear it (leave it empty).
+- [x] **File header G-code:** clear it (leave it empty).
   The FlashForge profile puts a FlashForge-style time estimate there, and Orca
   also copies that setting into the end of the file, where Moonraker reads it
   instead of the real estimate. With it in place, Fluidd and Mainsail show no
