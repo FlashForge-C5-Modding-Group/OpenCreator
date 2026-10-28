@@ -448,6 +448,27 @@ XY-only calibration and needs a configured scan height or `SCAN_Z`; the
 default `Z=1` probes the nozzle Z automatically. `TOOL=ALL` always refreshes
 the fixture reference and requires `Z=1`.
 
+## Baby stepping
+
+Baby stepping a tool's Z offset during a print, from Fluidd's or Mainsail's
+Z adjust buttons or `SET_GCODE_OFFSET Z_ADJUST=`, is saved as you go. It's
+saved as that tool's Z adjustment in `/usr/data/firmwareRes/config/zoffset.json`,
+the same value the touchscreen's Z offset sets. The next print, and the same
+tool after a toolchange, start from it. Each tool keeps its own value.
+
+| Macro | What it does |
+| --- | --- |
+| `LIST_BABYSTEP` | Shows the saved Z adjustment for every tool. `TOOL=2` shows only T2. |
+| `CLEAR_BABYSTEP TOOL=1` | Resets T1's saved Z adjustment to 0. With no `TOOL`, or `TOOL=ALL`, it resets all four. |
+
+Clearing the attached tool also takes the adjustment off its current Z offset.
+Because the touchscreen uses the same value, clearing a tool also clears its
+touchscreen Z offset.
+
+A Z change of more than 1 mm at once isn't treated as baby stepping and isn't
+saved. To stop saving baby stepping, add `persist_babystep: False` to
+`[creator5_toolchanger]`.
+
 ## Toolhead Dock Calibration
 
 Toolhead dock calibration, called **Extruder Position Calibrate** in the

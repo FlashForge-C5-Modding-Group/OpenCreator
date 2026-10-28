@@ -10,6 +10,7 @@
 | ZMax on Print End | <span class="oc-status ok">Finished</span> | Puts the bed to the very bottom of the build area, for easy grabbing, a suggestion from @josemyab |
 | Allow for near zero purge printing | <span class="oc-status ok">Finished</span> | You can turn off purge and flow calibration to have almost zero purge on start, a half suggestion from @josemyab |
 | Allow for calibration of only one toolhead | <span class="oc-status ok">Finished</span> | You don't need to calibrate all offsets to update z-offset of a nozzle, for switching nozzles. |
+| Saved baby stepping per tool | <span class="oc-status test">Testing</span> | Baby stepping Z during a print is saved to that tool's Z offset, so the next print starts from it. `LIST_BABYSTEP` shows each tool's value and `CLEAR_BABYSTEP TOOL=` resets one or all; see [Baby stepping](printer-features.md#baby-stepping). |
 | Allow for configuration of nozzle calibration | <span class="oc-status ok">Finished</span> | If your nozzle doesn't fit the min mm for levelboard, you can set it higher. |
 | Filament runout and switchover support | <span class="oc-status test">Untested</span> | Give a tool a backup in AFC ("Infinite Spool") and a runout switches to it by itself, with the run-out tool's Tx commands sent to the backup. With no backup, it pauses and asks: switch to another loaded tool, or load new filament. |
 | AFC Toolchanger | <span class="oc-status ok">Finished</span> | Allows for the use of AFC filament system, but with toolchangers. Should be fully functional except for "loaded" filament buttons. |
