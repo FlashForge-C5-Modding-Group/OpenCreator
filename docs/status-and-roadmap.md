@@ -18,6 +18,7 @@ well it has been tested on a printer.
 | Real Zero Purge modes | Implemented into switches | You can turn off Flow Calibration and Purging to make a basically zero waste printer. It prints a small purge line to prime the nozzle when starting the print, but thats it. It is under runout in Fluidd, or Misc in Mainsail. |
 | Print Farm / Automation support | Ready | Needs testing, but it should work with anything that just uses Moonraker. You should be able to just plop in any file and it should be able to just take it. |
 | RPI Support | In testing | Currently being tested, but allowing to tunnel the board MCUs to a Raspberry Pi. High quality cables are required or else you will get strange results. |
+| ACE Pro | Working | Each ACE slot feeds its own head (slot 1 to T0 ... slot 4 to T3). Auto feed takes a new spool to the head's filament sensor, and auto load takes it into the gears and purges when you press load. Feed assist runs during prints. Multiplexing (several slots into one head) is in the planning stages. |
 | Power Loss Recovery | Working | Resumes an interrupted print without homing Z into the part, and keeps the bed hot until you resume or discard it. Tested on a printer. |
 
 ## Milestones
@@ -33,10 +34,11 @@ well it has been tested on a printer.
 - [x] Installer verified end to end on a printer
 - [ ] RPi / SBC support out of testing
 - [x] Working power loss recovery
+- [x] ACE Pro with auto feed and auto load
 
 ## Planned, not implemented as supported features
 
-- [ ] ACE Pro integration as an additional filament system.
+- [ ] ACE Pro multiplexing: several ACE slots feeding one head (planning stages).
 - [x] Sliced G-code 3MF intake in the print-upload path (SBC installs, not yet verified on a printer).
 - [ ] Version tracking
 - [x] AI-vision overwatch for failures (Can be implemented via Pi and any service)

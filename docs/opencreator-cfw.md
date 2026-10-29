@@ -20,14 +20,15 @@ for printer files, configuration, and installation helpers.
 | Installation and updates | Provide a tested CFW installation and update path with recovery instructions. | <span class="oc-status test">Testing</span> |
 | Tool selection | Configure T0 to T3 pickup, docking, and safety in host-side modules and macros. | <span class="oc-status ok">Finished</span> |
 | Filament control | Integrate AFC standalone for toolchanger filament mapping, loading, and runout handling. | <span class="oc-status ok">Finished</span> |
-| ACE Pro | Add support for ACE Pro as another filament system. | <span class="oc-status">Planned</span> |
+| ACE Pro | Use an ACE Pro as another filament system, each slot feeding its own head, with auto feed and auto load. | <span class="oc-status ok">Working</span> |
+| ACE Pro multiplexing | Feed several ACE slots into one head and swap between them. | <span class="oc-status">Planned</span> |
 | Web and touchscreen | Allow for switching filaments on the web. | <span class="oc-status partial">Partial</span> |
 | Raspberry Pi host | Use USB gadget mode to tunnel Klipper communication from a Raspberry Pi running the Klipper host to the printer. | <span class="oc-status test">Testing</span> |
 
 To see more features that are directly implemented in detail look at [CFW Features](cfwfeatures.md).
 
-These are goals, and not all of them are finished. ACE Pro support is planned,
-and the Raspberry Pi tunnel is in testing (see
+These are goals, and not all of them are finished. The ACE Pro works with auto
+feed and auto load, multiplexing is in the planning stages, and the Raspberry Pi tunnel is in testing (see
 [OpenCreator for SBC](rpi-klipper.md)).
 
 Gadget mode Klipper / RPI Klipper is very close to what AnyCubic's modding scene calls [Tunneled Vanilla Klipper](https://github.com/Kobra-S1/vanilla-klipper-swu/blob/main/tunneled-klipper.md)

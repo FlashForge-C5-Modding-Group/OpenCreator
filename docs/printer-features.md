@@ -317,13 +317,18 @@ removes it before it compares early and late.
 1. The test runs at advances of 0, 0.05 and 0.10, which gives 15 scored
    strokes.
 2. It fits a straight line through (advance, drift) and takes the advance
-   where the line crosses zero.
+   where the line crosses zero. A stroke whose reading drops to 0 or near it
+   stalled the motor and isn't used.
 3. Now and then a stroke reads far off. Up to a tenth of the strokes that sit
    more than four robust standard deviations off the line are dropped, and
    the line is fitted again.
-4. The fit gives a 95% range for the answer. If that range is wider than
+4. If the load barely responds (\|t\| below 4), the test runs the same
+   advances again, up to 24 runs in all. PLA needs this: its pressure
+   settles within about 20 ms, so each stroke shows only a small drift.
+5. The fit gives a 95% range for the answer. If that range is wider than
    0.03, the test runs twice more, at the answer ±0.01. It repeats this until
-   the range is narrow enough or it has done nine runs.
+   the range is narrow enough, or until it has used six runs on this, the
+   same as a normal nine-run test.
 
 The answer is rejected, and nothing is changed, when:
 
@@ -351,6 +356,8 @@ T2 host flow test: pressure advance 0.0751 (95%: 0.0633-0.0869, t=-6.3, 25 strok
 | `ADVANCES` | `0,0.05,0.10` | Advances for the first runs, comma separated |
 | `REFINE` | `1` | `0` skips the extra runs |
 | `MAX_RUNS` | `9` | Limit on runs, including the extra ones |
+| `WEAK_RUNS` | `24` | Limit on runs when the load barely responds; `0` turns the repeats off |
+| `CURRENT` | `1` | Experimental: extruder run current during the strokes, as a fraction of the configured one. Lower makes pressure show up more, but noise grows as fast. Below about 0.8 the advance's push stalls the motor: on PETG this left too few strokes at PA 0.10 and gave 0.058 instead of about 0.075. |
 | `SENSOR` | `eboard` | `eboard`: the eboard's reading stream; `sg`: Klippy polls the driver (used when the eboard firmware has no stream) |
 | `FAST` | `10.4` | Stroke speed, mm/s of filament |
 | `SLOW` | `1` | Speed between strokes, mm/s of filament |

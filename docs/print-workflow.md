@@ -27,8 +27,11 @@ flowchart TD
   F -->|no| H[Load saved mesh]
   G --> I[Center probe check]
   H --> I
-  I --> J[Pick up first tool, apply nozzle Z,<br/>park, other tools to half temperature,<br/>wait for print temperature]
-  J --> K[Slicer G-code starts]
+  I --> J[Pick up first tool, apply nozzle Z,<br/>park, other tools to idle temperature,<br/>wait for print temperature]
+  J --> L{Purge on?}
+  L -->|yes| M[KAMP purge line<br/>in front of the objects]
+  L -->|no| K
+  M --> K[Slicer G-code starts]
 ```
 
 1. Start a non-blocking preheat of every used tool to at most 100 °C, so the
@@ -47,8 +50,9 @@ flowchart TD
    its automatic nozzle Z, verify that a safe nozzle Z is available, smart
    park, and wait for its print temperature. The print's other tools are set
    to their slicer idle temperature (Orca's *Idle temperature*), or 100 °C
-   if it has none. The print's other tools are set
-   to half their print temperature. The slicer's print moves follow.
+   if it has none.
+6. If purge is enabled, draw KAMP's purge line (`LINE_PURGE`) just in front
+   of the printed objects. The slicer's print moves follow.
 
 The center probe check does **not** itself replace the automatic nozzle Z
 measurement. A missing safe nozzle Z is a print-stopping condition, not a
@@ -56,7 +60,8 @@ reason to continue at zero offset.
 
 Flow calibration, purge, and bed leveling can be toggled in the printer's
 Misc controls or overridden for a job with `FLOW_CALIBRATION=0|1`,
-`PURGE=0|1`, and `BED_LEVELING=0|1`. Turning off flow and purge removes those
+`PURGE=0|1`, and `BED_LEVELING=0|1`. Turning off purge also skips the purge
+line. Turning off flow and purge removes those
 preparation operations; it does not bypass the filament-presence or nozzle-Z
 safety checks. See [Printer features](printer-features.md) for how the flow
 measurement works.

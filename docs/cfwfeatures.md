@@ -27,6 +27,8 @@
 | Allow to switch toolheads arbitraily | <span class="oc-status ok">Finished</span> | You can send commands T0-T3 or click the buttons to pick up the toolheads. |
 | Allow to load multiple toolheads simultaneously | <span class="oc-status ok">Finished</span> | You can send the load command for multiple tools, which changes them, loads, then docks. |
 | Allow for reading colour information and material information on Orca | <span class="oc-status ok">Finished</span> | OrcaSlicer syncs the filament list from the printer like an AMS: material and colour for every tool. Needs a current OrcaSlicer development build. |
+| ACE Pro auto feed and auto load | <span class="oc-status ok">Finished</span> | Each ACE slot feeds its own head. A new spool is fed to the head's filament sensor by itself, and pressing load takes it into the gears and purges. Feeds made during a print wait until it ends. |
+| ACE Pro multiplexing | <span class="oc-status">Planned</span> | Several ACE slots feeding one head, in the planning stages. |
 | Raspberry Pi Host support | <span class="oc-status ok">Finished</span> | Allowing to use a Raspberry Pi over the stock MIPS32 CPU, by tunneling the MCUs through the SoC through gadget mode USBs. |
 | Power Loss Recovery | <span class="oc-status ok">Finished</span> | Allows to resume a print from power loss or MCU errors. Until you resume or discard it, the bed is kept at the print's temperature so the part stays stuck down; discarding turns the heaters off. |
 | Kalico Support | <span class="oc-status ok">Finished</span> | On all installs, you install Kalico, a beefed up Klipper fork with features such as MPC tuning. |
