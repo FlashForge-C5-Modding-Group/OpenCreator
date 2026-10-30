@@ -33,7 +33,7 @@ restarts and reboots.
 
     `C5_MISC` lists the state of every switch.
 
-## Switches
+## Switches { style="clear: both" }
 
 | Switch | Default | Macros | What it does |
 | --- | --- | --- | --- |
