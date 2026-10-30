@@ -16,7 +16,10 @@ that piggy back off of the stock firmware which is all at the time of writing.
 
 We're also currently the only custom firmware that has this.
 
-We also actively take in suggestions and if we like them, we'll implement them.
+We also actively take in suggestions.
+
+We also have Power Loss Recovery, which **isn't a given** as most CFWs made do not have fully implemented PLR.
+On power loss, it will prompt you to restart your print, and will keep the bed warmed, so even if you aren't there, your print can be saved.
 
 ## Up to 2x faster toolchanges
 A stock toolchange usually takes about 6 seconds. On OpenCreator CFW one can take as little as 3 seconds,
@@ -27,7 +30,7 @@ so multi-color and multi-material prints spend far less time swapping tools.
 </video>
 
 ## Fixes stock firmware bugs
-FlashForge's firmware has a bug where switching extruders while one is unloading
+FlashForge's firmware has a bug where switching extruders whilst one is unloading
 can make the extruder run backwards. OpenCreator CFW fixes this.
 
 ## Klipper 
@@ -50,6 +53,10 @@ Unlike some other mods, our source code is easily readable and is reasonably spl
 Most of our UIs and backends such as Mainsail and Fluidd, along with Moonraker are mainstream, not forked, and only come with a CSS theme, update as soon as updates come out.
 
 ## Up to 3x* better performance
-With our custom compiled special ingridents, you are less likely to ever run into a Timer Too Close, or Motor Too Far In The Past, and can run a print without a purge tower without the printer crashing.
+With our custom compiled special ingredients that we sprinkle into our custom firmware, you are less likely to ever run into a Timer Too Close, or Motor Too Far In The Past, and can run a print without a purge tower without the printer crashing.
 
 (* - 3x best case senario, most of the time from 1.5 to 2x from completely stock 1.9.9)
+
+## Full installer
+Instead of picking afterwards, or not being able to pick at all, our installer environment will allow you to pick what you like, before it even installs,
+and if your printer breaks but can still access USB drives, you can use our installer to fix any problems, over SSH.
