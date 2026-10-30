@@ -9,6 +9,8 @@
 | --- | --- | --- |
 | ZMax on Print End | <span class="oc-status ok">Finished</span> | Puts the bed to the very bottom of the build area, for easy grabbing, a suggestion from @josemyab |
 | Allow for near zero purge printing | <span class="oc-status ok">Finished</span> | You can turn off purge and flow calibration to have almost zero purge on start, a half suggestion from @josemyab |
+| Purge line toggle | <span class="oc-status test">Testing</span> | The purge line in front of the print has its own **purge_line** switch (on by default), separate from the bucket purge; see [How to toggle features](toggle-features.md). |
+| Chamber heats with the bed (Pro Only) | <span class="oc-status test">Testing</span> | Print start turns the chamber heater on together with the bed, without waiting for it, using the chamber temperature from the slicer's filament settings. |
 | Allow for calibration of only one toolhead | <span class="oc-status ok">Finished</span> | You don't need to calibrate all offsets to update z-offset of a nozzle, for switching nozzles. |
 | Saved baby stepping per tool | <span class="oc-status test">Testing</span> | Baby stepping Z during a print is saved to that tool's Z offset, so the next print starts from it. `LIST_BABYSTEP` shows each tool's value and `CLEAR_BABYSTEP TOOL=` resets one or all; see [Baby stepping](printer-features.md#baby-stepping). |
 | Allow for configuration of nozzle calibration | <span class="oc-status ok">Finished</span> | If your nozzle doesn't fit the min mm for levelboard, you can set it higher. |

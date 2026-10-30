@@ -93,12 +93,13 @@ nav:
     - Installation: installation-and-safety.md
     - OpenCreator Installer: installer.md
     - Slicer Configuration: slicer-config.md
-  - OpenCreator Editions:
-    - OpenCreator Legacy: opencreator-legacy.md
-    - OpenCreator CFW: opencreator-cfw.md
-    - OpenCreator CFW Features: cfwfeatures.md
+  - OpenCreator Legacy: opencreator-legacy.md
+  - OpenCreator CFW:
+    - opencreator-cfw.md
+    - Features: cfwfeatures.md
     - OpenCreator for SBC: rpi-klipper.md
     - What makes us different: different.md
+    - How to toggle features: toggle-features.md
   - Printable Mods: printable-mods.md
   - Technical Reference:
     - Architecture: architecture.md

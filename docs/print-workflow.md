@@ -58,10 +58,10 @@ The center probe check does **not** itself replace the automatic nozzle Z
 measurement. A missing safe nozzle Z is a print-stopping condition, not a
 reason to continue at zero offset.
 
-Flow calibration, purge, and bed leveling can be toggled in the printer's
-Misc controls or overridden for a job with `FLOW_CALIBRATION=0|1`,
-`PURGE=0|1`, and `BED_LEVELING=0|1`. Turning off purge also skips the purge
-line. Turning off flow and purge removes those
+Flow calibration, purge, the purge line and bed leveling can be toggled in the
+printer's Misc controls or overridden for a job with `FLOW_CALIBRATION=0|1`,
+`PURGE=0|1`, `PURGE_LINE=0|1` and `BED_LEVELING=0|1` (see
+[How to toggle features](toggle-features.md)). Turning off flow and purge removes those
 preparation operations; it does not bypass the filament-presence or nozzle-Z
 safety checks. See [Printer features](printer-features.md) for how the flow
 measurement works.

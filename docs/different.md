@@ -48,3 +48,8 @@ Unlike some other mods, our source code is easily readable and is reasonably spl
 
 ## Mainstream UIs
 Most of our UIs and backends such as Mainsail and Fluidd, along with Moonraker are mainstream, not forked, and only come with a CSS theme, update as soon as updates come out.
+
+## Up to 3x* better performance
+With our custom compiled special ingridents, you are less likely to ever run into a Timer Too Close, or Motor Too Far In The Past, and can run a print without a purge tower without the printer crashing.
+
+(* - 3x best case senario, most of the time from 1.5 to 2x from completely stock 1.9.9)

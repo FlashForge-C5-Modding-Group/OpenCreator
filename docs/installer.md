@@ -45,8 +45,7 @@ flowchart TD
    [![Installer checking the printer, with the OpenCreator logo](assets/images/installer/check.png){ .oc-shot loading=lazy }](assets/images/installer/check.png)
 2. **Where should Klipper run?** *On printer SoC* installs everything on the
    printer. *Tunneled* turns the printer's board into a bridge for an SBC.
-   Tunneled needs FlashForge firmware 1.9.9: on 1.9.8 or older it's greyed
-   out, and the page asks you to update the printer to 1.9.9 first.
+   Both work on every supported FlashForge firmware version.
    Choosing *Tunneled* asks for the tunneled-mode password, typed on the screen's
    keyboard, both for a first install and for switching an installed printer to
    tunneled. It isn't asked again when the printer is already tunneled.
