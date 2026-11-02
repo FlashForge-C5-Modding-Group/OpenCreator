@@ -83,3 +83,13 @@ from FlashForge's [download center](https://www.flashforge.com/pages/download-ce
     Moonraker will also be updated, and will have to be reinstalled if you go back to stock
 
     If you uninstall OpenCreator and you picked Fluidd, you'll have to revert Nginx to stock configs.
+
+### Restoring the stock boot logo
+The OpenCreator boot logo stays after uninstalling. To put the FlashForge one back, you need root access
+on the printer.
+
+1. Download the [stock logo](assets/images/stock-boot-logo.jpeg)
+2. Copy it over `/usr/prog/logo.jpeg` on the printer, keeping that file name
+3. Reboot the printer
+
+[![Stock FlashForge boot logo](assets/images/stock-boot-logo.jpeg){ loading=lazy width=160 }](assets/images/stock-boot-logo.jpeg)
