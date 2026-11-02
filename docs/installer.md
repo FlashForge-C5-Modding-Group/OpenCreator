@@ -25,7 +25,7 @@ Extract the zip to the root of a FAT32 USB drive, then follow
 ```mermaid
 flowchart TD
   A[Check printer model<br/>and kernel package] --> B{Supported?}
-  B -->|no| S[Stop: install stock 1.9.9 first]
+  B -->|no| S[Stop: nothing is changed]
   B -->|yes| E{Where should<br/>Klipper run?}
   E -->|On printer SoC| F[Choose Fluidd or Mainsail]
   F --> G[Install GrumpyScreen?]
@@ -204,7 +204,7 @@ ssh opencreator@<printer IP>
     ---
 
     Before anything changes, FlashForge's `firmwareExe`, Moonraker, the
-    OpenCreator folder (Klipper and your config), the web UI folders and the
+    `opencreator` folder (Klipper and your config), the web UI folders and the
     nginx config are archived to the USB drive.
 
 -   :material-restore: **Restore**

@@ -45,7 +45,7 @@ restarts and reboots.
 | **clog_detection** | Off | `SET_PIN PIN=clog_detection` | Pauses the print when a tool's filament wheel stops turning while filament is loaded. If you get false positives, turn it off. |
 | **lower_bed_on_end** | Off | `C5_MISC_LOWER_BED_ON_END_ON` / `_OFF` | Lowers the bed to the bottom after the print, so the plate is easy to take out. |
 | **chamber_wait** | Off | `C5_MISC_CHAMBER_WAIT_ON` / `_OFF` | On: `M191` waits for the chamber to reach temperature. Off: it sets the target and the print carries on while the chamber heats. |
-| **door_notify** | Off | `C5_MISC_DOOR_NOTIFY_ON` / `_OFF` | Shows a pop-up and beeps when a door is opened during a print, or a print starts with one open. |
+| **door_notify** | Off | `C5_MISC_DOOR_NOTIFY_ON` / `_OFF` | Shows a pop-up (GrumpyScreen) and beeps when a door is opened during a print, or a print starts with one open. |
 | **quiet_mode** | Off | `C5_MISC_QUIET_MODE_ON` / `_OFF` | Silences the buzzer for anything it uses (start / end tune, door, etc). |
 | **chamber_heat_fan_full** (Pro) | Off | `C5_MISC_CHAMBER_HEAT_FAN_FULL_ON` / `_OFF` | Keeps the chamber heater fan at 90% while the chamber heats, instead of slowing it near the target. |
 | **host_pressure_advance** (PA BRANCH ONLY INDEV) | Off | `C5_MISC_HOST_PRESSURE_ADVANCE_ON` / `_OFF` | Runs the host pressure advance test at print start, see [Printer Features](printer-features.md). |
