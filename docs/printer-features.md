@@ -38,6 +38,28 @@ you reach the last page it won't appear again. Both choices are ordinary
 switches under Fans & Outputs, so you can change them at any time. To go
 through the dialog again, send `C5_FIRST_SETUP` in the console.
 
+## Camera streamer (experimental option)
+
+The camera streams with mjpg_streamer by default. [ustreamer](https://github.com/pikvm/ustreamer)
+is available as an experimental alternative. It passes the camera's own MJPEG
+frames through with almost no CPU, copes better with several viewers or a slow
+connection, and skips repeated frames when nothing moves.
+
+To switch, edit `camera.conf` in the config folder (Fluidd or Mainsail: Configuration),
+then restart the printer:
+
+```
+streamer: ustreamer
+```
+
+Switching to ustreamer needs Wi-Fi.
+
+`streamer: mjpg_streamer` switches back. The camera keeps the same port, addresses
+and colour settings, so Fluidd, Mainsail and Timelapse need no changes. If ustreamer
+stops three times in a row within 30 seconds of starting, the printer goes back to
+mjpg_streamer until the next restart, and says so in `/tmp/opencreator.log`.
+ustreamer's own log is `/usr/data/logs/ustreamer.log`.
+
 ## Timelapse
 
 The OpenCreator Installer sets up
