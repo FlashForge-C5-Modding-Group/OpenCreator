@@ -6,6 +6,11 @@ A collection of configurations and settings for Custom Firmware OpenCreator.
 For those who do not want to do this manually, we now have an Orca Cloud Profile!
 Check it out [here](https://cloud.orcaslicer.com/b/4e8284d5f077)
 
+## OrcaSlicer Plugin
+For those who want to replicate FlashForge's send dialogs, you can now use our
+OrcaSlicer 2.5.0 plugin! Just set it as a slicer pipeline plugin. Check it out
+[here](https://cloud.orcaslicer.com/p/499aed191b01)
+
 ## Print profile
 
 - [x] Under **Quality → Precision**, switch `Arc fitting` **off**.
