@@ -54,6 +54,15 @@ flowchart TD
 6. If purge is enabled, draw KAMP's purge line (`LINE_PURGE`) just in front
    of the printed objects. The slicer's print moves follow.
 
+With **purge_line_all_tools** on, the print's other tools (`TOOLS` and the
+slicer's used tools) each draw a purge line too, after the mesh and before the
+initial tool is picked up. Each one is picked up, heated to its own first-layer
+temperature, draws its line further out than the last (`purge_tool_spacing` in
+`KAMP_Settings.cfg`, 8 mm by default), then cools and docks like after priming.
+The initial tool's line is drawn last, nearest the objects. A tool's line is
+left out, with a message, if there's no room for it in front of or left of the
+objects, or the file has no object outlines (Orca's *Label objects*).
+
 The center probe check does **not** itself replace the automatic nozzle Z
 measurement. A missing safe nozzle Z is a print-stopping condition, not a
 reason to continue at zero offset.
