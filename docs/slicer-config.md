@@ -57,20 +57,21 @@ These will change stuff like printer agents.
     now on. Files already on the printer show no estimate until you upload them
     again.
 
-- [x] **Remove or comment out some G-code Print Start (Older versions of the profile):**
+- [x] Set your start G-Code to this:
 
-    `LINE_PURGE G1 X256 Y0 Z0.2 F6000`
-
-    `G1 E5 F{filament_max_volumetric_speed[initial_no_support_extruder]/2.4053*60}`
-
-    `G1 X216 E10 F{filament_max_volumetric_speed[initial_no_support_extruder]/2.4053*60}`
-
-- [x] **Remove or comment out some G-code Print Start (Newer versions of the profile):**
-    `G1 X256 Y0 Z0.2 F6000`
-
-    `G1 E5 F{filament_max_volumetric_speed[initial_no_support_extruder]/2.4053*60}`
-
-    ` G1 X216 E10 F{filament_max_volumetric_speed[initial_no_support_extruder]/2.4053*60}`
+```
+;start_gcode
+SET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count]
+M140 S[bed_temperature_initial_layer_single]
+M191 S[overall_chamber_temperature]
+M106 
+M106 P2 S0 ; Center_Fresh_Air_Input_Fan_for_PLA30%_(80_0-255)
+M106 S0 ; Model_Fan_(Heat_Break_Cooler_80-255)100%=255
+M106 P3 S0 ; Filter_Unit_Fan_0-255(ABS=255)
+G90
+M83
+;start_gcode end
+```
 
 - [x] **Remove or comment out some G-code Print End (Newer versions of the profile):**
     `G1 X150 Y150 E-1.2 F12000`
