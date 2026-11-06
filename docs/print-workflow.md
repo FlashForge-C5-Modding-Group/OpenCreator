@@ -11,6 +11,20 @@ shared hotend temperature for individual tools. The macro checks the physical
 filament-presence input for **each used tool**. A missing tool's filament
 cancels the job; unused tools are not required to be loaded.
 
+When a file has no `C5_PRINT_START` line, the print dispatcher
+(`virtual_sdcard.py`) builds one from the first 64 KB and the last 64 KB of
+the file:
+
+- `TOOL` is the first `T0`–`T3`. If the file has none, it's the first slot with
+  filament used.
+- `HOTEND` is the first `M109`, else the first `M104`. If neither exists, it's
+  that tool's `nozzle_temperature_initial_layer` from Orca's config block.
+  Orca leaves out the heating line in single-tool T0 jobs.
+- `BED` is the first `M140` or `M190`.
+
+If no hotend temperature can be found, the job stops before any motion, and the
+reason is printed to the console.
+
 ## Preparation order
 
 ```mermaid
