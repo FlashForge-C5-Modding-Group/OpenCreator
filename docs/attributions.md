@@ -14,6 +14,7 @@ We've used some open source projects, here's the ones we've used, this isn't ful
 | Zensical | Builds this documentation site | [MIT](https://github.com/zensical/zensical) |
 | Material for MkDocs | The site's theme and template overrides | [MIT](https://github.com/squidfunk/mkdocs-material) |
 | CleanFFC5P | A cleanup script for removing old G-Code, mods, and similar things | [MIT](https://github.com/d3dorsett/CleanFlashforgeCreator5Pro?tab=MIT-1-ov-file) |
+| HelixScreen | Optional screen which some people may like better than Grumpy | [GPLv3](https://github.com/prestonbrown/helixscreen?tab=GPL-3.0-1-ov-file) |
 
 We've also used a non open source project, which should be.<br>
 FlashForge's MCU and Touchscreen research was done.
