@@ -6,35 +6,92 @@
   --oc-plan: #7a7f8a;
 }
 
-/* Landing hero */
-.oc-hero {
-  padding: 1.6rem 1.4rem;
+/* The logo is off-white for the dark header; Zensical's light header is
+   white, so draw it in the text colour there. */
+[data-md-color-scheme="default"] .md-logo img {
+  filter: brightness(0);
+  opacity: 0.87;
+}
+
+/* Landing page (docs/index.md): one centred column */
+.md-typeset .oc-landing-hero {
   margin: 0 0 1.6rem;
-  border-radius: 0.6rem;
-  background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, #ff8a3d 100%);
+  padding: 2.4rem 2rem 2rem;
+  border-radius: 0.8rem;
+  background: linear-gradient(135deg, #ff5722 0%, #ff8a3d 100%);
+  color: #fff;
+  text-align: center;
+}
+.md-typeset .oc-landing-hero p,
+.md-typeset .oc-landing-hero strong {
   color: #fff;
 }
-.oc-hero h1 {
-  margin: 0 0 0.4rem;
+.md-typeset .oc-landing-hero > p {
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.md-typeset .oc-landing-hero h1 {
+  margin: 0.4rem 0 0.6rem;
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   color: #fff;
+}
+.md-typeset .oc-landing-hero strong {
+  font-size: 1.05rem;
+}
+/* Off-white already, so it reads on the orange */
+.md-typeset .oc-landing-hero img.oc-landing-mark {
+  width: 9rem;
+  filter: drop-shadow(0 0.6rem 1.2rem rgba(120, 30, 0, 0.35));
+}
+.md-typeset .oc-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0.9rem 0 0.4rem;
+}
+.md-typeset .oc-chips span {
+  padding: 0.15rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 0.7rem;
   font-weight: 700;
 }
-.oc-hero p {
-  margin: 0.4rem 0;
-  max-width: 42rem;
-}
-.oc-hero .md-button {
-  margin: 0.8rem 0.4rem 0 0;
+.md-typeset .oc-landing-hero .md-button {
+  margin: 0.8rem 0.2rem 0;
   color: #fff;
   border-color: #fff;
 }
-.oc-hero .md-button--primary {
+.md-typeset .oc-landing-hero .md-button--primary {
   background: #fff;
+  color: #e64a19;
+}
+.md-typeset .oc-landing-hero .md-button:hover,
+.md-typeset .oc-landing-hero .md-button:focus {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+.md-typeset .oc-landing h2 {
+  margin-top: 2rem;
+  font-weight: 700;
+}
+.md-typeset .oc-landing .grid.cards .lg {
+  font-size: 1.6em;
   color: var(--md-primary-fg-color);
 }
-.oc-hero .md-button:hover {
-  background: rgba(255, 255, 255, 0.18);
-  color: #fff;
+@media screen and (min-width: 60em) {
+  .md-typeset .grid.cards.oc-three > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .oc-landing-hero { padding: 1.6rem 1.2rem; }
+  .md-typeset .oc-landing-hero h1 { font-size: 2rem; }
+  .md-typeset .oc-landing-hero img.oc-landing-mark { width: 6.5rem; }
 }
 
 /* Cards */

@@ -1,95 +1,122 @@
 ---
+title: Home
+description: Open-source custom firmware for the FlashForge Creator 5 and 5 Pro. Klipper (Kalico), toolchanging, filament handling and more.
 hide:
   - toc
 ---
 
-<div class="oc-hero" markdown>
+<div class="oc-landing" markdown>
+
+<div class="oc-landing-hero" markdown>
+
+![OpenCreator logo](assets/logo.svg){ .oc-landing-mark }
 
 # OpenCreator
 
-OpenCreator is the FlashForge Creator 5 and Creator 5 Pro community full custom
-firmware project. It brings the printer's four controller boards, Klipper host,
-toolchanging, filament handling, and printer-side configuration into a
-maintainable stack that is fully open source.
+**Open-source custom firmware for the FlashForge Creator 5 and Creator 5 Pro.**
 
-OpenCreator Legacy deals with older versions that keep a mostly stock experience,
-whilst giving important creature comforts such as upgraded camera views.
+Kalico (Klipper) on the printer, a real toolchanger, AFC filament handling and
+Fluidd or Mainsail, all on the hardware you already own. Every part is open source
+and can be changed.
 
-[Get started](getting-started.md){ .md-button .md-button--primary }
-[Download the latest release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/latest){ .md-button }
-[Join the Discord](https://discord.gg/RsdkqDtfww){ .md-button }
+<div class="oc-chips">
+  <span>Klipper / Kalico</span>
+  <span>Toolchanging</span>
+  <span>AFC and ACE Pro</span>
+  <span>Plugins</span>
+</div>
+
+[Get started :material-arrow-right:](getting-started.md){ .md-button .md-button--primary }
+[Latest release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/latest){ .md-button }
+[Discord](https://discord.gg/RsdkqDtfww){ .md-button }
 
 </div>
 
-Join our [Discord](https://discord.gg/RsdkqDtfww) for updates on development,
-support and a community of Flashforge Creator 5 / 5 Pro owners. We can even help
-with alternate custom firmwares, even though support may be diminished.
+Running a Raspberry Pi or another SBC? [OpenCreator for SBC](rpi-klipper.md)
+runs the same stack there, with the printer's boards tunnelled over USB. Want to
+stay close to stock? [OpenCreator Legacy](opencreator-legacy.md) works around
+FlashForge's software instead of replacing it.
 
-## Start here
+## Why OpenCreator?
 
 <div class="grid cards" markdown>
 
--   :material-help-circle: **[Is OpenCreator CFW for you?](is-cfw-for-you.md)**
+-   :material-printer-3d-nozzle:{ .lg .middle } **Kalico on the printer**
 
     ---
 
-    What you gain, what you give up, and when Legacy fits better.
+    A Klipper fork with MPC heater tuning, input shaper graphs drawn on the
+    printer, power loss recovery and timelapse.
 
--   :material-rocket-launch: **[Getting started](getting-started.md)**
-
-    ---
-
-    Decide between the stock-based Legacy path and development CFW.
-
--   :material-shield-alert: **[Installation and safety](installation-and-safety.md)**
+-   :material-swap-horizontal-bold:{ .lg .middle } **A real toolchanger**
 
     ---
 
-    Download the latest release, and what you need to install it.
+    Switch heads with `T0`–`T3`, load several tools in one go, and calibrate
+    one nozzle without redoing all four.
+    [See how fast it changes](different.md)
 
--   :material-progress-check: **[Status and roadmap](status-and-roadmap.md)**
-
-    ---
-
-    What works, what is being tested, and what is planned.
-
--   :material-printer-3d: **[Slicer Configuration for CFW](slicer-config.md)**
+-   :material-printer-3d:{ .lg .middle } **Filament that knows itself**
 
     ---
 
-    Check out the needed slicer changes for CFW.
+    AFC with toolchanger support, ACE Pro auto feed and load, and material and
+    colour synced into OrcaSlicer like an AMS.
+
+-   :material-monitor-dashboard:{ .lg .middle } **Fluidd, Mainsail and GrumpyScreen**
+
+    ---
+
+    Full web control, so the touchscreen is optional. A faster camera stream,
+    SFTP and 3MF uploads come with it.
+
+-   :material-code-braces:{ .lg .middle } **Open and editable**
+
+    ---
+
+    Plain Klipper configs, toggles for every behaviour and a plugin system.
+    [Every repository](project-layout.md) is on GitHub.
+
+-   :material-account-group:{ .lg .middle } **Active community**
+
+    ---
+
+    Developers and Creator 5 owners in one place, for help, testing and what's
+    next. [Join the Discord](https://discord.gg/RsdkqDtfww)
 
 </div>
 
-## Editions
+## Pick your edition
 
-<div class="grid cards" markdown>
+<div class="grid cards oc-three" markdown>
 
--   :material-chip: **[OpenCreator CFW](opencreator-cfw.md)**
-
-    ---
-
-    The newer replacement stack and its development goals.
-
--   :material-raspberry-pi: **[OpenCreator CFW for SBC](rpi-klipper.md)**
+-   :material-chip:{ .lg .middle } **[OpenCreator CFW](opencreator-cfw.md)**
 
     ---
 
-    OpenCreator running on a RPi or SBC instead of the host mips32 SOC.
+    Replaces FlashForge's software with Kalico, Moonraker and a web UI on the
+    printer's own computer. The full feature set.
 
--   :material-star-check: **[OpenCreator CFW Features](cfwfeatures.md)**
-
-    ---
-
-    OpenCreator features in general over stock.
-
--   :material-history: **[OpenCreator Legacy](opencreator-legacy.md)**
+-   :material-raspberry-pi:{ .lg .middle } **[OpenCreator for SBC](rpi-klipper.md)**
 
     ---
 
-    The "Legacy" version of OpenCreator, which works around FlashForge instead of replacing it.
+    The same stack on a Raspberry Pi or other SBC, for more speed and room
+    than the printer's MIPS board.
+
+-   :material-history:{ .lg .middle } **[OpenCreator Legacy](opencreator-legacy.md)**
+
+    ---
+
+    Keeps the stock experience and adds comforts like a better camera. The
+    lowest-risk start.
 
 </div>
+
+Not sure which one? [Is OpenCreator CFW for you?](is-cfw-for-you.md) walks
+through what you gain and what you give up. The [feature list](cfwfeatures.md)
+and [status and roadmap](status-and-roadmap.md) show what's finished and what's
+still in testing.
 
 ## On the printer
 
@@ -101,50 +128,14 @@ with alternate custom firmwares, even though support may be diminished.
 
 </div>
 
-## Technical reference
-
-<div class="grid cards" markdown>
-
--   :material-sitemap: **[Architecture](architecture.md)**
-
-    ---
-
-    The host, four MCUs, AFC, touchscreen, and filesystem roles.
-
--   :material-memory: **[MCU development and verification](mcu-development.md)**
-
-    ---
-
-    The four boards, shared extruder driver, build checks, and outstanding printer tests.
-
--   :material-play-circle: **[Print workflow](print-workflow.md)**
-
-    ---
-
-    The current tool, heating, mesh, and nozzle-Z preparation sequence for CFW.
-
--   :material-tune-variant: **[General Printer Features](printer-features.md)**
-
-    ---
-
-    Toggles, macros and behaviors available on the printer.
-
--   :material-source-repository: **[Project layout](project-layout.md)**
-
-    ---
-
-    Find the source repositories.
-
 </div>
 
 !!! warning "Development software"
-    Do not treat any full custom firmware from us as complete.
-    Anything you may of seen may be out of date, different
-    or just completely not working, and you should wait
-    unless you know exactly what you are doing and how to revert.
+    Don't treat any full custom firmware from us as complete. What you've seen
+    may be out of date, different, or not working. Wait unless you know exactly
+    what you're doing and how to go back to stock.
 
-!!! danger "Warranty & Responsibility Disclosure"
-    OpenCreator's team and contributors do not take any responsibility over
-    any damage, unintended wear, or anything else done to your printer
-    and the responsibility is on you if you "brick" or break your printer,
-    and installing mods may void your warranty, so of course, be careful!
+!!! danger "Warranty and responsibility"
+    OpenCreator's team and contributors take no responsibility for damage,
+    wear or anything else that happens to your printer. If you brick or break
+    it, that's on you, and installing mods may void your warranty. Be careful!

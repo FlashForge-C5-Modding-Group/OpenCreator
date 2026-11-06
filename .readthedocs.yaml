@@ -1,13 +1,17 @@
 version: 2
 
+# Read the Docs has no built-in Zensical builder: build with it and copy the
+# site to where Read the Docs serves from.
 build:
   os: ubuntu-24.04
   tools:
     python: "3.12"
-
-mkdocs:
-  configuration: mkdocs.yml
-
-python:
-  install:
-    - requirements: docs/requirements.txt
+  jobs:
+    install:
+      - pip install -r docs/requirements.txt
+    build:
+      html:
+        - python -m zensical build --strict
+    post_build:
+      - mkdir -p "$READTHEDOCS_OUTPUT/html"
+      - cp -r site/. "$READTHEDOCS_OUTPUT/html/"
