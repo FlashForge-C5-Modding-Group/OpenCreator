@@ -26,7 +26,8 @@ A stock toolchange usually takes about 6 seconds. On OpenCreator CFW one can tak
 so multi-color and multi-material prints spend far less time swapping tools.
 
 <video class="oc-video" controls preload="metadata" playsinline>
-  <source src="../assets/videos/toolchange-speed.mp4" type="video/mp4">
+  <source src="https://opencreator.readthedocs.io/en/latest/assets/videos/toolchange-speed.mp4" type="video/mp4">
+  <a href="https://opencreator.readthedocs.io/en/latest/assets/videos/toolchange-speed.mp4">Watch the toolchange video</a>
 </video>
 
 ## Fixes stock firmware bugs

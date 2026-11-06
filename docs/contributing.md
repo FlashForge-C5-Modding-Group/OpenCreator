@@ -17,3 +17,11 @@ Before proposing a change, build the site with warnings treated as errors:
 On Windows, use `.venv\Scripts\python.exe`. The generated `site/` directory
 is ignored by Git; only the source Markdown and configuration should be
 committed.
+
+## Videos and other raw HTML
+
+Markdown images and links work with relative paths. Paths inside raw HTML,
+such as `<video>` or `<source src="...">`, don't: the site loads pages without
+a full reload, and a relative `src` is then resolved against the page you came
+from. Give media in raw HTML its full URL, for example
+`https://opencreator.readthedocs.io/en/latest/assets/videos/<file>.mp4`.
