@@ -30,6 +30,18 @@ so multi-color and multi-material prints spend far less time swapping tools.
   <a href="https://opencreator.readthedocs.io/en/latest/assets/videos/toolchange-speed.mp4">Watch the toolchange video</a>
 </video>
 
+## Better timelapses
+OpenCreator CFW takes a camera frame at every layer change and turns them into
+a smooth MP4 when the print finishes, using
+[Moonraker Timelapse](printer-features.md#timelapse). The videos are under
+**Timelapse** in Fluidd and Mainsail, where you can also change the frame rate
+or park the toolhead for each frame.
+
+<video class="oc-video" controls preload="metadata" playsinline muted>
+  <source src="https://opencreator.readthedocs.io/en/latest/assets/videos/timelapse.mp4" type="video/mp4">
+  <a href="https://opencreator.readthedocs.io/en/latest/assets/videos/timelapse.mp4">Watch the timelapse</a>
+</video>
+
 ## Fixes stock firmware bugs
 FlashForge's firmware has a bug where switching extruders whilst one is unloading
 can make the extruder run backwards. OpenCreator CFW fixes this.
