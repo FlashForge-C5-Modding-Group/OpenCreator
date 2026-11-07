@@ -25,6 +25,24 @@ does that while the printer is printing or paused: it says so, and the change ta
 Plugins installed from a git URL also show up in Fluidd and Mainsail's update manager as
 **oc-plugin-&lt;id&gt;**, so they can be updated from there like OpenCreator itself.
 
+To see what's installed without SSH, run the `OC_PLUGINS` macro, or tap **Plugins** in GrumpyScreen's
+macros. It opens a dialog listing every plugin with its version, greyed out if it's disabled and red if its
+manifest is broken. Tap one for its description, author, what it adds to Klipper and Moonraker, and where it
+came from. `oc-plugin sync` rebuilds the list (as `config/plugins/_oc-plugins.cfg`) every time Klipper
+starts, so it stays current. Installing, updating and removing still happen over SSH.
+
+### ZMOD plugins
+
+`oc-plugin install` also takes a plugin made for [ZMOD](https://wiki.zmod.link/Plugin/), the AD5M/AD5X mod,
+for example `oc-plugin install https://github.com/ghzserg/g28_tenz`. Support is basic. A ZMOD plugin has no
+manifest, just a repo named after the plugin with `<name>.cfg` (or `en/<name>.cfg` if it's translated), so
+`oc-plugin` takes its id from the repo name and its version from git, and links only that config into Klipper.
+After that it's listed, updated, disabled and removed like any other plugin.
+
+Its `install.sh`, `uninstall.sh` and `update.sh` are not run, because they expect ZMOD's folders, and Python
+modules have to be linked by hand, as on ZMOD itself. A plugin whose config uses ZMOD's own macros or settings
+won't work here as it is.
+
 !!! warning "Plugins run with full access"
     A plugin's Klipper and Moonraker code runs inside Klipper and Moonraker, with the same access to the
     printer as they have. Only install plugins you trust.
