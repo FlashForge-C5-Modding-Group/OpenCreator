@@ -67,13 +67,7 @@ Sometimes an update can't be distributed like that, this is the other way for mo
 
 
 ## Uninstalling OpenCreator
-To uninstall OpenCreator and go back to bone stock, install any firmware update for your printer
-from FlashForge's [download center](https://www.flashforge.com/pages/download-center).
-
-1. Download the firmware for your model (Creator 5 or Creator 5 Pro) from the
-   [download center](https://www.flashforge.com/pages/download-center)
-2. Put the file on the USB and plug it in, without OpenCreator also on the drive
-3. Once it finishes, the printer runs FlashForge's firmware again, with the stock MCU firmware on every board
+To uninstall OpenCreator and go back to bone stock, launch the installer, and follow instructions for a `full rollback`
 
 !!! warn "Files left over"
     There are some files left over from uninstalling, they can be removed via
@@ -85,8 +79,7 @@ from FlashForge's [download center](https://www.flashforge.com/pages/download-ce
     If you uninstall OpenCreator and you picked Fluidd, you'll have to revert Nginx to stock configs.
 
 ### Restoring the stock boot logo
-The OpenCreator boot logo stays after uninstalling. To put the FlashForge one back, you need root access
-on the printer.
+The OpenCreator boot logo will be removed when you use the full-rollback option. Here's a way if you do it via normal software updates.
 
 1. Download the [stock logo](assets/images/stock-boot-logo.jpeg)
 2. Copy it over `/usr/prog/logo.jpeg` on the printer, keeping that file name
