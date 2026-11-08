@@ -56,9 +56,9 @@ and a web UI. It's in public alpha, so it suits some people more than others.
 
 ## CFW may not be for you yet if you
 
-- **Rely on the stock touchscreen.** GrumpyScreen replaces it and shows all four tools, but can't extrude yet.
-- **Use FlashForge's app, cloud or FlashStudio.** These go away once FlashForge's services are disabled.
-- **Care about your warranty.** Installing mods may void it.
+- **Rely on the stock touchscreen.** GrumpyScreen replaces it fully, new UI.
+- **Use FlashForge's app, cloud or FlashStudio.** These go away once FlashForge's services are gone.
+- **Care about your warranty.** Installing mods may void it. You can clean up any traces but they still may figure it out.
 - **Want official support.** You can't ask FlashForge for software support if you're on custom firmware.
 - **Have zero prior experience with 3D printing.** You're expected to have at least a basic understanding of Klipper.
 

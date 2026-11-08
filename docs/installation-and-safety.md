@@ -41,7 +41,7 @@ stops without changing anything. See [Supported kernel packages](installer.md).
 1. Download the zip from the [latest release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/latest) and extract it to the root of the USB drive
 2. Reboot the printer with the USB plugged in
 3. Go through the steps, SoC installs are recommended for people who don't know what tunneled is
-4. Wait about 25-30 minutes for things to install
+4. Wait about 15-30 minutes for things to install (Backing up takes the longest)
 5. After it is finished, it will prompt you to remove the USB drive and press the reboot button
 6. Once you reboot, you should see a new boot logo, and Grumpyscreen, and on the web under the printer IP, Fluidd.
 7. Set up your slicer for OpenCreator: follow [Slicer Configuration](slicer-config.md) before your first print.

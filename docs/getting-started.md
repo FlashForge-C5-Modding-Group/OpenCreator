@@ -7,9 +7,9 @@ community-maintained Klipper and printer-side components. CFW is in public
 alpha: download the [latest release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/latest) and see
 [Installation and safety](installation-and-safety.md).
 
-If you want to improve a working stock printer today, start with the
+If you want to improve a stock printer today, start with the
 [Creator-5-Mods Legacy guides](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Mods).
-Follow the prerequisites and rollback advice for each individual modification.
+Follow the prerequisites for each individual modification.
 
 If you are contributing to CFW, start with [Project layout](project-layout.md)
 and [Architecture](architecture.md). The printer configuration lives in
@@ -19,7 +19,7 @@ in `CREATOR5_TOOLCHANGER.md` inside the configuration tree.
 
 Join our Discord for support and to report problems with the alpha.
 
-## Before a printer trial
+## Before installing on a printer
 
 - [x] Read [Status and roadmap](status-and-roadmap.md)
 - [x] Read [Installation and safety](installation-and-safety.md)

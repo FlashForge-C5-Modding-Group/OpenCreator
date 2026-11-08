@@ -17,7 +17,7 @@ configuration ties those parts together.
 
 ## Printer-side layout
 
-The development configuration is organized below `/usr/data/config` on the
+The SoC configuration is organized below `/usr/data/opencreator/klipper/configs` on the
 printer. `printer.base.cfg` includes the Creator 5, probe, motor, filament,
 vibration, Misc, and AFC files. G-code storage is configured at
 `/usr/data/gcodes`. Stock-format calibration data remains under
@@ -31,7 +31,7 @@ installer asks which printer it's connected to. On a Creator 5, `M106`/`M107 P2`
 `M191` says there's no chamber heater instead of failing.
 
 The config layout is originally based on FlashForge's default config layout, just expanded with new macros, settings, and removals of useless settings.
-This does not mean our config is interchangable with stock firmware, and if you try, it will not work as a lot of settings are intertwined.
+This does not mean our config is interchangable with stock firmware, and if you try, it will not work as a lot of settings are intertwined with our Kalico.
 
 There is one physical extrusion motor. The four Klipper extruder contexts
 select the corresponding tool heaters and state; they are not four independent

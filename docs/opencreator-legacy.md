@@ -30,6 +30,5 @@ with FlashForge's newer features, use their cloud service, or use the FlashForge
 | Web access | Add tools such as Mainsail alongside the stock software. |
 | Updates and recovery | Check each modification's prerequisite instructions before applying it. |
 
-For a printer you need to operate today, start with the Legacy guides and
-their stated prerequisites. For the separate replacement stack, see
+For the separate replacement stack, see
 [OpenCreator CFW](opencreator-cfw.md). 
