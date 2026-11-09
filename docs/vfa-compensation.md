@@ -57,7 +57,8 @@ times in a row.
 Run **VFA** from the touchscreen or Fluidd's *Calibrations* group, or send
 `VFA_COMPENSATION` in the console. **VFA + Graphs** (`VFA_COMPENSATION_GRAPH`)
 does the same and draws graphs too (see below). Both are loud, and take a
-while.
+while. Add `AXIS=X` or `AXIS=Y` to redo just one motor; the other keeps its
+values.
 
 1. **Safety checks.** It refuses during a print, and unless all four heads are
    docked.
@@ -65,13 +66,19 @@ while.
    calibrating with a tool on matches the weight it prints with. Then
    `G1 Z100` and `G1 X130 Y130`, as on stock.
 3. **Finds each motor's real resonance.** With compensation off, the head
-   makes test moves at 20 to 120 mm/s in 5 mm/s steps, then finer steps around
-   the strongest. The speed where the main ripple shakes hardest gives that
-   motor's frequency, and everything after is aimed at it. A result is used
-   only when there's a clear peak, inside the swept speeds and at least 1.5
-   times the typical level. Otherwise it keeps the configured frequency (200 Hz
-   unless saved) and says why.
-4. **Searches each ripple** the same way stock does, with three differences:
+   makes test moves from 20 to 300 mm/s, each about 8% faster than the last,
+   then finer steps around the three strongest high points (a narrow peak can
+   fall between two speeds). Where the main ripple peaks gives the motor's
+   resonances: clear peaks, inside the swept speeds and at least 1.5 times the
+   typical level. With no clear peak it uses the configured frequency (200 Hz
+   unless saved) and says so.
+4. **Picks the best resonance.** With two strong ones, it calibrates at each,
+   sweeps the speeds again with each result, and keeps whichever leaves less
+   vibration. The strongest peak isn't always best, because the best setting
+   depends on the speed it's tuned at. On one C5, the X motor tuned at its
+   stronger 84 Hz resonance left 3 to 5 times more vibration from 30 to
+   120 mm/s than tuned at its 285 Hz one.
+5. **Searches each ripple** the same way stock does, with three differences:
     - Each measurement uses the whole steady-speed part of the move, found from
       the move's own timing, so there's less noise in every number it finds.
     - The two directions' amplitudes are combined into the one that gives the
@@ -79,10 +86,10 @@ while.
     - The result is measured again as it will run and compared with no
       compensation. A ripple that isn't at least 5% better is left off
       (amplitude 0) rather than saved.
-5. **Puts things back.** The printer's own acceleration settings are restored.
+6. **Puts things back.** The printer's own acceleration settings are restored.
    If calibration stops with an error, the motors go back to their saved
    values instead of being left half-calibrated.
-6. **Saves.** `SAVE_CONFIG` writes the values and the measured frequencies to
+7. **Saves.** `SAVE_CONFIG` writes the values and the measured frequencies to
    `printer.cfg` and restarts Klipper. With `SAVE=0` nothing is written, but the
    new values are still used until Klipper restarts.
 
@@ -104,6 +111,10 @@ Mainsail's config files.
   the three ripples. Dotted lines are before compensation and solid lines
   after, so lower is better. Peaks are speeds where a ripple matches the
   frame's resonance, and a marker shows the speed each ripple was tuned at.
+  A line that stops early is a ripple too fast there for the accelerometer to
+  measure (over about 700 Hz): the 4x above about 100 mm/s and the 2x above
+  about 200 mm/s. The 1x ripple, the one that matters at fast wall speeds, is
+  shown up to 300 mm/s.
 - **Bottom chart:** each ripple at its worst speed, before and after, with how
   much less it shakes. A ripple that was left off because it didn't help is
   labelled as such.
@@ -119,7 +130,7 @@ re-tensioning belts, since that moves the resonance.
 
 | | Stock | OpenCreator |
 |---|---|---|
-| Resonance frequency | Fixed 200 Hz | Measured for each motor, 200 Hz if no clear peak |
+| Resonance frequency | Fixed 200 Hz | Measured for each motor; with two, the one that calibrates better. 200 Hz if no clear peak |
 | Data per measurement | About 0.6 s from the middle of each move | The whole steady-speed part of each move |
 | One amplitude for both directions | The larger of the two | The one with the least vibration over both |
 | Checked against no compensation | No | Yes: a ripple that isn't 5% better is left off |

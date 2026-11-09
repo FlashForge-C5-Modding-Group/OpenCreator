@@ -10,7 +10,7 @@ installing OpenCreator, a dialog welcomes you and asks two questions:
 - **Bed heat soak:** before a fresh bed mesh, wait a few minutes at bed
   temperature so the plate finishes warping first. Off by default.
 
-There's nothing to calibrate first: a first install on the printer (SoC) takes
+There's nothing you have to calibrate first: a first install on the printer (SoC) takes
 your printer's own calibration from FlashForge's config (`/usr/data/config/printer.cfg`), so it
 starts with the input shaper and the PID tuning of all four hotends and the bed
 that FlashForge measured. The bed mesh isn't taken; OpenCreator measures its
@@ -21,6 +21,10 @@ To calibrate yourself anyway: `CALIBRATE_INPUT_SHAPER` (or
 [`CALIBRATE_INPUT_SHAPER_GRAPH`](#input-shaper-graphs) for graphs too),
 [`VFA_COMPENSATION`](vfa-compensation.md), and `C5_PID_CALIBRATE TOOL=1 TARGET=250` for a heater (add
 `TOLERANCE=0.1` if a noisy heater won't settle; the default is 0.05).
+
+One calibration we do recommend running once, when you're ready:
+[VFA compensation](vfa-compensation.md). OpenCreator's VFA calibration is much
+better than stock's, and the dialog has a page saying so.
 
 The next page explains when to run the two other calibrations:
 `C5_CALIBRATE_OFFSETS` if the tools' offsets weren't right on the stock
