@@ -17,10 +17,10 @@ On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`.
 Run `.venv/bin/python -m zensical build --strict` (or its Windows equivalent)
 before submitting documentation changes.
 
-## Publish on Read the Docs
+## Publishing
 
-Import `FlashForge-C5-Modding-Group/OpenCreator` in the Read the Docs
-dashboard and select this repository's `main` branch. The root
-`.readthedocs.yaml` installs the pinned documentation dependencies and builds
-the site with Zensical, which reads `mkdocs.yml` as is. Read the Docs will provide the project URL after import; no
-deployment credentials belong in this repository.
+The site is served at https://opencreatorcfw.github.io/. Every push to `main`
+runs `.github/workflows/docs.yml`, which builds with Zensical and pushes the
+output to `OpenCreatorCFW/opencreatorcfw.github.io` (branch `main`, which
+GitHub Pages serves). The workflow authenticates with the `PAGES_DEPLOY_KEY`
+secret, the private half of a write deploy key on that repository.

@@ -74,7 +74,7 @@ To uninstall OpenCreator and go back to bone stock, launch the installer, and fo
     `/usr/data/opencreator`
     `/usr/data/grumpyscreen`
     `/usr/data/python-hf`
-    Moonraker will also be updated, and will have to be reinstalled if you go back to stock
+    Moonraker will also be updated, and will have to be reinstalled if you go back to stock, you'll have to find the download for the old version.
 
     If you uninstall OpenCreator and you picked Fluidd, you'll have to revert Nginx to stock configs.
 

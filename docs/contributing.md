@@ -24,4 +24,4 @@ Markdown images and links work with relative paths. Paths inside raw HTML,
 such as `<video>` or `<source src="...">`, don't: the site loads pages without
 a full reload, and a relative `src` is then resolved against the page you came
 from. Give media in raw HTML its full URL, for example
-`https://opencreator.readthedocs.io/en/latest/assets/videos/<file>.mp4`.
+`https://opencreatorcfw.github.io/assets/videos/<file>.mp4`.

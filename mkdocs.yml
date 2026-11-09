@@ -1,6 +1,6 @@
 site_name: OpenCreator
 site_description: Open-source custom firmware for the FlashForge Creator 5 and 5 Pro. Klipper (Kalico), toolchanging, filament handling and more.
-site_url: !ENV [READTHEDOCS_CANONICAL_URL, 'https://opencreator.readthedocs.io/en/latest/']
+site_url: https://opencreatorcfw.github.io/
 repo_url: https://github.com/FlashForge-C5-Modding-Group/OpenCreator
 repo_name: FlashForge-C5-Modding-Group/OpenCreator
 edit_uri: edit/main/docs/
@@ -11,8 +11,8 @@ theme:
   logo: assets/logo.svg
   favicon: assets/favicon.svg
   font:
-    text: Inter
-    code: JetBrains Mono
+    text: IBM Plex Sans
+    code: IBM Plex Mono
   features:
     - navigation.sections
     - navigation.indexes
@@ -28,15 +28,15 @@ theme:
   palette:
     # Palette toggle for light mode
     - scheme: default
-      primary: deep orange
-      accent: amber
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     # Palette toggle for dark mode
     - scheme: slate
-      primary: deep orange
-      accent: amber
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode

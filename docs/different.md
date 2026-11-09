@@ -26,8 +26,8 @@ A stock toolchange usually takes about 6 seconds. On OpenCreator CFW one can tak
 so multi-color and multi-material prints spend far less time swapping tools.
 
 <video class="oc-video" controls preload="metadata" playsinline>
-  <source src="https://opencreator.readthedocs.io/en/latest/assets/videos/toolchange-speed.mp4" type="video/mp4">
-  <a href="https://opencreator.readthedocs.io/en/latest/assets/videos/toolchange-speed.mp4">Watch the toolchange video</a>
+  <source src="https://opencreatorcfw.github.io/assets/videos/toolchange-speed.mp4" type="video/mp4">
+  <a href="https://opencreatorcfw.github.io/assets/videos/toolchange-speed.mp4">Watch the toolchange video</a>
 </video>
 
 ## Better timelapses
@@ -38,8 +38,8 @@ a smooth MP4 when the print finishes, using
 or park the toolhead for each frame.
 
 <video class="oc-video" controls preload="metadata" playsinline muted>
-  <source src="https://opencreator.readthedocs.io/en/latest/assets/videos/timelapse.mp4" type="video/mp4">
-  <a href="https://opencreator.readthedocs.io/en/latest/assets/videos/timelapse.mp4">Watch the timelapse</a>
+  <source src="https://opencreatorcfw.github.io/assets/videos/timelapse.mp4" type="video/mp4">
+  <a href="https://opencreatorcfw.github.io/assets/videos/timelapse.mp4">Watch the timelapse</a>
 </video>
 
 ## Fixes stock firmware bugs

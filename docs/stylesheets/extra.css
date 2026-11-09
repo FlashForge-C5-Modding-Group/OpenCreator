@@ -1,119 +1,318 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,600;112,700;112,800&display=swap");
+
+/* The four tools, T0 to T3: the bar under every page title and the card tops */
 :root {
-  --oc-ok: #2e9d57;
-  --oc-test: #d98a00;
-  --oc-partial: #2f7fd1;
-  --oc-bad: #d64545;
-  --oc-plan: #7a7f8a;
+  --oc-graphite: #1a2130;
+  --oc-graphite-2: #243046;
+  --oc-orange: #ff5722;
+  --oc-t0: #ff5722;
+  --oc-t1: #f2b01e;
+  --oc-t2: #22a699;
+  --oc-t3: #6c7bff;
+  --oc-tools: linear-gradient(90deg,
+    var(--oc-t0) 0 25%, var(--oc-t1) 25% 50%,
+    var(--oc-t2) 50% 75%, var(--oc-t3) 75% 100%);
+  --oc-display: "Archivo", var(--md-text-font-family, sans-serif);
+
+  --oc-ok: #23874a;
+  --oc-test: #b86e00;
+  --oc-partial: #2a6fbd;
+  --oc-bad: #c83a3a;
+  --oc-plan: #6b7280;
 }
 
-/* The logo is off-white for the dark header; Zensical's light header is
-   white, so draw it in the text colour there. */
-[data-md-color-scheme="default"] .md-logo img {
+/* Palette: graphite header in both schemes, orange for links and actions */
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color: var(--oc-graphite);
+  --md-primary-fg-color--light: var(--oc-graphite-2);
+  --md-primary-fg-color--dark: #121826;
+  --md-primary-bg-color: #f4f5f7;
+  --md-primary-bg-color--light: rgba(244, 245, 247, 0.7);
+}
+[data-md-color-accent="custom"] {
+  --md-accent-fg-color: #e64a19;
+  --md-accent-fg-color--transparent: rgba(255, 87, 34, 0.1);
+}
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #f6f7f9;
+  --md-default-fg-color: rgba(26, 33, 48, 0.9);
+  --md-typeset-a-color: #d84315;
+  --md-code-bg-color: #eceef2;
+}
+[data-md-color-scheme="slate"] {
+  --md-hue: 222;
+  --md-default-bg-color: #141a26;
+  --md-code-bg-color: #1c2433;
+  --md-typeset-a-color: #ff8a5c;
+  --md-accent-fg-color: #ff8a5c;
+}
+
+/* Graphite header in dark mode; white with dark text in light mode */
+.md-header,
+.md-tabs {
+  background-color: var(--oc-graphite);
+  color: #f4f5f7;
+}
+[data-md-color-scheme="default"] .md-header,
+[data-md-color-scheme="default"] .md-tabs {
+  background-color: #fff;
+  color: var(--oc-graphite);
+  box-shadow: 0 1px 0 rgba(26, 33, 48, 0.08);
+}
+/* The logo is off-white for a dark header */
+[data-md-color-scheme="default"] .md-header .md-logo img {
   filter: brightness(0);
   opacity: 0.87;
 }
-
-/* Landing page (docs/index.md): one centred column */
-.md-typeset .oc-landing-hero {
-  margin: 0 0 1.6rem;
-  padding: 2.4rem 2rem 2rem;
-  border-radius: 0.8rem;
-  background: linear-gradient(135deg, #ff5722 0%, #ff8a3d 100%);
-  color: #fff;
-  text-align: center;
-}
-.md-typeset .oc-landing-hero p,
-.md-typeset .oc-landing-hero strong {
-  color: #fff;
-}
-.md-typeset .oc-landing-hero > p {
-  max-width: 36rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-.md-typeset .oc-landing-hero h1 {
-  margin: 0.4rem 0 0.6rem;
-  font-size: 2.6rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: #fff;
-}
-.md-typeset .oc-landing-hero strong {
-  font-size: 1.05rem;
-}
-/* Off-white already, so it reads on the orange */
-.md-typeset .oc-landing-hero img.oc-landing-mark {
-  width: 9rem;
-  filter: drop-shadow(0 0.6rem 1.2rem rgba(120, 30, 0, 0.35));
-}
-.md-typeset .oc-chips {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.4rem;
-  margin: 0.9rem 0 0.4rem;
-}
-.md-typeset .oc-chips span {
-  padding: 0.15rem 0.7rem;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.15);
-  font-size: 0.7rem;
+.md-header__title,
+.md-header__topic {
+  font-family: var(--oc-display);
   font-weight: 700;
 }
-.md-typeset .oc-landing-hero .md-button {
-  margin: 0.8rem 0.2rem 0;
-  color: #fff;
-  border-color: #fff;
+/* The search field reads as part of the dark header */
+@media screen and (min-width: 45em) {
+  [data-md-color-scheme="slate"] .md-header .md-search__button,
+  [data-md-color-scheme="slate"] .md-header .md-search__button:hover,
+  [data-md-color-scheme="slate"] .md-header .md-search__button:focus {
+    color: #c9cfd9;
+    background-color: rgba(255, 255, 255, 0.09);
+  }
+  [data-md-color-scheme="slate"] .md-header .md-search__button:hover,
+  [data-md-color-scheme="slate"] .md-header .md-search__button:focus {
+    background-color: rgba(255, 255, 255, 0.16);
+  }
+  [data-md-color-scheme="slate"] .md-header .md-search__button::before {
+    background-color: #c9cfd9;
+  }
+  [data-md-color-scheme="slate"] .md-header .md-search__button::after {
+    color: #c9cfd9;
+    background: rgba(255, 255, 255, 0.1);
+  }
 }
-.md-typeset .oc-landing-hero .md-button--primary {
+
+/* Headings */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  font-family: var(--oc-display);
+  color: var(--md-default-fg-color);
+  letter-spacing: -0.01em;
+}
+.md-typeset h1 {
+  font-weight: 800;
+  font-size: 2.1em;
+  line-height: 1.15;
+  margin-bottom: 1.2em;
+  padding-bottom: 0.75rem;
+  background: var(--oc-tools) left bottom / 4.8rem 0.28rem no-repeat;
+}
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  color: #e9ecf1;
+}
+.md-typeset h2 {
+  font-weight: 700;
+  font-size: 1.4em;
+  margin-top: 2.2em;
+}
+.md-typeset h3 {
+  font-weight: 600;
+  font-size: 1.12em;
+}
+
+/* Body copy: a comfortable measure on wide screens */
+.md-typeset {
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+.md-content__inner > p,
+.md-content__inner > ul,
+.md-content__inner > ol {
+  max-width: 44rem;
+}
+
+/* Navigation: the current page is marked with the brand orange */
+.md-nav__link--active,
+.md-nav__item .md-nav__link--active {
+  color: var(--md-typeset-a-color);
+  font-weight: 600;
+}
+
+/* Buttons */
+.md-typeset .md-button {
+  border-radius: 0.3rem;
+  font-weight: 600;
+}
+.md-typeset .md-button--primary {
+  background-color: var(--oc-orange);
+  border-color: var(--oc-orange);
+  color: #fff;
+}
+.md-typeset .md-button--primary:hover,
+.md-typeset .md-button--primary:focus {
+  background-color: #e64a19;
+  border-color: #e64a19;
+  color: #fff;
+}
+.md-typeset .md-button:focus-visible,
+.md-typeset a:focus-visible {
+  outline: 2px solid var(--oc-t1);
+  outline-offset: 2px;
+}
+
+/* ---- Home page (docs/index.md) ---- */
+/* The edit button would float beside the hero and narrow it */
+.md-content__inner:has(.oc-landing) > .md-content__button {
+  display: none;
+}
+.md-typeset .oc-landing-hero {
+  margin: 0 0 2rem;
+  padding: 2.6rem 2.4rem 2.2rem;
+  border-radius: 0.6rem;
+  background: var(--oc-graphite);
+  color: #dfe3ea;
+}
+/* Light mode: the brand orange */
+[data-md-color-scheme="default"] .md-typeset .oc-landing-hero {
+  background: linear-gradient(135deg, #ff5722 0%, #ff8a3d 100%);
+  color: #fff;
+}
+[data-md-color-scheme="default"] .md-typeset .oc-landing-hero p {
+  color: rgba(255, 255, 255, 0.92);
+}
+[data-md-color-scheme="default"] .md-typeset .oc-landing-hero .md-button--primary,
+[data-md-color-scheme="default"] .md-typeset .oc-landing-hero .md-button--primary:hover,
+[data-md-color-scheme="default"] .md-typeset .oc-landing-hero .md-button--primary:focus {
   background: #fff;
+  border-color: #fff;
   color: #e64a19;
+}
+[data-md-color-scheme="default"] .md-typeset .oc-landing-hero .md-button {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+[data-md-color-scheme="slate"] .md-typeset .oc-landing-hero {
+  background: #1d2638;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+.md-typeset .oc-landing-hero > p {
+  max-width: 34rem;
+}
+.md-typeset .oc-landing-hero img.oc-landing-mark {
+  display: block;
+  width: 5.5rem;
+  margin-bottom: 1.2rem;
+}
+.md-typeset .oc-landing-hero h1 {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0;
+  font-size: 3.1rem;
+  line-height: 1;
+  color: #fff;
+  background: none;
+}
+.md-typeset .oc-landing-hero .headerlink {
+  display: none;
+}
+.md-typeset .oc-landing-hero p {
+  color: #b9c0cc;
+}
+.md-typeset .oc-landing-hero p.oc-lede {
+  margin: 0 0 0.8rem;
+  font-size: 1.15rem;
+  line-height: 1.45;
+  font-weight: 500;
+  color: #fff;
+}
+.md-typeset .oc-landing-hero .md-button {
+  margin: 0.6rem 0.4rem 0 0;
+  color: #fff;
+  background: transparent;
+  border: 0.05rem solid rgba(255, 255, 255, 0.4);
 }
 .md-typeset .oc-landing-hero .md-button:hover,
 .md-typeset .oc-landing-hero .md-button:focus {
-  background: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.08);
   color: #fff;
 }
-.md-typeset .oc-landing h2 {
-  margin-top: 2rem;
-  font-weight: 700;
-}
-.md-typeset .oc-landing .grid.cards .lg {
-  font-size: 1.6em;
-  color: var(--md-primary-fg-color);
-}
-@media screen and (min-width: 60em) {
-  .md-typeset .grid.cards.oc-three > ul {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media screen and (max-width: 44.9375em) {
-  .md-typeset .oc-landing-hero { padding: 1.6rem 1.2rem; }
-  .md-typeset .oc-landing-hero h1 { font-size: 2rem; }
-  .md-typeset .oc-landing-hero img.oc-landing-mark { width: 6.5rem; }
+.md-typeset .oc-landing-hero .md-button--primary,
+.md-typeset .oc-landing-hero .md-button--primary:hover,
+.md-typeset .oc-landing-hero .md-button--primary:focus {
+  background: var(--oc-orange);
+  border-color: var(--oc-orange);
 }
 
-/* Cards */
+.md-typeset .oc-landing h2 {
+  margin-top: 2.4rem;
+}
+
+/* Feature cards: each topped with the next tool's colour, lifting on hover */
+.md-typeset .grid {
+  grid-gap: 0.8rem;
+}
 .md-typeset .grid.cards > ul > li {
-  border-radius: 0.5rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-top: 0.2rem solid var(--card, var(--oc-t0));
+  border-radius: 0.3rem;
+  background: var(--md-default-bg-color);
+  box-shadow: none;
   transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
 }
+[data-md-color-scheme="default"] .md-typeset .grid.cards > ul > li {
+  background: #fff;
+}
+.md-typeset .grid.cards > ul > li:nth-child(4n + 2) { --card: var(--oc-t1); }
+.md-typeset .grid.cards > ul > li:nth-child(4n + 3) { --card: var(--oc-t2); }
+.md-typeset .grid.cards > ul > li:nth-child(4n + 4) { --card: var(--oc-t3); }
 .md-typeset .grid.cards > ul > li:hover {
-  border-color: var(--md-primary-fg-color);
+  border-color: var(--md-default-fg-color--lighter);
+  border-top-color: var(--card, var(--oc-t0));
   box-shadow: var(--md-shadow-z2);
   transform: translateY(-2px);
 }
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .grid.cards > ul > li:hover { transform: none; }
+}
+.md-typeset .grid.cards > ul > li > hr {
+  display: none;
+}
+.md-typeset .grid.cards > ul > li > p:first-child {
+  font-family: var(--oc-display);
+  font-size: 0.95em;
+}
+.md-typeset .grid.cards > ul > li > p:first-child a {
+  text-decoration: none;
+}
+.md-typeset .grid.cards .lg {
+  font-size: 1.5em;
+  color: var(--card, var(--oc-t0));
+}
+@media screen and (min-width: 60em) {
+  .md-typeset .grid.cards.oc-three {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
-/* Tables */
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .oc-landing-hero { padding: 1.8rem 1.3rem 1.6rem; }
+  .md-typeset .oc-landing-hero h1 { font-size: 2rem; }
+  .md-typeset .oc-landing-hero p.oc-lede { font-size: 1rem; }
+  .md-typeset .oc-landing-hero img.oc-landing-mark { width: 4.2rem; }
+}
+
+/* ---- Tables ---- */
 .md-typeset table:not([class]) {
-  border-radius: 0.4rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.3rem;
   overflow: hidden;
-  font-size: 0.72rem;
+  font-size: 0.74rem;
 }
 .md-typeset table:not([class]) th {
   background: var(--md-default-fg-color--lightest);
   font-weight: 700;
+}
+.md-typeset table:not([class]) td:first-child {
+  min-width: 9rem;
+  font-weight: 600;
 }
 .md-typeset table:not([class]) tr:hover td {
   background: var(--md-accent-fg-color--transparent);
@@ -121,19 +320,40 @@
 
 /* Status badges: <span class="oc-status ok">Finished</span> */
 .md-typeset .oc-status {
-  display: inline-block;
-  padding: 0.05rem 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.05rem 0.55rem 0.05rem 0.45rem;
   border-radius: 1rem;
-  font-size: 0.65rem;
-  font-weight: 700;
+  font-size: 0.66rem;
+  font-weight: 600;
   white-space: nowrap;
-  color: #fff;
-  background: var(--oc-plan);
+  color: var(--status, var(--oc-plan));
+  background: color-mix(in srgb, var(--status, var(--oc-plan)) 13%, transparent);
 }
-.md-typeset .oc-status.ok { background: var(--oc-ok); }
-.md-typeset .oc-status.test { background: var(--oc-test); }
-.md-typeset .oc-status.partial { background: var(--oc-partial); }
-.md-typeset .oc-status.bad { background: var(--oc-bad); }
+.md-typeset .oc-status::before {
+  content: "";
+  width: 0.45em;
+  height: 0.45em;
+  border-radius: 50%;
+  background: currentColor;
+}
+.md-typeset .oc-status.ok { --status: var(--oc-ok); }
+.md-typeset .oc-status.test { --status: var(--oc-test); }
+.md-typeset .oc-status.partial { --status: var(--oc-partial); }
+.md-typeset .oc-status.bad { --status: var(--oc-bad); }
+[data-md-color-scheme="slate"] .md-typeset .oc-status {
+  color: color-mix(in srgb, var(--status, var(--oc-plan)) 55%, #fff);
+  background: color-mix(in srgb, var(--status, var(--oc-plan)) 24%, transparent);
+}
+
+/* Admonitions: flatter, matching the cards */
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 0 0 0 0.2rem;
+  border-radius: 0.3rem;
+  box-shadow: none;
+}
 
 /* Task lists */
 .md-typeset .task-list-item {
@@ -146,7 +366,7 @@
 /* Mermaid diagrams */
 :root {
   --md-mermaid-node-bg-color: var(--md-accent-fg-color--transparent);
-  --md-mermaid-node-fg-color: var(--md-primary-fg-color);
+  --md-mermaid-node-fg-color: var(--md-default-fg-color);
   --md-mermaid-edge-color: var(--md-default-fg-color--light);
 }
 .md-typeset .mermaid {
@@ -157,7 +377,7 @@
 /* Content tabs */
 .md-typeset .tabbed-set {
   border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
   padding: 0 0.8rem;
 }
 
@@ -169,7 +389,7 @@
 }
 .md-typeset .oc-shots img,
 .md-typeset img.oc-side-shot {
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
   border: 1px solid var(--md-default-fg-color--lightest);
 }
 @media screen and (max-width: 44.9375em) {
@@ -189,7 +409,7 @@
 /* A screenshot inline with the text, at a readable size. */
 .md-typeset img.oc-shot {
   max-width: min(100%, 32rem);
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
   border: 1px solid var(--md-default-fg-color--lightest);
 }
 
@@ -199,5 +419,5 @@
   width: 100%;
   max-width: 360px;
   margin: 1rem auto;
-  border-radius: 0.4rem;
+  border-radius: 0.3rem;
 }

@@ -13,20 +13,14 @@ hide:
 
 # OpenCreator
 
-**Open-source custom firmware for the FlashForge Creator 5 and Creator 5 Pro.**
+Open-source custom firmware for the FlashForge Creator 5 and Creator 5 Pro.
+{ .oc-lede }
 
 Kalico (Klipper) on the printer, a real toolchanger, AFC filament handling and
 Fluidd or Mainsail, all on the hardware you already own. Every part is open source
 and can be changed.
 
-<div class="oc-chips">
-  <span>Klipper / Kalico</span>
-  <span>Toolchanging</span>
-  <span>AFC and ACE Pro</span>
-  <span>Plugins</span>
-</div>
-
-[Get started :material-arrow-right:](getting-started.md){ .md-button .md-button--primary }
+[Get started](getting-started.md){ .md-button .md-button--primary }
 [Latest release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/latest){ .md-button }
 [Discord](https://discord.gg/RsdkqDtfww){ .md-button }
 
