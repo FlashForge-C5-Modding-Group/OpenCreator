@@ -111,6 +111,7 @@ nav:
     - MCU development and verification: mcu-development.md
     - Print workflow: print-workflow.md
     - Printer Features: printer-features.md
+    - VFA compensation: vfa-compensation.md
     - Plugins: plugins.md
     - Project layout: project-layout.md
   - Project:

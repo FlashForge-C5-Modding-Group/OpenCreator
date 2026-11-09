@@ -19,7 +19,7 @@ installs start with the template's values, so calibrate those yourself.
 
 To calibrate yourself anyway: `CALIBRATE_INPUT_SHAPER` (or
 [`CALIBRATE_INPUT_SHAPER_GRAPH`](#input-shaper-graphs) for graphs too),
-`VFA_COMPENSATION`, and `C5_PID_CALIBRATE TOOL=1 TARGET=250` for a heater (add
+[`VFA_COMPENSATION`](vfa-compensation.md), and `C5_PID_CALIBRATE TOOL=1 TARGET=250` for a heater (add
 `TOLERANCE=0.1` if a noisy heater won't settle; the default is 0.05).
 
 The next page explains when to run the two other calibrations:
