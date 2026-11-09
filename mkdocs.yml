@@ -26,20 +26,25 @@ theme:
     - search.highlight
     - content.tooltips
   palette:
-    # Palette toggle for light mode
-    - scheme: default
+    # Follow the OS setting until the reader picks one
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: custom
       accent: custom
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
-    # Palette toggle for dark mode
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: custom
       accent: custom
       toggle:
         icon: material/weather-sunny
-        name: Switch to light mode
+        name: Switch to system preference
 
 extra:
   social:
