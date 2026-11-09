@@ -126,6 +126,28 @@ It takes longer than **VFA**, by one more sweep per motor.
 Run it if you see VFA lines on your prints, and again after changing or
 re-tensioning belts, since that moves the resonance.
 
+## During a print
+
+Calibration only finds the numbers. The cancelling happens on the mainboard,
+inside each motor's own control:
+
+- **At print start**, `STEPPER_RESONANCE_DAMP_ENABLE` sends each motor's saved
+  values to the mainboard: for each ripple (1x, 2x, 4x), an amplitude and two
+  phases, one per direction. The same values are also sent when Klipper starts.
+- **While the motor turns**, the mainboard adjusts the motor's current about
+  20,000 times a second. On top of the normal current it adds a small extra
+  current that rises and falls with the motor's position: once, twice and four
+  times per motor cycle, timed with the phase for the direction it's turning,
+  so it pushes against each ripple as it happens. It follows the motor's actual
+  position, so it works at any speed and through speed changes, with nothing
+  for Klipper to calculate per move. Prints aren't slowed down at all.
+- **At high speed**, the mainboard switches a motor to a separate high-speed
+  control mode, which doesn't add the compensation. That happens at about
+  510 mm/s of belt travel: roughly 360 to 510 mm/s of toolhead speed, depending
+  on the direction of travel. Walls at 300 mm/s are always compensated.
+- **At print end, or when a print is cancelled**, `STEPPER_RESONANCE_DAMP_DISABLE`
+  turns it off. The next print start turns it back on.
+
 ## Side by side
 
 | | Stock | OpenCreator |
