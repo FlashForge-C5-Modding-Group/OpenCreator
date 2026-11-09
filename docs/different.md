@@ -70,6 +70,27 @@ With our custom compiled special ingredients that we sprinkle into our custom fi
 
 (* - 3x best case senario, most of the time from 1.5 to 2x from completely stock 1.9.9)
 
+## No slowed-down short moves
+Since 1.9.9, stock firmware avoids Timer Too Close by slowing down short moves,
+whether your print needed it or not:
+
+- Every move of 0.75 mm or less is slowed so it takes at least 2.5 ms. A 0.2 mm
+  move can go no faster than 80 mm/s, however fast the slicer asked for.
+- Any short move that extrudes (0.75 mm or less across) is capped at 80 mm/s.
+- On top of that, the motion planner limits acceleration on them. In 1.9.9,
+  always: short moves to 5000 mm/s², and short extruding moves to 80 mm/s at
+  1500 mm/s². In 2.0.0, moves of 0.3 mm or less are limited to 10000 mm/s², and
+  extruding moves of 0.5 mm or less to 120 mm/s at 5000 mm/s². That applies when
+  moves come in faster than 80 a second (fully from 200), and for the first 100
+  moves of a print.
+
+Curves, arcs, small details and fine infill are made of exactly these short
+moves, so stock prints them slower than the slicer planned for.
+
+OpenCreator CFW has none of these limits: every move runs at the speed in your
+G-code. We keep up with the moves instead of slowing them down (see
+[above](#up-to-3x-better-performance)).
+
 ## Full installer
 Instead of picking afterwards, or not being able to pick at all, our installer environment will allow you to pick what you like, before it even installs,
 and if your printer breaks but can still access USB drives, you can use our installer to fix any problems, over SSH.
