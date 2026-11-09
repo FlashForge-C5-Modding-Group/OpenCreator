@@ -10,7 +10,7 @@
   {%- if page and page.meta is defined and page.meta and page.meta.description is defined and page.meta.description -%}
     {%- set description = page.meta.description -%}
   {%- endif -%}
-  {%- set image = (config.site_url or "") ~ "assets/images/social.png" -%}
+  {%- set image = (config.site_url or "") ~ "assets/images/social.png?v=2" -%}
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{{ config.site_name }}">
   <meta property="og:title" content="{{ title }}">
