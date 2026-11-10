@@ -43,7 +43,7 @@ FlashForge's software instead of replacing it.
     A Klipper fork with MPC heater tuning, input shaper graphs drawn on the
     printer, power loss recovery and timelapse.
 
--   :material-swap-horizontal-bold:{ .lg .middle } **A real toolchanger**
+-   :material-swap-horizontal-bold:{ .lg .middle } **A real Klipper toolchanger**
 
     ---
 
