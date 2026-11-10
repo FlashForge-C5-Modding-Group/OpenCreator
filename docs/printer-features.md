@@ -3,12 +3,19 @@
 ## First-time setup
 
 The first time you open Fluidd (or Mainsail, or look at the touchscreen) after
-installing OpenCreator, a dialog welcomes you and asks two questions:
+installing OpenCreator, a dialog welcomes you and asks four questions:
 
+- **Pressure advance calibration:** measure each tool's pressure advance over
+  the purge bucket at the start of every print.
+- **Purging:** purge each tool into the bucket at the start of every print.
 - **Clog Detection:** pause the print when a tool's filament wheel stops
   turning while filament is still loaded in it. Off by default.
 - **Bed heat soak:** before a fresh bed mesh, wait a few minutes at bed
   temperature so the plate finishes warping first. Off by default.
+
+Then it says where your tool offsets and dock positions come from and how to
+recalibrate them, and recommends recalibrating
+[VFA compensation](vfa-compensation.md) once.
 
 There's nothing you have to calibrate first: a first install on the printer (SoC) takes
 your printer's own calibration from FlashForge's config (`/usr/data/config/printer.cfg`), so it
@@ -63,6 +70,20 @@ and colour settings, so Fluidd, Mainsail and Timelapse need no changes. If ustre
 stops three times in a row within 30 seconds of starting, the printer goes back to
 mjpg_streamer until the next restart, and says so in `/tmp/opencreator.log`.
 ustreamer's own log is `/usr/data/logs/ustreamer.log`.
+
+## Screen timeout
+
+The touchscreen's backlight turns off after 5 minutes without a touch, and on
+again at the next touch. That waking touch doesn't press anything. A keyboard
+or gamepad on the printer's USB keeps it on too, and so does Sonic Mania or
+DOOM while you play.
+
+To change the time, edit `screen-timeout.conf` in the config folder from
+Fluidd or Mainsail: `timeout: 300` is in seconds, and `0` keeps the screen on.
+The change takes effect within a few seconds.
+
+It runs as its own small service beside the screen app, so it works with
+GrumpyScreen and HelixScreen alike.
 
 ## Timelapse
 

@@ -10,7 +10,7 @@ well it has been tested on a printer.
 | Klipper host on printer | Creator 5 modules, MCU protocol support, and printer configs exist. | It is working. |
 | Toolchanging and AFC standalone | T0 to T3 motion, physical dock and grab checks, filament mapping, runout integration, and safety interlocks are implemented. | Mostly finished testing, and should almost be 100%. |
 | Print start and stop | Four-tool preparation, optional flow and purge, bed mesh, nozzle Z checks, and normal EOF stop are implemented. | All sequences are working as intended |
-| Flow and VFA calibration | The host has an eboard pressure-advance test and MCLib vibration calibration integration. | It mostly works, but may still have some bugs if the flow is interupted. |
+| Flow and VFA calibration | The host has an eboard pressure-advance test and MCLib vibration calibration integration. | It mostly works, but may still have some bugs if the flow is interrupted. |
 | Touchscreen and web UI | Mainsail/Fluidd controls and separate touchscreen. | GrumpyScreen has had multi-extruder pulled in, macros are in dev. |
 | Complete removal of firmwareExe | The main pain point for FlashForge printers | Their bad touchscreen + camera + print uploading sequence has been completely removed and do not function at all. |
 | Installer | Touchscreen installer from a USB drive: Entware, LoopScript, Kalico, Moonraker, Mainsail/Fluidd, GrumpyScreen, the root login and MCU firmware flashing, with a backup first (optional) and restore. Recovery and Update Configs when it's already installed. | Working: tested from a fully stock install to a OpenCreator install. |

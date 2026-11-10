@@ -1,5 +1,5 @@
 # The difference with OpenCreator
-There's a plethera of mods now for the Creator 5, what makes us different?
+There's a plethora of mods now for the Creator 5, what makes us different?
 
 It's not special that there's a couple mods apart from us now.
 Even though we were first on the scene with our stock mods, doesn't mean we stopped innovating when others came out with their solutions.
@@ -68,7 +68,7 @@ Most of our UIs and backends such as Mainsail and Fluidd, along with Moonraker a
 ## Up to 3x* better performance
 With our custom compiled special ingredients that we sprinkle into our custom firmware, you are less likely to ever run into a Timer Too Close, or Motor Too Far In The Past, and can run a print without a purge tower without the printer crashing.
 
-(* - 3x best case senario, most of the time from 1.5 to 2x from completely stock 1.9.9)
+(* - 3x best case scenario, most of the time from 1.5 to 2x from completely stock 1.9.9)
 
 ## No slowed-down short moves
 Since 1.9.9, stock firmware avoids Timer Too Close by slowing down short moves,

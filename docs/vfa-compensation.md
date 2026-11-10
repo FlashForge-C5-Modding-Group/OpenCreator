@@ -73,8 +73,8 @@ values.
    typical level. With no clear peak it uses the configured frequency (200 Hz
    unless saved) and says so.
 4. **Picks the best resonance.** With two strong ones, it calibrates at each,
-   sweeps the speeds again with each result, and keeps whichever leaves less
-   vibration. The strongest peak isn't always best, because the best setting
+   sweeps the speeds again with each result in both directions, and keeps
+   whichever leaves less vibration. The strongest peak isn't always best, because the best setting
    depends on the speed it's tuned at. On one C5, the X motor tuned at its
    stronger 84 Hz resonance left 3 to 5 times more vibration from 30 to
    120 mm/s than tuned at its 285 Hz one.
@@ -102,8 +102,9 @@ wants the raw numbers.
 
 ### Graphs
 
-**VFA + Graphs** runs the same calibration, then repeats the speed sweep with
-compensation on. It draws one picture per motor to `config/vfa/`
+**VFA + Graphs** runs the same calibration, and measures the speeds again with
+compensation on. With two resonances it reuses the winner's check sweep, so
+there's nothing extra to measure. It draws one picture per motor to `config/vfa/`
 (`vfa_stepper_x.png`, `vfa_stepper_y.png`), which you can open from Fluidd's or
 Mainsail's config files.
 
@@ -119,7 +120,8 @@ Mainsail's config files.
   much less it shakes. A ripple that was left off because it didn't help is
   labelled as such.
 
-It takes longer than **VFA**, by one more sweep per motor.
+It takes longer than **VFA** by one more sweep for each motor with only one
+resonance.
 
 ### When to run it
 
