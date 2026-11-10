@@ -47,3 +47,15 @@ before docking. eBoard builds (`CONFIG_C5_EBOARD`) therefore write the
 absolute direction at the start of every move in `src/stepper.c`. This needs
 the eBoard reflashed; until then a `FIRMWARE_RESTART` resets all four to
 forward.
+
+## Shared MCUs across older printers
+The MCUs are heavily shared.
+
+Older printers such as the AD5X and AD5M both have the same
+Nations MCU, but the Gigadevice GD32 chip for the main MCU
+is completely new, and has not been seen on any other 3D
+printer made yet. A lot of libraries such as MCLib and 
+addons such as VFA testing are assumed or said to be made
+by GigaDevice, the MCU manufacturer. In the grape vine, 
+there is supposed to be another printer coming out with the same 
+MCU but as a revision, not a new release.

@@ -13,13 +13,10 @@ Script, and Mainsail. The companion
 [Creator-5-Scripts](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Scripts)
 repository contains scripts intended to run on a rooted printer.
 
-Legacy remains useful while [OpenCreator CFW](opencreator-cfw.md) is being
-developed. Follow each Legacy guide's own prerequisites.
-
-Legacy will not be discontinued when full custom firmware comes out, and will continued to be
-improved, with some features from full CFW, as they will use similar "Plugin" systems.
-Legacy is also a better choice for people who don't want to tinker at all, and would rather keep up
-with FlashForge's newer features, use their cloud service, or use the FlashForge printer ecosystem such as more direct use of their slicer, Flash Studio.
+!!! warning "Legacy Deprication of Support"
+    Legacy no longer gets meaninful updates and will not get Discord support anymore as CFW has been
+    deemed stable enough to work on most printers. The legacy method still works and will gain version
+    updates to continue to support newer versions of the FlashForge OS Kernel package.
 
 | Legacy area | Approach |
 | --- | --- |
@@ -30,5 +27,5 @@ with FlashForge's newer features, use their cloud service, or use the FlashForge
 | Web access | Add tools such as Mainsail alongside the stock software. |
 | Updates and recovery | Check each modification's prerequisite instructions before applying it. |
 
-For the separate replacement stack, see
-[OpenCreator CFW](opencreator-cfw.md). 
+For the newer and supported separate replacement stack, see
+[OpenCreator CFW](opencreator-cfw.md).

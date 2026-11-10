@@ -2,8 +2,9 @@
 
 OpenCreator full custom firmware, or CFW, is the deeper Creator 5 integration
 effort. It aims to make the printer's host software, MCU behavior, toolchanging,
-and configuration maintainable as one community-developed stack. CFW is in
-public alpha; get the [latest release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/latest). The mostly stock alternative is
+and configuration maintainable as one community-developed stack. To gain is more features
+and more stable software overall compared to stock. 
+CFW is in public alpha; get the [latest release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/latest). The mostly stock alternative is
 [OpenCreator Legacy](opencreator-legacy.md).
 
 The work is split between
@@ -16,14 +17,15 @@ for printer files, configuration, and installation helpers.
 
 | Full custom firmware area | Goal | Status |
 | --- | --- | --- |
-| Base software | Maintain Creator 5 behavior in a community-developed Klipper host and MCU stack. | <span class="oc-status ok">Working</span> |
-| Installation and updates | Provide a tested CFW installation and update path with recovery instructions. | <span class="oc-status test">Testing</span> |
+| Base software | Maintain Creator 5 stock behavior in a community-developed Klipper host and MCU stack. | <span class="oc-status ok">Finished</span> |
+| Installation and updates | Provide a tested CFW installation. | <span class="oc-status ok">Finished</span> |
 | Tool selection | Configure T0 to T3 pickup, docking, and safety in host-side modules and macros. | <span class="oc-status ok">Finished</span> |
 | Filament control | Integrate AFC standalone for toolchanger filament mapping, loading, and runout handling. | <span class="oc-status ok">Finished</span> |
-| ACE Pro | Use an ACE Pro as another filament system, each slot feeding its own head, with auto feed and auto load. | <span class="oc-status ok">Working</span> |
+| ACE Pro | Use an ACE Pro as another filament system, each slot feeding its own head, with auto feed and auto load. | <span class="oc-status ok">Finished</span> |
 | ACE Pro multiplexing | Feed several ACE slots into one head and swap between them. | <span class="oc-status">Planned</span> |
 | Web and touchscreen | Allow for switching filaments on the web. | <span class="oc-status partial">Partial</span> |
 | Raspberry Pi host | Use USB gadget mode to tunnel Klipper communication from a Raspberry Pi running the Klipper host to the printer. | <span class="oc-status test">Testing</span> |
+| Extend stock features | Better VFA testing, stallguard and other similar improvements to software | <span class="oc-status partial">Partial</span> |
 
 To see more features that are directly implemented in detail look at [CFW Features](cfwfeatures.md).
 
@@ -35,13 +37,3 @@ Gadget mode Klipper / RPI Klipper is very close to what AnyCubic's modding scene
 and a lot of inital insperation was taken to go this route over direct MCU soldering,
 as it may not be possible on this board, as there has been no direct way (yet) to
 solder and allow USB passthrough for the MCUs.
-
-## Where the work stands
-
-The development stack has Creator 5-specific Klipper modules, MCU ports,
-AFC standalone integration, printer configuration, and a print workflow under
-active test. Read [Architecture](architecture.md) for the component roles,
-[Print workflow](print-workflow.md) for the current sequence, and
-[Status and roadmap](status-and-roadmap.md) for the difference between source
-implementation and printer verification. Testing is underway for the general public
-and can be joined via Discord and asking in any channel for access.

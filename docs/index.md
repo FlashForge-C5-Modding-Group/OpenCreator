@@ -16,13 +16,14 @@ hide:
 Open-source custom firmware for the FlashForge Creator 5 and Creator 5 Pro.
 { .oc-lede }
 
-Kalico (Klipper) on the printer, a real toolchanger, AFC filament handling and
+Kalico (Klipper) on the printer, a real toolchanger you control, AFC filament handling and
 Fluidd or Mainsail, all on the hardware you already own. Every part is open source
 and can be changed.
 
 [Get started](getting-started.md){ .md-button .md-button--primary }
 [Latest release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/latest){ .md-button }
 [Discord](https://discord.gg/RsdkqDtfww){ .md-button }
+[How we're different](different){ .md-button }
 
 </div>
 
@@ -46,7 +47,7 @@ FlashForge's software instead of replacing it.
 
     ---
 
-    Switch heads with `T0`–`T3`, load several tools in one go, and calibrate
+    Switch heads with `T0`–`T3` with no extra software, load several tools in one go, and calibrate
     one nozzle without redoing all four.
     [See how fast it changes](different.md)
 
@@ -102,10 +103,15 @@ FlashForge's software instead of replacing it.
 
     ---
 
-    Keeps the stock experience and adds comforts like a better camera. The
-    lowest-risk start.
+    Keeps the stock experience and adds comforts like a better camera. A
+    slight change that really doesn't do much.
 
 </div>
+
+!!! warning "Development software"
+    Don't treat any full custom firmware from us as complete. What you've seen
+    from reviews, videos, or anything related outside of this wiki
+    may be out of date, different, or not working. 
 
 Not sure which one? [Is OpenCreator CFW for you?](is-cfw-for-you.md) walks
 through what you gain and what you give up. The [feature list](cfwfeatures.md)
@@ -123,11 +129,6 @@ still in testing.
 </div>
 
 </div>
-
-!!! warning "Development software"
-    Don't treat any full custom firmware from us as complete. What you've seen
-    may be out of date, different, or not working. Wait unless you know exactly
-    what you're doing and how to go back to stock.
 
 !!! danger "Warranty and responsibility"
     OpenCreator's team and contributors take no responsibility for damage,

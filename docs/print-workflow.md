@@ -30,7 +30,7 @@ reason is printed to the console.
 ```mermaid
 flowchart TD
   A[Check filament in every used tool] -->|missing| X[Cancel the job]
-  A --> C[Start preheating used tools<br/>to max 100 °C]
+  A --> C[Start preheating tools<br/>to max 100 °C & bed to temp]
   C --> B[Home, then wait for the bed]
   B --> D{Flow calibration<br/>or purge on?}
   D -->|yes| E[For each used tool:<br/>pick up, nozzle Z, heat,<br/>flow / purge, cool, dock]
@@ -39,13 +39,12 @@ flowchart TD
   W --> F{Bed leveling on?}
   F -->|yes| G[Adaptive mesh]
   F -->|no| H[Load saved mesh]
-  G --> I[Center probe check]
+  G --> I[Pick up first tool, apply nozzle Z,<br/>park, other tools to idle temperature,<br/>wait for print temperature]
   H --> I
-  I --> J[Pick up first tool, apply nozzle Z,<br/>park, other tools to idle temperature,<br/>wait for print temperature]
-  J --> L{Purge on?}
-  L -->|yes| M[KAMP purge line<br/>in front of the objects]
-  L -->|no| K
-  M --> K[Slicer G-code starts]
+  I --> J{Purge on?}
+  J -->|yes| M[KAMP purge line<br/>in front of the objects]
+  J -->|no| O
+  M --> O[Slicer G-code starts]
 ```
 
 1. Start a non-blocking preheat of every used tool to at most 100 °C, so the

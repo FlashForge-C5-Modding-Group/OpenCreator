@@ -50,7 +50,7 @@ and a web UI. It's in public alpha, so it suits some people more than others.
     ---
 
     More is on the way, including more accurate pressure advance tuned to your filament, and stall
-    and skipped step detection (StallGuard-like) on X, Y and Z. Both are coming soon.
+    and skipped step detection (StallGuard-like) on X, Y and Z, to even better VFA testing and compensation.
 
 </div>
 

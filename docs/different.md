@@ -94,3 +94,8 @@ G-code. We keep up with the moves instead of slowing them down (see
 ## Full installer
 Instead of picking afterwards, or not being able to pick at all, our installer environment will allow you to pick what you like, before it even installs,
 and if your printer breaks but can still access USB drives, you can use our installer to fix any problems, over SSH.
+
+## Better VFA compensation
+FlashForge keeps a lot of their special sauce for their VFA calibration disabled. We fix up their disabled options and make it better.
+
+Read the wiki page on [VFA Compensation](vfa-compensation)

@@ -8,3 +8,7 @@ Printable parts made for the Creator 5 and 5 Pro from the community of the OpenC
 
 A tool for leveling the bed. Use it with `C5_SCREWS_TILT`, which probes the
 bed screws and tells you how far to turn each one. Made by @SycoAniliz.
+
+## Want to list your own?
+
+Let us know on our Discord!

@@ -33,7 +33,7 @@ starts, so it stays current. Installing, updating and removing still happen over
 
 ### ZMOD plugins
 
-`oc-plugin install` also takes a plugin made for [ZMOD](https://wiki.zmod.link/Plugin/), the AD5M/AD5X mod,
+`oc-plugin install` also takes a plugin made for [ZMOD](https://wiki.zmod.link/Plugin/), the AD5M/AD5X/C5(P) mod,
 for example `oc-plugin install https://github.com/ghzserg/g28_tenz`. Support is basic. A ZMOD plugin has no
 manifest, just a repo named after the plugin with `<name>.cfg` (or `en/<name>.cfg` if it's translated), so
 `oc-plugin` takes its id from the repo name and its version from git, and links only that config into Klipper.
@@ -41,13 +41,14 @@ After that it's listed, updated, disabled and removed like any other plugin.
 
 Its `install.sh`, `uninstall.sh` and `update.sh` are not run, because they expect ZMOD's folders, and Python
 modules have to be linked by hand, as on ZMOD itself. A plugin whose config uses ZMOD's own macros or settings
-won't work here as it is.
+won't work here as it is. Most plugins are expected to be rewritten.
 
 !!! warning "Plugins run with full access"
     A plugin's Klipper and Moonraker code runs inside Klipper and Moonraker, with the same access to the
-    printer as they have. Only install plugins you trust.
+    printer as they have. Only install plugins you trust. An attacker could gain access to your network
+    via a malicious plugin.
 
-## Making a plugin
+## Making an OpenCreator plugin
 
 Copy the [example plugin](https://github.com/FlashForge-C5-Modding-Group/OpenCreator-Plugin-Example). Its
 README lists every manifest key. In short:
