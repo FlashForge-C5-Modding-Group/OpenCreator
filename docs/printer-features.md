@@ -507,8 +507,10 @@ the fixture reference and requires `Z=1`.
 Baby stepping a tool's Z offset during a print, from Fluidd's or Mainsail's
 Z adjust buttons or `SET_GCODE_OFFSET Z_ADJUST=`, is saved as you go. It's
 saved as that tool's Z adjustment in `/usr/data/firmwareRes/config/zoffset.json`,
-the same value the touchscreen's Z offset sets. The next print, and the same
-tool after a toolchange, start from it. Each tool keeps its own value.
+the same value the touchscreen's Z offset sets. Each nozzle keeps its own
+value: a step goes to whichever head is attached. The next print, and the same
+nozzle after a toolchange, start from it, read from that file each time, so
+it's kept across restarts too.
 
 | Macro | What it does |
 | --- | --- |
