@@ -139,6 +139,30 @@ calibrated at, the wobble it targets drops by 75 to 95%. The rest of the
 vibration is the frame and belts, which this doesn't touch; input shaping
 handles that.
 
+## Inspiration: Prusa's phase stepping
+
+This work builds on what Prusa Research published about
+[phase stepping](https://blog.prusa3d.com/phase-stepping-how-we-busted-vibrations-and-improved-print-quality-on-the-xl-printer-with-just-a-firmware-update_94793)
+on the Original Prusa XL (firmware 6.0) and later the CORE One. They showed
+that every stepper motor turns slightly unevenly in its own way, which causes
+both noise and vertical fine artifacts, and that correcting each motor's drive
+signal, calibrated by moving the head diagonally at several speeds while
+recording the toolhead accelerometer, removes most of it. Prusa reported over
+96% less motor vibration on the XL. Their
+[help article](https://help.prusa3d.com/article/phase-stepping_673616) covers
+the calibration.
+
+What we took from it: per-motor correction of the motor's own ripple,
+calibrated with the accelerometer on moves that turn one motor at a time, at
+several speeds. No Prusa code is used. What differs on the Creator 5:
+
+| | Prusa phase stepping | OpenCreator |
+|---|---|---|
+| Motor driver | Trinamic stepper drivers | The mainboard's own motor control (MCLib), adding a correcting current |
+| Steps | Replaced: the firmware drives the motor phases from the motion plan (hence the name) | Kept: Klipper still sends steps, the mainboard follows the real move between them |
+| Correction | Per motor and direction | Per motor and direction, with a table of corrections per speed |
+| Crash detection | Turned off while it's on | Not affected (skipped step detection is the separate, optional motion guard) |
+
 ## Why not full phase stepping
 
 Prusa's phase stepping has the printer's computer send the motor's exact path

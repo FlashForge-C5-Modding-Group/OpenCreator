@@ -19,6 +19,19 @@ We've used some open source projects, here's the ones we've used, this isn't ful
 We've also used a non open source project, which should be.<br>
 FlashForge's MCU and Touchscreen research was done.
 
+## Research and inspiration
+
+Work we learned from without using its code:
+
+- **Prusa Research, phase stepping** ([blog post](https://blog.prusa3d.com/phase-stepping-how-we-busted-vibrations-and-improved-print-quality-on-the-xl-printer-with-just-a-firmware-update_94793),
+  [help article](https://help.prusa3d.com/article/phase-stepping_673616),
+  [Prusa-Firmware-Buddy](https://github.com/prusa3d/Prusa-Firmware-Buddy), GPLv3).
+  Their finding that each stepper motor has its own ripple, and that a per-motor correction calibrated with
+  the toolhead accelerometer on diagonal moves can cancel most of it, is the idea behind
+  [Quieter motors](motor-noise.md). Our version runs on the Creator 5's own motor control (MCLib) rather than
+  Trinamic drivers, keeps Klipper's steps, and calibrates a correction per speed; see that page for how it
+  differs.
+
 ## Current Contributions
 
 - @ano.space --- MCU Firmware, some Klippy bugfixes
