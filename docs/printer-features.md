@@ -555,3 +555,48 @@ not need to be removed for this calibration.
 
 If contact, sensor verification, measurement, or redocking fails, the
 routine does not save new dock coordinates. 
+
+## Mainboard and power supply fans
+
+The mainboard has two fans of its own: one cooling the board and the X/Y/Z
+motor drivers, and one in the power supply. Stock runs both at full speed
+whenever the motors are powered or a hotend is heating. OpenCreator only runs
+them as fast as the printer needs, so they are much quieter most of the time.
+
+- **Mainboard fan:** follows the mainboard chip's own temperature. Off below
+  54.5 °C, from 30% at 54.5 °C up to full speed at 65 °C, and at least 40%
+  while the motors are powered, for the drivers.
+- **Power supply fan:** follows the power supply's estimated load, from the
+  hotends' heater power and the motors. 30% at light load, at least 50% while
+  a hotend is heating, full speed at about 120 W. It never runs slower than
+  the mainboard fan. Once the load is gone it keeps running for a minute at
+  most 80%, then stops.
+
+Both ramp up and down smoothly instead of switching between off and full. They
+are checked every second on their own timer, so long commands such as PID
+calibration, heat-up waits or homing don't stop them.
+
+During input shaper and VFA calibration both fans are held at 50%, so their
+noise stays the same through the measurement.
+
+`C5_BOARD_FANS` shows both speeds, the mainboard temperature and the
+estimated load. `C5_BOARD_FANS HOLD=0.5` holds both fans at 50% (`HOLD=-1`
+releases them), and any setting can be changed until the next restart, e.g.
+`C5_BOARD_FANS MAX_TEMP=65`. To keep a change, edit `[c5_board_fans]` in
+`printer.base.cfg`.
+
+## MCU temperatures
+
+Fluidd and Mainsail show the temperature of the mainboard chip
+(`mainboard_mcu`) and of the toolhead board's chip (`toolhead_mcu`). They are
+only for keeping an eye on things; the mainboard one also drives the
+mainboard fan.
+
+## Motion guard
+
+The motion guard watches the X, Y and Z motors for skipped steps and stalls
+during a print, from the mainboard's own motor control. It is off by default,
+as it reported too many false alarms while the motors were crawling or
+holding still. `C5_MOTION_GUARD ENABLE=1` turns it on until the next restart
+(`ACTION=pause` to pause the print instead of warning), and
+`C5_MOTION_STATUS` shows what it has counted.

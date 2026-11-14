@@ -149,6 +149,10 @@ inside each motor's own control:
   on the direction of travel. Walls at 300 mm/s are always compensated.
 - **At print end, or when a print is cancelled**, `STEPPER_RESONANCE_DAMP_DISABLE`
   turns it off. The next print start turns it back on.
+- **With ripple correction**, a ripple that has a
+  [ripple correction](motor-noise.md#ripple-correction) table (2x and 4x after
+  `RIPPLE_CALIBRATE`) isn't sent; the table corrects it at every speed
+  instead. The 1x VFA value still applies.
 
 ## Side by side
 

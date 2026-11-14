@@ -112,6 +112,7 @@ nav:
     - Print workflow: print-workflow.md
     - Printer Features: printer-features.md
     - VFA compensation: vfa-compensation.md
+    - Quieter motors: motor-noise.md
     - Plugins: plugins.md
     - Project layout: project-layout.md
   - Project:
