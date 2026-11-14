@@ -51,8 +51,9 @@ multiples, timed to the motor's position. The right current depends on the
 speed: for the once-per-step wobble it shrinks as the speed nears the motor's
 resonance, flips over, and grows again above it. So each multiple has a table
 of corrections at five speeds, and the mainboard picks the value for the
-current speed from the step rate. Above the fastest calibrated speed the
-correction fades out, as nothing was measured there.
+current speed from the step rate. Just above the fastest and below the
+slowest calibrated speed the correction fades out, as nothing was measured
+there.
 
 It is calibrated per motor, and per direction of travel, with the toolhead
 accelerometer.
@@ -95,33 +96,48 @@ saved tables.
 ### With VFA compensation
 
 [VFA compensation](vfa-compensation.md) also corrects the 1, 2 and 4 times
-ripples, but tuned at the speed where each one hits the frame's resonance.
-Once a multiple has a ripple table, its VFA value isn't used, at startup or
-when a print turns VFA on. VFA's once-per-cycle correction still applies.
+ripples, but tuned near the frame's resonance, so mostly at higher speeds.
+The mainboard hands over by speed: where a ripple table covers the motor's
+current speed, it replaces the VFA value for that ripple; outside the table
+VFA takes over again, blended in between. Keep both calibrated.
+
+### Fans during calibration
+
+Calibration holds the mainboard and power supply fans at 50% and waits for
+them to settle before measuring, like input shaper and VFA calibration do.
+Otherwise they speed up as the mainboard warms during the test, and their
+changing vibration throws the measurements off.
 
 ## Measured
 
-Creator 5 Pro, toolhead accelerometer, each move run twice. The numbers are
-how much less the toolhead shakes than on the firmware before these changes,
-in three frequency bands: 10–100 / 100–300 / 300–800 Hz. "Diagonal" moves
-one motor only.
+Creator 5 Pro, toolhead accelerometer, board fans held at 50% throughout. The
+new firmware (step interpolation plus calibrated ripple correction) is the
+average of three sessions, against the firmware before these changes. Numbers
+are how much less the toolhead shakes, in three frequency bands:
+10–100 / 100–300 / 300–800 Hz. "Diagonal" moves one motor only.
 
-| Move | Step interpolation | Plus ripple correction |
-|---|---|---|
-| Y 5 mm/s | −27% / −49% / −58% | −35% / −42% / −54% |
-| Y 10 mm/s | −26% / −41% / −60% | −41% / −39% / −57% |
-| Y 20 mm/s | −1% / −24% / −42% | −44% / −43% / −33% |
-| Y 80 mm/s | −4% / −30% / −3% | −5% / −36% / −16% |
-| X 5 mm/s | −41% / −15% / −13% | −34% / −18% / −15% |
-| X 20 mm/s | −17% / −23% / −18% | −10% / −36% / −14% |
-| X 40 mm/s | −5% / +3% / +10% | −4% / −16% / −7% |
-| Diagonal 20 mm/s | −2% / −8% / −20% | −31% / −64% / −14% |
-| Slow speed changes | −2 to −15% / 0 to +2% / −3 to −8% | −13 to −19% / −2 to −10% / −12 to −14% |
-| X 150 mm/s | about the same | about the same |
+| Move | Change |
+|---|---|
+| Y 5 mm/s | −24% / −39% / −58% |
+| Y 10 mm/s | −37% / −38% / −52% |
+| Y 20 mm/s | −42% / −54% / −45% |
+| Y 80 mm/s | −4% / −30% / +1% |
+| X 5 mm/s | −40% / −15% / −17% |
+| X 10 mm/s | −34% / +18% / −4% |
+| X 20 mm/s | −23% / −42% / −36% |
+| X 40 mm/s | +2% / −27% / −4% |
+| X 80 mm/s | −12% / −22% / −9% |
+| X 150 mm/s | −11% / −6% / −4% |
+| Diagonal 5 mm/s | −34% / −29% / −16% |
+| Diagonal 20 mm/s | −32% / −62% / −14% |
+| Diagonal 80 mm/s | +2% / −14% / −13% |
+| Slow speed changes | −2 to −17% / −6 to −10% / −5 to −14% |
 
-At the speed each point was calibrated at, the wobble it targets drops by 70
-to 98%. The rest of the vibration is the frame and belts, which this doesn't
-touch; input shaping handles that.
+Repeating the same test 15 minutes apart moves single numbers by up to about
+±30%, so read small changes as no change. At the speed each point was
+calibrated at, the wobble it targets drops by 75 to 95%. The rest of the
+vibration is the frame and belts, which this doesn't touch; input shaping
+handles that.
 
 ## Why not full phase stepping
 

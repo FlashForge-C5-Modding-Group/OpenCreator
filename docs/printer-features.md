@@ -576,8 +576,8 @@ Both ramp up and down smoothly instead of switching between off and full. They
 are checked every second on their own timer, so long commands such as PID
 calibration, heat-up waits or homing don't stop them.
 
-During input shaper and VFA calibration both fans are held at 50%, so their
-noise stays the same through the measurement.
+During input shaper, VFA and ripple calibration both fans are held at 50%,
+so their vibration stays the same through the measurement.
 
 `C5_BOARD_FANS` shows both speeds, the mainboard temperature and the
 estimated load. `C5_BOARD_FANS HOLD=0.5` holds both fans at 50% (`HOLD=-1`

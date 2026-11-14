@@ -151,8 +151,8 @@ inside each motor's own control:
   turns it off. The next print start turns it back on.
 - **With ripple correction**, a ripple that has a
   [ripple correction](motor-noise.md#ripple-correction) table (2x and 4x after
-  `RIPPLE_CALIBRATE`) isn't sent; the table corrects it at every speed
-  instead. The 1x VFA value still applies.
+  `RIPPLE_CALIBRATE`) uses the table at the speeds it was calibrated for, and
+  VFA above and below them.
 
 ## Side by side
 
