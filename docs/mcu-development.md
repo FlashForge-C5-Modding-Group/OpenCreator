@@ -59,3 +59,6 @@ addons such as VFA testing are assumed or said to be made
 by GigaDevice, the MCU manufacturer. In the grape vine, 
 there is supposed to be another printer coming out with the same 
 MCU but as a revision, not a new release.
+
+How MCLib drives the motors, and how Kalico's replacement for it works,
+is documented in [Architecture](architecture.md#mclib-and-motor-control).
