@@ -114,6 +114,7 @@ nav:
     - VFA compensation: vfa-compensation.md
     - Quieter motors: motor-noise.md
     - Plugins: plugins.md
+    - Plugin repositories: plugin-repositories.md
     - Project layout: project-layout.md
   - Project:
     - Status and roadmap: status-and-roadmap.md

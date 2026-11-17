@@ -7,6 +7,8 @@ shows each part and is the place to start when making one.
 
 ## Using plugins
 
+Find available add-ons in [Plugin repositories](plugin-repositories.md).
+
 Plugins are managed with `oc-plugin` over SSH:
 
 | Command | What it does |
