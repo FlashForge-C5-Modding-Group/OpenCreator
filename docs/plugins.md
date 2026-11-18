@@ -11,16 +11,44 @@ Plugins are managed with `oc-plugin` over SSH:
 
 | Command | What it does |
 | --- | --- |
-| `oc-plugin install <git URL>` | Download and enable a plugin. `--ref <branch or tag>` picks a version. |
-| `oc-plugin list` | Installed plugins, their version, whether they're enabled, and the git branch and commit. |
+| `oc-plugin search [word]` | The [plugin catalog](#plugin-catalog), or the entries matching a word. |
+| `oc-plugin install <id or git URL>` | Download and enable a plugin, by its catalog id or from any git URL. `--ref <branch or tag>` picks a version. |
+| `oc-plugin list` | Installed plugins, their version, whether they're enabled, and the git branch and commit. Plugins not made for this printer are marked. |
 | `oc-plugin update [id]` | Pull the newest version of one plugin, or all of them. |
 | `oc-plugin disable <id>` / `enable <id>` | Turn a plugin off or back on without removing it. |
-| `oc-plugin remove <id>` | Uninstall it. |
+| `oc-plugin remove <id>` | Uninstall it. `--keep-data` keeps its settings for a reinstall. |
+| `oc-plugin status` | Each plugin's [background programs](#startup-items-and-scripts): running or stopped, and their log file. |
+| `oc-plugin logs <id> [item]` | The end of a plugin's logs. `-n 200` for more lines, `-f` to keep following. |
+| `oc-plugin start` / `stop` / `restart <id> [item]` | Start, stop or restart a plugin's background programs. |
 | `oc-plugin sync` | Redo the links and includes; see [How it works](#how-it-works). |
 
 After a change, `oc-plugin` restarts Klipper and/or Moonraker itself, whichever the plugin needs. It never
 does that while the printer is printing or paused: it says so, and the change takes effect at the next restart.
 `--no-restart` skips the restart.
+
+Plugins can say which printers and installs they're made for. `install` refuses one that isn't made for
+yours, and `update` keeps the old version if a new one isn't, or if its manifest is broken. `--force` installs
+it anyway. The [SSH login banner](installer.md#login-banner) shows how many plugins are installed.
+
+## Plugin catalog
+
+`oc-plugin search` lists the plugins in OpenCreator's catalog, split into official and unofficial ones.
+Install one by its id, for example `oc-plugin install hello`.
+
+| Plugin | Id | Made for | |
+| --- | --- | --- | --- |
+| [Hello OpenCreator](https://github.com/FlashForge-C5-Modding-Group/OpenCreator-Plugin-Example) | `hello` | All | Official. The example plugin: a Klippy module, a macro and a Moonraker endpoint. |
+| [Printer Buddy Lite](https://github.com/FlashForge-C5-Modding-Group/printer-buddy-lite) | `sep-ai` | SoC installs | Official. Print failure detection on the printer's own X2600 RISC-V core, with a web page on port 7180. |
+| [OctoEverywhere for OpenCreator](https://github.com/KidCe/opencreator-octoeverywhere) | `octoeverywhere` | SoC installs | Unofficial. OctoEverywhere remote access and cameras. After installing, run `sh /usr/data/opencreator/plugins/octoeverywhere/install.sh` and follow its README. |
+
+Official plugins are made or checked by the OpenCreator team. Unofficial ones are listed so they're easy to
+find, but nobody from OpenCreator has reviewed them: read what a plugin does before installing it.
+
+The catalog is `catalog.json` in [opencreator-fs](https://github.com/FlashForge-C5-Modding-Group/opencreator-fs)
+(`fs/usr/data/opencreator/plugin-manager/`). It comes with OpenCreator updates, so `search` works offline. To
+get a plugin listed, open a pull request adding it; the
+[example plugin's README](https://github.com/FlashForge-C5-Modding-Group/OpenCreator-Plugin-Example#getting-into-the-catalog)
+shows an entry.
 
 Plugins installed from a git URL also show up in Fluidd and Mainsail's update manager as
 **oc-plugin-&lt;id&gt;**, so they can be updated from there like OpenCreator itself.
@@ -73,6 +101,41 @@ README lists every manifest key. In short:
 
 Module names must be unique. A plugin whose module has the same name as one of Kalico's, or as
 another plugin's, is refused and isn't installed. Give yours a prefix.
+
+### Startup items and scripts
+
+A plugin can also run its own programs:
+
+```json
+"startup": [{ "name": "server", "exec": "bin/server.sh", "type": "service" }],
+"scripts": { "install": "bin/install.sh", "update": "bin/install.sh", "uninstall": "bin/uninstall.sh" }
+```
+
+- **`startup`:** programs started when the plugin is installed or enabled and at every boot, and stopped
+  when it's disabled or removed. A `service` is started again if it exits (5 s later, backing off to a
+  minute while it keeps failing). A `once` item runs at boot and stops. `args` and `delay` (up to 600 s)
+  are optional.
+- **`scripts`:** `install` runs before anything is linked, and the plugin isn't installed if it fails.
+  `update` runs after `oc-plugin update` pulls a new version, and `uninstall` before `oc-plugin remove`.
+  Each gets up to 15 minutes.
+
+Both run in the plugin folder with `OC_PLUGIN_ID`, `OC_PLUGIN_DIR`, `OC_PLUGIN_DATA`, `OC_CONFIG_DIR`,
+`OC_KLIPPER_DIR` and `OC_MOONRAKER_URL` set. `OC_PLUGIN_DATA` is a folder for the plugin's own files, and it's
+kept across updates. Startup items log to `/tmp/oc-plugin-<id>-<name>.log`, which `oc-plugin logs` shows. On
+the printer, `/tmp` is in RAM, so a log is moved aside to `.log.1` once it passes 512 KB.
+
+### Compatibility
+
+```json
+"requires": { "models": ["Creator5Pro"], "modes": ["soc"] }
+```
+
+- **`models`:** `Creator5` and/or `Creator5Pro`, for hardware only one of them has, like the Pro's chamber
+  heater. The model comes from the stock boot script, or from `printer.model.cfg` on SBC installs. If it
+  can't be told, `oc-plugin` only warns.
+- **`modes`:** `soc` (Klipper on the printer itself) and/or `sbc` (Klipper on a Raspberry Pi or other SBC).
+
+Leave `requires` out if the plugin runs everywhere.
 
 To try a plugin while writing it, install the folder straight from disk: `oc-plugin install /usr/data/my-plugin`.
 That's a copy, so install it again after each change, and it isn't offered in the update manager.

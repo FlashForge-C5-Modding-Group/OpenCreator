@@ -201,16 +201,17 @@ printer, with the model underneath:
   ▐██▌            ███▌                  IP       192.168.2.92 (wlan0)
   ▐██▌            ███▌                  Storage  1.8 GB free of 5.5 GB in /usr/data
   ▐██▙▖           ▜██▙        ▄▄▄▄▖     Host     flashforge
-   ▝▜█████████████▄▀████████████▀
+   ▝▜█████████████▄▀████████████▀       Plugins  1 installed (oc-plugin list)
       ▝▀▀▀▀▀▀▀▀▀▀     ▀▀▀▀▀▀▀▀▀
             Creator 5 Pro
 
 root@flashforge:/usr/data/opencreator#
 ```
 
-The prompt is coloured and shows the folder you're in. It works in the
-printer's own shell, so nothing extra needs installing. If bash is installed
-through Entware, the login uses bash instead.
+The Plugins line counts the installed [plugins](plugins.md); with none it
+points to `oc-plugin search`. The prompt is coloured and shows the folder
+you're in. It works in the printer's own shell, so nothing extra needs
+installing. If bash is installed through Entware, the login uses bash instead.
 
 - Only interactive logins get it. SFTP, `scp` and `ssh <printer> <command>`
   aren't affected, so scripts and file transfers work as before.
