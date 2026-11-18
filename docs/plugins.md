@@ -40,6 +40,7 @@ Install one by its id, for example `oc-plugin install hello`.
 | [Hello OpenCreator](https://github.com/FlashForge-C5-Modding-Group/OpenCreator-Plugin-Example) | `hello` | All | Official. The example plugin: a Klippy module, a macro and a Moonraker endpoint. |
 | [Printer Buddy Lite](https://github.com/FlashForge-C5-Modding-Group/printer-buddy-lite) | `sep-ai` | SoC installs | Official. Print failure detection on the printer's own X2600 RISC-V core, with a web page on port 7180. |
 | [OctoEverywhere for OpenCreator](https://github.com/KidCe/opencreator-octoeverywhere) | `octoeverywhere` | SoC installs | Unofficial. OctoEverywhere remote access and cameras. After installing, run `sh /usr/data/opencreator/plugins/octoeverywhere/install.sh` and follow its README. |
+| [Orca Filament Profiles](https://github.com/Xmister/opencreator-orca-filament-profiles) | `orca-filament-profiles` | All | Unofficial. Pick which OrcaSlicer filament preset each AFC material uses when Orca syncs filaments (OrcaSlicer 2.5 or later). AFC now supports this itself, so this plugin may be of little use. If you still want it, put your mappings in `orca-filament-profiles/mapping.cfg` next to `printer.cfg` and restart Klipper. |
 
 Official plugins are made or checked by the OpenCreator team. Unofficial ones are listed so they're easy to
 find, but nobody from OpenCreator has reviewed them: read what a plugin does before installing it.
