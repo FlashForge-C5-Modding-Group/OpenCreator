@@ -78,6 +78,10 @@ To uninstall OpenCreator and go back to bone stock, launch the installer, and fo
 
     If you uninstall OpenCreator and you picked Fluidd, you'll have to revert Nginx to stock configs.
 
+The [SSH login banner](installer.md#login-banner) doesn't need cleaning up: a
+rollback removes it, and it turns itself off whenever FlashForge's firmware is
+back in place.
+
 ### Restoring the stock boot logo
 The OpenCreator boot logo will be removed when you use the full-rollback option. Here's a way if you do it via normal software updates.
 

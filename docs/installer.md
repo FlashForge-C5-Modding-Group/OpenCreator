@@ -188,6 +188,41 @@ ssh opencreator@<printer IP>
     Type the new password twice. Running the installer again keeps the
     password you set.
 
+### Login banner
+
+Logging in over SSH shows the OpenCreator logo next to some details about the
+printer, with the model underneath:
+
+```text
+        ▄▄▄▄▄▄▄▄      ▄▄▄▄▄▄▄▄▄
+    ▗▟████████████▙▞▜███████████▄       OpenCreator
+   ▟██▛▘        ▝▜██▙▝       ▝▜███▄     -----------
+  ▐██▌            ███▌                  Uptime   2d 13h 22m
+  ▐██▌            ███▌                  IP       192.168.2.92 (wlan0)
+  ▐██▌            ███▌                  Storage  1.8 GB free of 5.5 GB in /usr/data
+  ▐██▙▖           ▜██▙        ▄▄▄▄▖     Host     flashforge
+   ▝▜█████████████▄▀████████████▀
+      ▝▀▀▀▀▀▀▀▀▀▀     ▀▀▀▀▀▀▀▀▀
+            Creator 5 Pro
+
+root@flashforge:/usr/data/opencreator#
+```
+
+The prompt is coloured and shows the folder you're in. It works in the
+printer's own shell, so nothing extra needs installing. If bash is installed
+through Entware, the login uses bash instead.
+
+- Only interactive logins get it. SFTP, `scp` and `ssh <printer> <command>`
+  aren't affected, so scripts and file transfers work as before.
+- The logo needs a UTF-8 terminal. Windows Terminal, PuTTY and the macOS and
+  Linux terminals all use UTF-8 by default.
+- With bash, your own `~/.bashrc` can still set a different prompt.
+- Rolling back to stock removes it. It also turns itself off if FlashForge's
+  firmware is put back any other way, such as a FlashForge update.
+
+To turn it off on your printer, delete `/etc/profile.d/opencreator.sh` and
+`/usr/data/opencreator/startup/scripts/03-login.sh`.
+
 ## Safety features
 
 <div class="grid cards" markdown>
