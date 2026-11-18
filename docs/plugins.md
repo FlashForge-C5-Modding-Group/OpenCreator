@@ -21,6 +21,7 @@ Plugins are managed with `oc-plugin` over SSH:
 | `oc-plugin logs <id> [item]` | The end of a plugin's logs. `-n 200` for more lines, `-f` to keep following. |
 | `oc-plugin start` / `stop` / `restart <id> [item]` | Start, stop or restart a plugin's background programs. |
 | `oc-plugin sync` | Redo the links and includes; see [How it works](#how-it-works). |
+| `oc-plugin moonraker [URL]` | Tunneled printers: show or set the SBC's Moonraker. `--find` looks for it, `--scan` lists every one and asks which. See [Tunneled printers](#tunneled-printers). |
 
 After a change, `oc-plugin` restarts Klipper and/or Moonraker itself, whichever the plugin needs. It never
 does that while the printer is printing or paused: it says so, and the change takes effect at the next restart.
@@ -32,15 +33,15 @@ it anyway. The [SSH login banner](installer.md#login-banner) shows how many plug
 
 ## Plugin catalog
 
-`oc-plugin search` lists the plugins in OpenCreator's catalog, split into official and unofficial ones.
-Install one by its id, for example `oc-plugin install hello`.
+`oc-plugin search` lists the plugins in OpenCreator's catalog, split into official and unofficial ones, with
+where each one runs (SoC, SBC or both). Install one by its id, for example `oc-plugin install hello`.
 
-| Plugin | Id | Made for | |
+| Plugin | Id | Runs on | |
 | --- | --- | --- | --- |
-| [Hello OpenCreator](https://github.com/FlashForge-C5-Modding-Group/OpenCreator-Plugin-Example) | `hello` | All | Official. The example plugin: a Klippy module, a macro and a Moonraker endpoint. |
-| [Printer Buddy Lite](https://github.com/FlashForge-C5-Modding-Group/printer-buddy-lite) | `sep-ai` | SoC installs | Official. Print failure detection on the printer's own X2600 RISC-V core, with a web page on port 7180. |
-| [OctoEverywhere for OpenCreator](https://github.com/KidCe/opencreator-octoeverywhere) | `octoeverywhere` | SoC installs | Unofficial. OctoEverywhere remote access and cameras. After installing, run `sh /usr/data/opencreator/plugins/octoeverywhere/install.sh` and follow its README. |
-| [Orca Filament Profiles](https://github.com/Xmister/opencreator-orca-filament-profiles) | `orca-filament-profiles` | All | Unofficial. Pick which OrcaSlicer filament preset each AFC material uses when Orca syncs filaments (OrcaSlicer 2.5 or later). AFC now supports this itself, so this plugin may be of little use. If you still want it, put your mappings in `orca-filament-profiles/mapping.cfg` next to `printer.cfg` and restart Klipper. |
+| [Hello OpenCreator](https://github.com/FlashForge-C5-Modding-Group/OpenCreator-Plugin-Example) | `hello` | SoC, SBC | Official. The example plugin: a Klippy module, a macro and a Moonraker endpoint. |
+| [Printer Buddy Lite](https://github.com/FlashForge-C5-Modding-Group/printer-buddy-lite) | `sep-ai` | SoC, SBC (tunneled) | Official. Print failure detection on the printer's own X2600 RISC-V core, with a web page on port 7180. On a tunneled printer it's installed on the printer and finds the SBC's Moonraker by itself. |
+| [OctoEverywhere for OpenCreator](https://github.com/KidCe/opencreator-octoeverywhere) | `octoeverywhere` | SoC | Unofficial. OctoEverywhere remote access and cameras. After installing, run `sh /usr/data/opencreator/plugins/octoeverywhere/install.sh` and follow its README. |
+| [Orca Filament Profiles](https://github.com/Xmister/opencreator-orca-filament-profiles) | `orca-filament-profiles` | SoC, SBC | Unofficial. Pick which OrcaSlicer filament preset each AFC material uses when Orca syncs filaments (OrcaSlicer 2.5 or later). AFC now supports this itself, so this plugin may be of little use. If you still want it, put your mappings in `orca-filament-profiles/mapping.cfg` next to `printer.cfg` and restart Klipper. |
 
 Official plugins are made or checked by the OpenCreator team. Unofficial ones are listed so they're easy to
 find, but nobody from OpenCreator has reviewed them: read what a plugin does before installing it.
@@ -134,7 +135,8 @@ the printer, `/tmp` is in RAM, so a log is moved aside to `.log.1` once it passe
 - **`models`:** `Creator5` and/or `Creator5Pro`, for hardware only one of them has, like the Pro's chamber
   heater. The model comes from the stock boot script, or from `printer.model.cfg` on SBC installs. If it
   can't be told, `oc-plugin` only warns.
-- **`modes`:** `soc` (Klipper on the printer itself) and/or `sbc` (Klipper on a Raspberry Pi or other SBC).
+- **`modes`:** `soc` (Klipper on the printer itself) and/or `sbc` (Klipper on a Raspberry Pi or other SBC,
+  including a printer tunneled to one).
 
 Leave `requires` out if the plugin runs everywhere.
 
@@ -168,7 +170,22 @@ On the printer, `10-klipper.sh` runs `oc-plugin sync --only klipper` before ever
 `/usr/data/opencreator/plugin-manager/`, which the installer and the OpenCreator updater keep up to date.
 `10-klipper.sh` links it into `/opt/bin`.
 
-### Tunneled and SBC installs
+### Tunneled printers
+
+A tunneled printer counts as an SBC install, so it takes plugins made for `sbc`. `oc-plugin` runs on the
+printer as usual, and `tunneled.sh` starts the plugins' startup items at boot. Klipper and Moonraker are on the
+SBC, so a plugin's Klipper and Moonraker parts aren't linked on the printer, and nothing is restarted. Startup
+items and scripts get `OC_TUNNELED=1`.
+
+Plugins that talk to Moonraker get the SBC's as `OC_MOONRAKER_URL`. `oc-plugin moonraker --find` finds it: it
+keeps the saved address if it still answers, and otherwise tries port 7125 on every address in the printer's
+own networks (neighbours it already knows first). It only accepts an OpenCreator tunnel SBC, one whose
+Moonraker has the `opencreator-updater` update entry or whose Klipper's MCUs are on `/dev/ttyGS*`. With several
+tunneled printers on one network it lists them all with their hostnames. Over SSH it asks which one is this
+printer's; run by a plugin it stops and says so. Pick one with `oc-plugin moonraker --scan`, or set it by hand
+with `oc-plugin moonraker http://<sbc>:7125`. The choice is saved in `plugins/.moonraker-url`.
+
+### Running oc-plugin on the SBC
 
 `oc-plugin` also works on a Raspberry Pi running Klipper. There, the default folders are
 `~/opencreator-plugins`, `~/klipper`, `~/printer_data/config` and `~/moonraker`. Nothing runs `sync` at each
