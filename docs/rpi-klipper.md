@@ -178,6 +178,20 @@ look at, never into the live config.
     the official `main` branch (local edits are stashed, not deleted), fixes the
     `moonraker.conf` section and restarts Moonraker.
 
+### Updating the printer side
+
+The update manager only updates the SBC. To update OpenCreator on the printer itself (the
+bridge's startup scripts, the launcher, GrumpyScreen's files), SSH into the printer and run:
+
+```sh
+oc-tunneled
+```
+
+It pulls the latest opencreator-fs and puts the new files in place. They're used from the
+next reboot. Klipper's config and the MCU firmware aren't touched. On a printer that hasn't
+rebooted since the update that added the command, run
+`sh /usr/data/opencreator/tunneled/oc-tunneled` instead.
+
 ### 3MF uploads
 
 Sliced 3MF files (OrcaSlicer or Bambu Studio "Export plate sliced file", `.gcode.3mf`) can be
