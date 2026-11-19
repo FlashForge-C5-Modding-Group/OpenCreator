@@ -106,6 +106,7 @@ nav:
     - What makes us different: different.md
     - How to toggle features: toggle-features.md
   - Printable Mods: printable-mods.md
+  - Games: games.md
   - Technical Reference:
     - Architecture: architecture.md
     - MCU development and verification: mcu-development.md

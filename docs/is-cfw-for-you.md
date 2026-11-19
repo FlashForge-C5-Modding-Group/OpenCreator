@@ -24,7 +24,7 @@ and a web UI. It's in public alpha, so it suits some people more than others.
 
     ---
 
-    Kalico with MPC, input shaper graphs on the printer, per-tool Z offsets, toggles for purge, flow
+    Kalico with MPC, corrected PID, input shaper graphs on the printer, per-tool Z offsets, toggles for purge, flow
     calibration, bed soak and more. See [CFW Features](cfwfeatures.md).
 
 -   :material-printer-3d: **Use OrcaSlicer**
@@ -45,6 +45,31 @@ and a web UI. It's in public alpha, so it suits some people more than others.
 
     Move Klipper onto an SBC for more power and cameras. See [OpenCreator for SBC](rpi-klipper.md).
 
+-   :material-quality-high: **Want better prints and camera quality**
+
+    ---
+
+    With features like better [VFA compensation](vfa-compensation.md) you can get cleaner prints, and with camera tweaks, you can have the best looking camera.
+
+-   :material-fan-off: **Want a quieter printer**
+
+    ---
+
+    We adaptively scale fan noise to what your temperature actually is, making it quiet when it's cold, and loud when its hot.
+
+-   :material-alert-circle-check: **Want AI detection**
+
+    ---
+
+    With our special hand-crafted model in collaboration with [Printer Buddy](https://github.com/printer-buddy/printer-buddy), we give you [Printer Buddy Lite](https://github.com/FlashForge-C5-Modding-Group/printer-buddy-lite)
+    The best available local AI vision model for your Creator 5, running as a plugin to addon, with zero performance overhead.
+
+-   :material-shopping: **Want an ever growing plugin list**
+
+    ---
+
+    [With a small command or two, you can download addons instantly compatible and available for your printer.](plugins.md)
+
 -   :material-rocket-launch-outline: **Want what's coming next**
 
     ---
@@ -60,7 +85,8 @@ and a web UI. It's in public alpha, so it suits some people more than others.
 - **Use FlashForge's app, cloud or FlashStudio.** These go away once FlashForge's services are gone.
 - **Care about your warranty.** Installing mods may void it. You can clean up any traces but they still may figure it out.
 - **Want official support.** You can't ask FlashForge for software support if you're on custom firmware.
-- **Have zero prior experience with 3D printing.** You're expected to have at least a basic understanding of Klipper.
+- **Have zero prior experience with 3D printing.** You're expected to have at least a basic understanding of Klipper. We can help, but we aren't perfect.
+- **Your main language is anything other than English.** Currently, multi-lingual support is basic and not automatic. In development!
 
 ## Not sure?
 
