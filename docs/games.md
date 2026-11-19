@@ -1,12 +1,10 @@
 # Games on the Creator 5
 
 The Creator 5 runs on an **Ingenic X2600**, a low-power embedded chip that's very
-*slow* by modern standards. That's what makes these ports a cool, real games
-running on hardware that was never meant to do much more than print and drive a tiny UI.
+*slow* by modern standards. That's what makes these ports a feat: real games
+running on hardware that was never meant to do much more than drive a print UI.
 
-These are community-built ports you can install on only OpenCreator CFW.
-
-OpenCreator does what FlashForge don't
+These are community-built ports you can install on OpenCreator CFW.
 
 !!! warning "Games are not part of printing"
     Games run on the printer's application processor, separate from the motion
