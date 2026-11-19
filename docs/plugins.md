@@ -47,8 +47,10 @@ Official plugins are made or checked by the OpenCreator team. Unofficial ones ar
 find, but nobody from OpenCreator has reviewed them: read what a plugin does before installing it.
 
 The catalog is `catalog.json` in [opencreator-fs](https://github.com/FlashForge-C5-Modding-Group/opencreator-fs)
-(`fs/usr/data/opencreator/plugin-manager/`). It comes with OpenCreator updates, so `search` works offline. To
-get a plugin listed, open a pull request adding it; the
+(`fs/usr/data/opencreator/plugin-manager/`). `oc-plugin` downloads it from GitHub each time, so a newly
+listed plugin shows up right away, without an OpenCreator update. Offline, it uses the last download
+(`plugins/.catalog.json`), or the copy that came with OpenCreator. To get a plugin listed, open a pull
+request adding it; the
 [example plugin's README](https://github.com/FlashForge-C5-Modding-Group/OpenCreator-Plugin-Example#getting-into-the-catalog)
 shows an entry.
 
