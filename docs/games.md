@@ -27,7 +27,7 @@ levels and total conversions.
 
 DOOM's game data lives in `.wad` files. The engine is free; you supply a WAD:
 
-- **Registered `DOOM.WAD` / `DOOM2.WAD`** — from a retail copy you own.
+- **Registered `DOOM.WAD` / `DOOM2.WAD`** - from a retail copy you own.
 - **Community WADs** - free fan-made levels and total conversions (many are
   standalone and need no retail files, includes FreeDOOM).
 
