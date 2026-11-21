@@ -40,9 +40,12 @@ where each one runs (SoC, SBC or both). Install one by its id, for example `oc-p
 | --- | --- | --- | --- |
 | [Hello OpenCreator](https://github.com/FlashForge-C5-Modding-Group/OpenCreator-Plugin-Example) | `hello` | SoC, SBC | Official. The example plugin: a Klippy module, a macro and a Moonraker endpoint. |
 | [Printer Buddy Lite](https://github.com/FlashForge-C5-Modding-Group/printer-buddy-lite) | `sep-ai` | SoC, SBC (tunneled) | Official. Print failure detection on the printer's own X2600 RISC-V core, with a web page on port 7180. On a tunneled printer it's installed on the printer and finds the SBC's Moonraker by itself. |
-| [Shake&Tune (numpy only)](https://github.com/FlashForge-C5-Modding-Group/numpy-shaketune) | `numpy-shaketune` | SoC | Official, experimental. Klippain Shake&Tune on the printer itself, with a numpy-only stand-in for matplotlib. Needs a lot of system resources: each graph keeps the CPU busy for about a minute and uses up to about 200 MB of memory. Needs git (`opkg install git`). Graphs go to `ShakeTune_results` next to `printer.cfg`. |
+| [Shake&Tune (numpy only)](https://github.com/FlashForge-C5-Modding-Group/numpy-shaketune) | `numpy-shaketune` | SoC | Official, experimental. Klippain Shake&Tune on the printer itself, with a numpy-only stand-in for matplotlib. Needs a lot of system resources: each graph keeps the CPU busy for about a minute and uses up to about 130 MB of memory. Needs git (`opkg install git`). Graphs go to `ShakeTune_results` next to `printer.cfg`. |
 | [OctoEverywhere for OpenCreator](https://github.com/KidCe/opencreator-octoeverywhere) | `octoeverywhere` | SoC | Unofficial. OctoEverywhere remote access and cameras. After installing, run `sh /usr/data/opencreator/plugins/octoeverywhere/install.sh` and follow its README. |
+| [OpenCreator Display Manager](https://github.com/pappicio/display-manager) | `display-manager` | SoC, SBC | Unofficial. Switch between HelixScreen and GrumpyScreen with Klipper macros. Install Script Runner first. May slow the printer down; no support in SoC mode, including for slowdowns or MCU shutdowns. |
+| [OpenCreator Spoolman Integration](https://github.com/JayKuswahey/OpenCreator-Plugin-Spoolman) | `oc_spoolman_integration` | SoC, SBC | Unofficial. A Spoolman spool per tool through AFC, so each tool books filament on its own spool. After installing, put your Spoolman server's address in `oc-spoolman.conf` (next to `moonraker.conf`), uncomment its `[spoolman]` section, then restart Moonraker and run `FIRMWARE_RESTART`. |
 | [Orca Filament Profiles](https://github.com/Xmister/opencreator-orca-filament-profiles) | `orca-filament-profiles` | SoC, SBC | Unofficial. Pick which OrcaSlicer filament preset each AFC material uses when Orca syncs filaments (OrcaSlicer 2.5 or later). AFC now supports this itself, so this plugin may be of little use. If you still want it, put your mappings in `orca-filament-profiles/mapping.cfg` next to `printer.cfg` and restart Klipper. |
+| [Samba Share](https://github.com/pappicio/samba-share) | `samba-share` | SoC, SBC | Unofficial. Shares `/usr/data` on the network over SMB. Needs Entware. The share is writable with guest access, so use it only on a trusted local network. |
 | [Script Runner](https://github.com/pappicio/oc-script-runner) | `script-runner` | SoC, SBC | Unofficial. Runs your own shell and Python scripts at startup, in SoC and tunneled mode, from `/usr/data/opencreator/scripts/` (`both/`, `soc/` or `tunneled/`). Needed by Touchscreen Server, so install it first. |
 | [Touchscreen Server](https://github.com/pappicio/touchscreen-server-plugin) | `touchscreen-server` | SoC, SBC | Unofficial. Remote access to the GrumpyScreen or HelixScreen touchscreen from a web browser. Install Script Runner first; after installing, open the URL shown in the install output. May slow the printer down, and it's only supported on tunneled printers. |
 
@@ -65,6 +68,13 @@ macros. It opens a dialog listing every plugin with its version, greyed out if i
 manifest is broken. Tap one for its description, author, what it adds to Klipper and Moonraker, and where it
 came from. `oc-plugin sync` rebuilds the list (as `config/plugins/_oc-plugins.cfg`) every time Klipper
 starts, so it stays current. Installing, updating and removing still happen over SSH.
+
+To browse every plugin in the catalog, run `OC_PLUGIN_MARKET`, tap **Plugin Marketplace** in GrumpyScreen's
+macros, or tap **Marketplace** at the bottom of the `OC_PLUGINS` dialog. Official plugins are blue, unofficial
+ones yellow, installed ones grey and ones that don't run on this printer red. Tap one for its description,
+author, notes, link and the `oc-plugin install` command for it. The list comes from the catalog the printer last
+fetched: it's refreshed at every boot and whenever `oc-plugin search`, `install` or `update` runs, and Klipper
+shows the new list from its next start.
 
 ### ZMOD plugins
 
