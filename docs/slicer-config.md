@@ -76,10 +76,10 @@ M83
 - [x] **Remove or comment out some G-code Print End (Newer versions of the profile):**
     `G1 X150 Y150 E-1.2 F12000`
 
-- [x] **Layer change G-code (optional, for timelapses):**
-  - Add `TIMELAPSE_TAKE_FRAME` on its own line, so [Timelapse](printer-features.md#timelapse) takes a frame at every layer.
-  - Add `SET_PRINT_STATS_INFO CURRENT_LAYER={layer_num + 1}` to its own line, so the "current layer" if updated every layer.
-
+- [x] **Layer change G-code:**
+  - Add `SET_PRINT_STATS_INFO CURRENT_LAYER={layer_num + 1}` to its own line, so the "current layer" is updated every layer and make Fluidd show it.
+  - Optional: Add `TIMELAPSE_TAKE_FRAME` on its own line, so [Timelapse](printer-features.md#timelapse) takes a frame at every layer.
+  
 ## Optional / niceties
 
 !!! tip "Faster retractions"
