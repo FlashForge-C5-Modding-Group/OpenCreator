@@ -28,6 +28,9 @@ theme:
   palette:
     # Follow the OS setting until the reader picks one
     - media: "(prefers-color-scheme)"
+      scheme: default
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-auto
         name: Switch to light mode
