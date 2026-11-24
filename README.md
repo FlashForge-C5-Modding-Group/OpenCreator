@@ -1,9 +1,10 @@
 # OpenCreator
 
-OpenCreator is the documentation home for the Creator 5 full custom firmware
+If you're looking for downloads, check them out in the releases [here!](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases)
+
+OpenCreator (the repository) is the documentation home for the Creator 5 full custom firmware
 project. The website source is in [`docs/`](docs/index.md) and is built with
-[Zensical](https://zensical.org/) on Read the Docs. It covers architecture, current print workflow,
-verification status, installation boundaries, and the stock-based Legacy path.
+[Zensical](https://zensical.org/) on Read the Docs and https://opencreatorcfw.github.io/
 
 ## Preview locally
 
