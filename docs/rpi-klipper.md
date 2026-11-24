@@ -192,22 +192,20 @@ next reboot. Klipper's config and the MCU firmware aren't touched. On a printer 
 rebooted since the update that added the command, run
 `sh /usr/data/opencreator/tunneled/oc-tunneled` instead.
 
-### 3MF uploads
-
-Sliced 3MF files (OrcaSlicer or Bambu Studio "Export plate sliced file", `.gcode.3mf`) can be
-uploaded straight to Fluidd or from the slicer. The first sliced plate is extracted as G-code with
-its preview thumbnail. A 3MF with no sliced G-code is rejected.
-
 ### OpenCreator Fluidd theme
 
 An extra-dark Fluidd theme with the OpenCreator logo and orange accents is installed into
 `~/printer_data/config/.fluidd-theme/`. It is made for Fluidd's dark mode. To go back to stock
 Fluidd, delete or rename `.fluidd-theme/custom.css` and reload the page.
 
-### Kalico
+## Fixes required
 
-SBC installs run [Kalico](https://github.com/FlashForge-C5-Modding-Group/kalico), which adds MPC
-heater control (`C5_MPC_CALIBRATE`) on top of everything the Klipper port does.
+### Change GrumpyScreen to tunneled IP
+Tunneled IPs do not get automatically changed in GrumpyScreen.
+
+Check `/usr/data/opencreator/klipper/config/` for the GrumpyScreen config if you've previuosly run SoC.
+
+The other one is at `/usr/data/grumpyscreen/` for the GrumpyScreen one if you've never launched SoC before.
 
 ## Extra notes
 
