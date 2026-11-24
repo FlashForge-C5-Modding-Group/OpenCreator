@@ -98,4 +98,4 @@ and if your printer breaks but can still access USB drives, you can use our inst
 ## Better VFA compensation
 FlashForge keeps a lot of their special sauce for their VFA calibration disabled. We fix up their disabled options and make it better.
 
-Read the wiki page on [VFA Compensation](vfa-compensation)
+Read the wiki page on [VFA Compensation](vfa-compensation.md)

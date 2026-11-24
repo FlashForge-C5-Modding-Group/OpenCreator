@@ -38,19 +38,19 @@ stops without changing anything. See [Supported kernel packages](installer.md).
 
 ## Steps to install OpenCreator
 
-1. Download the zip from the [latest release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/latest) and extract it to the root of the USB drive
-2. Reboot the printer with the USB plugged in
-3. Go through the steps, SoC installs are recommended for people who don't know what tunneled is
-4. Wait about 15-30 minutes for things to install (Backing up takes the longest)
-5. After it is finished, it will prompt you to remove the USB drive and press the reboot button
-6. Once you reboot, you should see a new boot logo, and Grumpyscreen, and on the web under the printer IP, Fluidd.
+1. Download the zip from the [latest release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/latest) and extract it to the root of the USB drive.
+2. Reboot the printer with the USB drive plugged in.
+3. Follow the on-screen steps. If you're not sure what "tunneled" means, choose a SoC install.
+4. Wait about 15-30 minutes for the install (backing up takes the longest).
+5. When it finishes, you'll be prompted to remove the USB drive and press reboot.
+6. After rebooting you'll see the new boot logo and GrumpyScreen on the touchscreen, and Fluidd in your browser at the printer's IP.
 7. Set up your slicer for OpenCreator: follow [Slicer Configuration](slicer-config.md) before your first print.
 
 ## Steps to update OpenCreator
 There are two ways.
 
 ### Way 1: Fluidd/Mainsail
-Fluidd and Mainsail have a way for smaller updates that don't effect most packages on the printer.
+Fluidd and Mainsail have a way for smaller updates that don't affect most packages on the printer.
 
 1. Navigate to the software update section
 2. Update "OpenCreator" then "Klipper"
@@ -69,14 +69,14 @@ Sometimes an update can't be distributed like that, this is the other way for mo
 ## Uninstalling OpenCreator
 To uninstall OpenCreator and go back to bone stock, launch the installer, and follow instructions for a `full rollback`
 
-!!! warn "Files left over"
-    There are some files left over from uninstalling, they can be removed via
-    `/usr/data/opencreator`
-    `/usr/data/grumpyscreen`
-    `/usr/data/python-hf`
-    Moonraker will also be updated, and will have to be reinstalled if you go back to stock, you'll have to find the download for the old version.
+!!! warning "Files left over"
+    Some files are left over after uninstalling. They can be removed manually:
+    `/usr/data/opencreator`, `/usr/data/grumpyscreen`, and `/usr/data/python-hf`.
 
-    If you uninstall OpenCreator and you picked Fluidd, you'll have to revert Nginx to stock configs.
+    Moonraker is also updated by OpenCreator, so if you go back to stock you'll need
+    to reinstall FlashForge's original version from their download.
+
+    If you picked Fluidd during install, you'll also need to revert Nginx to the stock config.
 
 The [SSH login banner](installer.md#login-banner) doesn't need cleaning up: a
 rollback removes it, and it turns itself off whenever FlashForge's firmware is

@@ -43,7 +43,7 @@ well it has been tested on a printer.
 - [ ] Version tracking
 - [x] AI-vision overwatch for failures (Can be implemented via Pi and any service)
 - [ ] Further detection for print failures
-- [ ] Reducing amount of wasted filament when runout is occured
+- [ ] Reducing the amount of wasted filament when a runout occurs
 
 The installer works, and the OpenCreator Updater is being finished; see their
 rows in the table above.

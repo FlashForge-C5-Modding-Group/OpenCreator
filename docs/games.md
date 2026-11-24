@@ -16,7 +16,7 @@ These are community-built ports you can install on OpenCreator CFW.
 The classic 1993 shooter, running on the Creator 5's touchscreen with on-screen
 controls (D-pad, action buttons, and the status bar).
 
-![DOOM running on the Creator 5 with on-screen touch controls](../assets/images/doom.jpg){ .oc-shot }
+![DOOM running on the Creator 5 with on-screen touch controls](assets/images/doom.jpg){ .oc-shot }
 
 DOOM is driven by the open **WAD** asset files, so you can also load custom
 levels and total conversions.
@@ -37,7 +37,7 @@ same as the stock episode.
 Sonic Mania, the 2017 & 2018 platformer by SEGA, Christian Whitehead, PagodaWest Games and Headcannon, running at full speed during 2D sections, and almost full speed
 during 3D sections to get emeralds. Fully completable from start to finish. Using RSDK 5U.
 
-![Sonic Mania running on the Creator 5](../assets/images/sonic-mania.jpg){ .oc-shot }
+![Sonic Mania running on the Creator 5](assets/images/sonic-mania.jpg){ .oc-shot }
 
 ## Installing
 

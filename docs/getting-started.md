@@ -17,7 +17,7 @@ and [Architecture](architecture.md). The printer configuration lives in
 MCU code live in `kalico`. The detailed toolchanger development notes are
 in `CREATOR5_TOOLCHANGER.md` inside the configuration tree.
 
-Join our Discord for support and to report problems with the alpha.
+Join our [Discord](https://discord.gg/RsdkqDtfww) for support and to report problems with the alpha.
 
 ## Before installing on a printer
 

@@ -23,7 +23,7 @@ and can be changed.
 [Get started](getting-started.md){ .md-button .md-button--primary }
 [Latest release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/latest){ .md-button }
 [Discord](https://discord.gg/RsdkqDtfww){ .md-button }
-[How we're different](different){ .md-button }
+[How we're different](different.md){ .md-button }
 
 </div>
 
