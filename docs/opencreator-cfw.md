@@ -2,8 +2,8 @@
 
 OpenCreator full custom firmware, or CFW, is the deeper Creator 5 integration
 effort. It aims to make the printer's host software, MCU behavior, toolchanging,
-and configuration maintainable as one community-developed stack. To gain is more features
-and more stable software overall compared to stock. 
+and configuration maintainable as one community-developed stack. The goal is more features
+and more stable software overall compared to stock.
 CFW is in public alpha; get the [latest release](https://github.com/FlashForge-C5-Modding-Group/OpenCreator/releases/latest). The mostly stock alternative is
 [OpenCreator Legacy](opencreator-legacy.md).
 
@@ -34,6 +34,6 @@ feed and auto load, multiplexing is in the planning stages, and the Raspberry Pi
 [OpenCreator for SBC](rpi-klipper.md)).
 
 Gadget mode Klipper / RPI Klipper is very close to what AnyCubic's modding scene calls [Tunneled Vanilla Klipper](https://github.com/Kobra-S1/vanilla-klipper-swu/blob/main/tunneled-klipper.md)
-and a lot of inital insperation was taken to go this route over direct MCU soldering,
+and a lot of initial inspiration was taken to go this route over direct MCU soldering,
 as it may not be possible on this board, as there has been no direct way (yet) to
 solder and allow USB passthrough for the MCUs.

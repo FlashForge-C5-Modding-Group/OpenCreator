@@ -13,10 +13,10 @@ Script, and Mainsail. The companion
 [Creator-5-Scripts](https://github.com/FlashForge-C5-Modding-Group/Creator-5-Scripts)
 repository contains scripts intended to run on a rooted printer.
 
-!!! warning "Legacy Deprication of Support"
-    Legacy no longer gets meaninful updates and will not get Discord support anymore as CFW has been
+!!! warning "Legacy deprecation of support"
+    Legacy no longer gets meaningful updates and will not get Discord support anymore, as CFW has been
     deemed stable enough to work on most printers. The legacy method still works and will gain version
-    updates to continue to support newer versions of the FlashForge OS Kernel package.
+    updates to continue to support newer versions of the FlashForge OS kernel package.
 
 | Legacy area | Approach |
 | --- | --- |
