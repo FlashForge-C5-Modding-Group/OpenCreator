@@ -45,6 +45,7 @@ restarts and reboots.
 | **bed_soak** | Off | `C5_MISC_BED_SOAK_ON` / `_OFF` | Waits at bed temperature before a fresh mesh (`bed_soak_minutes`, 2 by default), so the plate stops warping first. Skipped below 45 °C. |
 | **clog_detection** | Off | `SET_PIN PIN=clog_detection` | Pauses the print when a tool's filament wheel stops turning while filament is loaded. If you get false positives, turn it off. |
 | **lower_bed_on_end** | Off | `C5_MISC_LOWER_BED_ON_END_ON` / `_OFF` | Lowers the bed to the bottom after the print, so the plate is easy to take out. |
+| **park_carriage_on_end** | Off | `C5_MISC_PARK_CARRIAGE_ON_END_ON` / `_OFF` | After the print, moves the empty carriage to the back left, away from the docks. The spot is `park_x` / `park_y` in `printer.creator5.cfg`. |
 | **chamber_wait** | Off | `C5_MISC_CHAMBER_WAIT_ON` / `_OFF` | On: `M191` waits for the chamber to reach temperature. Off: it sets the target and the print carries on while the chamber heats. |
 | **door_notify** | Off | `C5_MISC_DOOR_NOTIFY_ON` / `_OFF` | Shows a pop-up (GrumpyScreen) and beeps when a door is opened during a print, or a print starts with one open. |
 | **quiet_mode** | Off | `C5_MISC_QUIET_MODE_ON` / `_OFF` | Silences the buzzer for anything it uses (start / end tune, door, etc). |
