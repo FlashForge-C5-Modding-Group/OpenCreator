@@ -63,7 +63,8 @@ then restart the printer:
 streamer: ustreamer
 ```
 
-Switching to ustreamer needs Wi-Fi.
+Switching to ustreamer needs an internet connection, over Wi-Fi or [wired Ethernet](#wired-ethernet):
+the printer downloads it the first time.
 
 `streamer: mjpg_streamer` switches back. The camera keeps the same port, addresses
 and colour settings, so Fluidd, Mainsail and Timelapse need no changes. If ustreamer
@@ -600,3 +601,33 @@ as it reported too many false alarms while the motors were crawling or
 holding still. `C5_MOTION_GUARD ENABLE=1` turns it on until the next restart
 (`ACTION=pause` to pause the print instead of warning), and
 `C5_MOTION_STATUS` shows what it has counted.
+
+## Wired Ethernet
+
+The Creator 5 only has Wi-Fi, and FlashForge's firmware has no drivers for USB network
+adapters. OpenCreator adds them, so a USB Ethernet adapter in the printer's USB port
+gives it a wired connection. Android USB tethering works the same way.
+
+| Adapter | Examples |
+|---|---|
+| Realtek RTL8152, RTL8153, RTL8156 | Most USB Ethernet adapters, 100 Mbit to 2.5 Gbit |
+| ASIX AX88772 | 100 Mbit adapters |
+| ASIX AX88179, AX88178A | Gigabit adapters |
+| Standard CDC ECM / NCM | Adapters that use the generic USB network class |
+| RNDIS | Android phones with USB tethering on |
+
+Plug the adapter in and connect it to your router; within about 10 seconds it gets an
+address by DHCP, like Wi-Fi does. It can be plugged in or out while the printer is on.
+
+- **The cable is used while it's in.** Wi-Fi stays connected, and if the cable is
+  pulled out or loses its link, the printer goes back to Wi-Fi at once.
+- **The adapter has its own IP address**, different from the printer's Wi-Fi one.
+  Find it in your router's list of devices, and use it in your browser and slicer.
+- **SoC installs only.** On a [Raspberry Pi tunnel](rpi-klipper.md) install the
+  printer's USB port talks to the Pi, so this isn't used.
+- **Kernel 2.0.7 or 2.0.8.** The drivers were built and checked for FlashForge's kernel
+  packages 2.0.7 and 2.0.8 only, and aren't loaded on others. Over SSH,
+  `ls /usr/prog/PROGRAM/kernel/` shows which one the printer has.
+
+If the adapter isn't picked up, `/usr/data/logs/usb-ethernet.log` says why, and
+`ip addr` over SSH shows the adapter and its address.

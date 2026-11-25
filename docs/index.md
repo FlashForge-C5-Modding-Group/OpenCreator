@@ -63,7 +63,8 @@ FlashForge's software instead of replacing it.
     ---
 
     Full web control, so the touchscreen is optional. A faster camera stream,
-    SFTP and 3MF uploads come with it.
+    SFTP, 3MF uploads and [wired Ethernet](printer-features.md#wired-ethernet)
+    with a USB adapter come with it.
 
 -   :material-code-braces:{ .lg .middle } **Open and editable**
 
