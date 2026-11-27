@@ -1,6 +1,6 @@
 # Early boot and recovery stick
 
-FlashForge updates overwrite `/usr/prog/app_startup.sh` and `firmwareExe`, the two files that normally start OpenCreator. So OpenCreator also boots from a file their updates never touch: `/usr/prog/module/driver.sh`. Stock's read-only rootfs runs it at every boot, long before `app_startup.sh`. The same file runs a recovery script from a USB stick, so a printer whose startup is broken can still be fixed without opening it up.
+FlashForge updates overwrite `/usr/prog/app_startup.sh` and `firmwareExe`, the two files that normally start OpenCreator. So OpenCreator also boots from a file their updates don't overwrite: `/usr/prog/module/driver.sh`. Stock's rootfs runs it at every boot, long before `app_startup.sh`. The same file runs a recovery script from a USB stick, so a printer whose startup is broken can still be fixed without opening it up.
 
 ## Safer than stock
 
@@ -15,7 +15,7 @@ On a stock printer the only way to recover without opening it up is a FlashForge
 
 Other details that help:
 
-- `driver.sh` runs from stock's read-only rootfs, which no update or mod can change.
+- `driver.sh` is started by stock's rootfs, which is read-only while the printer runs, so mods can't change that. A FlashForge update can ship a new rootfs (squashfs); one that drops the `driver.sh` call is unlikely, but then OpenCreator boots the old way through `app_startup.sh`.
 - `driver.sh` and `firmwareExe` are written to a temporary file first and renamed into place, so a power loss never leaves half a file.
 - A boot lock makes sure OpenCreator starts once, whichever of `driver.sh` and `app_startup.sh` gets there first.
 - Klipper and the rest only start once Wi-Fi has an address (or after 15 s), so SSH is there when you need it.
