@@ -70,6 +70,13 @@ and a web UI. It's in public alpha, so it suits some people more than others.
 
     [With a small command or two, you can download addons instantly compatible and available for your printer.](plugins.md)
 
+-   :material-lifebuoy: **Want a printer that's hard to brick**
+
+    ---
+
+    On stock, a broken startup script means opening the printer to recover it. CFW boots even then, and a
+    recovery script on a USB stick fixes it from outside. See [Early boot and recovery stick](early-boot.md).
+
 -   :material-rocket-launch-outline: **Want what's coming next**
 
     ---

@@ -114,6 +114,7 @@ nav:
   - Games: games.md
   - Technical Reference:
     - Architecture: architecture.md
+    - Early boot and recovery stick: early-boot.md
     - MCU development and verification: mcu-development.md
     - Print workflow: print-workflow.md
     - Printer Features: printer-features.md
