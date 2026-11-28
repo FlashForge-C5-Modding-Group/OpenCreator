@@ -93,3 +93,31 @@ The optional lower-bed-at-end setting is separate from print-start bed
 leveling. The printer configuration also routes cancellation through the stop
 sequence, but a shutdown can prevent ordinary G-code cleanup. Confirm the
 machine state before resuming after an MCU fault.
+
+## Notower (no prime tower)
+
+!!! warning
+    Notower needs a poop bucket fitted on the printer for the purged filament
+    to drop into. A nozzle brush is recommended, so the purge doesn't trail
+    back onto the print.
+
+Notower purges into the bucket after each tool change instead of printing a
+prime tower. It only runs on prints that use more than one tool. Slice with the
+prime tower off, then turn it on for the print in either of these ways:
+
+- Tick **Notower** in [OpenCreator Send](https://github.com/FlashForge-C5-Modding-Group/opencreator-send)
+  and set the grams.
+- Add a line `; poop=2` to the G-code, for example in the slicer's start
+  G-code. The number is grams per tool change; without one it's 2 g.
+
+After every tool change in the print, the new tool goes to the bucket at
+300 mm/s (20 000 mm/s² acceleration), heats to its print temperature, purges
+that much filament at 10 mm³/s, retracts 1 mm and goes back to the print. The
+weight becomes a length with the filament density
+from the slicer (PLA's 1.24 g/cm³ if it has none). 2 g of PLA takes about
+2 min 40 s per tool change.
+
+The tool changes during print start (priming, purge lines, picking up the first
+tool) don't purge, nor does a tool change by hand while paused. The bucket is
+on the frame, so the print position isn't lost, and the bed is never raised
+for it.

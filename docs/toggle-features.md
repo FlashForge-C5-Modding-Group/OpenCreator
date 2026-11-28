@@ -67,6 +67,7 @@ G-code instead. A value there wins over the switch for that print only.
 | `BED_LEVELING=0` or `1` | **bed_leveling** |
 | `HOST_PRESSURE_ADVANCE=0` or `1` | **host_pressure_advance** |
 | `BUILDPLATE_CHECK=0` | Skips the build plate check (no switch) |
+| `POOP=<grams>` | Turns on notower for a multi-tool print (no switch), see [Print workflow](print-workflow.md#notower-no-prime-tower) |
 
 For example, a print with no bucket purge and no purge line:
 
