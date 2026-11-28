@@ -39,8 +39,8 @@ restarts and reboots.
 | --- | --- | --- | --- |
 | **flow_calibration** | On | `C5_MISC_FLOW_CALIBRATION_ON` / `_OFF` | FlashForge PA calibration, known to be extremely inaccurate. Recommended off on first setup. |
 | **purge** | On | `C5_MISC_PURGE_ON` / `_OFF` | Purges each prepared tool into the bucket at print start. With this and flow calibration both off, tool preparation is skipped. |
-| **purge_line** | On | `C5_MISC_PURGE_LINE_ON` / `_OFF` | The purge line drawn in front of the print, just before it starts. Separate from **purge**. |
-| **purge_line_all_tools** | Off | `C5_MISC_PURGE_LINE_ALL_TOOLS_ON` / `_OFF` | With **purge_line** on, every tool the print uses draws its own purge line at its own temperature, not only the first. Needs Kalico. See [Print Workflow](print-workflow.md). |
+| **purge_line** | On | `C5_MISC_PURGE_LINE_ON` / `_OFF` | The KAMP purge line drawn in front of the print, just before it starts. Separate from **purge**. This will draw a purge line for all filaments used in the print. |
+| **purge_line_all_tools** | Off | `C5_MISC_PURGE_LINE_ALL_TOOLS_ON` / `_OFF` | With **purge_line** on, every tool the print uses draws its own purge line at its own temperature, not only the first. This is different from `C5_MISC_PURGE_LINE_ON` and will place a thin layer at the front of the plate. Needs Kalico. See [Print Workflow](print-workflow.md). |
 | **bed_leveling** | On | `C5_MISC_BED_LEVEL_ON` / `_OFF` | Probes a fresh bed mesh before each print. Uses KAMP if slicer settings are correct. Off loads the saved `default` mesh instead. |
 | **bed_soak** | Off | `C5_MISC_BED_SOAK_ON` / `_OFF` | Waits at bed temperature before a fresh mesh (`bed_soak_minutes`, 2 by default), so the plate stops warping first. Skipped below 45 °C. |
 | **clog_detection** | Off | `SET_PIN PIN=clog_detection` | Pauses the print when a tool's filament wheel stops turning while filament is loaded. If you get false positives, turn it off. |
